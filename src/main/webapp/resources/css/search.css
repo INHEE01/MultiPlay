@@ -1,0 +1,170 @@
+    a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.3rem; /* 글씨가 너무 커서 줄였음 */
+    }
+    .search-searchresult {
+        /* margin-top: 30px;
+        margin-bottom: 30px; */
+        margin: 30px auto; /* 상하 마진 30px, 좌우 마진 자동(중앙정렬) */
+        padding: 10px;
+        width: 1100px;
+        height: 200px;
+        background-color: #f2f1f1; /* 색상 전부 연하게 바꿨음 */
+        text-align: center; /* div 안 내용물 중앙정렬 */
+    }
+    .search-searchresult-inner{
+    	margin: 45px auto;
+    }
+  
+    .search-searchresult-inner>p {
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+    .search-searchresult-inner>input {
+        width: 600px;
+        height: 30px;
+        background-color: #f2f1f1;
+    }
+    .search-searchresult-inner>a {
+        background-color: #f2f1f1;
+    }
+
+/* 추천 검색어 */
+    .search-recommendbar {
+        overflow: hidden;
+        text-align: center;
+        display: inline-block;
+    }
+    .search-recommendbar>h2 {
+        float: left;
+    }
+    .search-recommendbar-1 {
+        float: left;
+        width: 150px;
+        height: 40px;
+        margin: 4px;
+        border: 3px solid orange;
+        border-radius: 16px;
+        text-align: center;
+    }
+    .search-recommendbar-1:hover {
+        background-color: black;
+        color: white;
+    }
+    .search-midbar {
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .search-midbar-1 {
+        padding-left: 50px;
+        display: inline-block;
+        border: 2.5px solid orange;
+        width: 280px;
+        height: 50px;
+        background-color: white;
+    }
+
+    .search-midbar>a {
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+        letter-spacing: 2px;
+    }
+
+    .search-midbar-1:hover {
+        background-color: orange;
+    }
+
+    .search-rankingbar>a {
+        vertical-align: middle;
+    }
+
+    .search-more {
+        text-align: center;
+    }
+
+    .search-more-1 {
+        display: inline-block;
+        background-color: orange;
+        width: 280px;
+        height: 50px;
+        border-radius: 5px;
+    }
+
+    /*怨좉컼�쇳꽣 */
+    .bnr-bottom-wrap {
+        clear: both;
+        width: 100%;
+        background: white;
+    }
+
+    .bnr-bottom {
+        width: 1200px;
+        display: table;
+        margin: 0px auto;
+        background-color: white;
+        display: flex;
+    }
+
+    .bnr-bottom-01,
+    .bnr-bottom-02 {
+        background-color: white;
+    }
+
+    .icon-container {
+        background-color: white;
+        padding: 20px;
+        border: 2px solid rgb(151, 151, 151);
+        border-radius: 50%;
+    }
+
+    .fa-phone-volume,
+    .fa-pen-to-square {
+        font-size: 30px;
+        background-color: white;
+        color: rgb(151, 151, 151);
+    }
+
+    .bnr-bottom .bnr-bottom-01 {
+        display: flex;
+        align-items: center;
+        padding-left: 120px;
+        position: relative;
+        border-right: 1px solid lightgray;
+        margin: 15px 0px;
+    }
+
+    .bnr-bottom .bnr-bottom-02 {
+        display: flex;
+        align-items: center;
+        padding-left: 50px;
+        margin: 15px 0px;
+    }
+
+    .bnr-bottom>div {
+        width: 50%;
+        height: 120px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .bottom-title {
+        font-weight: 600;
+        font-size: 18px;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        background-color: white;
+    }
+
+    .bottom-sub {
+        background-color: white;
+        font-size: 15px;
+        display: block;
+    }
+
+    .info-container {
+        background-color: white;
+        margin-left: 20px;
+    }
