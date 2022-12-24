@@ -47,7 +47,7 @@
 			status, ENROLL_DATE, MODIFY_DATE 
 		) VALUES (
 			 0, #{userId}, #{userPw},
-			 default, #{userName}, #{userPhone},
+			 #{userName}, #{userBirth}, #{userPhone},
 			 #{userEmail}, #{userAddress}, DEFAULT,
 			 DEFAULT, DEFAULT, DEFAULT)
 	</insert>
