@@ -8,7 +8,8 @@ body{
 }
 #board-write-container{
   width: 1200px;
-  margin: 0 auto;
+  margin: 70 auto;
+  padding:0px 20px;
 }
 
 /*버튼*/
@@ -33,7 +34,9 @@ button:hover{
 
 
 /*게시판 윗부분*/
-
+.bnts{
+	margin-bottom:20px;
+}
 .board-table{
   width: 100%;
   border-top: 3px solid rgb(157, 157, 157);
@@ -145,8 +148,11 @@ table#tbl-comment tr:hover button.btn-update{
   color: white;
 }
 
-.comments:hover td{
+#comment:hover td{
   background-color: lightgray;
+}
+.commnet:hover td{
+	background-color: transparent;
 }
 .comment-count:hover td{
   background-color: transparent;

@@ -1,15 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;900&family=Noto+Sans+KR:wght@100;300;400;500;700&family=Paytone+One&family=Secular+One&display=swap');
 
-a{
-text-decoration: none;
-color: black;
-}
+
 body{
 	background-color: rgb(255, 247, 237);
-	 margin: 0px;
+	margin: 0px;
   	padding: 0px;
   	box-sizing: border-box;
+  	text-aglin:center;
+  	text-decoration: none;
+	color: black;
 }
+
+#board-title{
+	text-decoration: none;
+	color:black;
+}
+
 .file-img{
 	max-height: 25px;
 	max-width: 25px;
@@ -37,10 +43,19 @@ body{
 
 .board{
   width: 1200px;
-  margin: 0 auto;
+  margin: 0px auto;
   padding-top: 10px;
+
 }
 
+.container{
+	margin: 0 auto;
+}
+
+.write{
+	margin:10px;
+	margin-top:70px;
+}
 ul,li {
   margin: 0;
   padding: 0;
@@ -48,63 +63,11 @@ ul,li {
   margin-bottom: 5px;
 }
 a{background-color: transparent;}
-.container {
-  margin: 0 auto;
-  clear: both;
-}
-.tab-container {
-  margin-top: 40px;
-  display: flex;
-}
-.tab-container__item {
-  cursor: pointer;
-}
-.tab-container__item:hover {
-  background-color:  rgb(251, 188, 4);
-  transition: background-color 0.4s ease-in-out;
-}
-.tab-container__item:hover .tab-container__item--title {
-  color: #fff;
-  transition: color 0.4s ease-in-out;
-}
-.tab-container__item.active {
-  border-bottom: 2px solid rgb(251, 188, 4);
-}
-.tab-container__item.active .tab-container__item--title {
-  color:  rgb(251, 188, 4);
-}
-.tab-container__item.active:hover {
-  background-color:  rgb(251, 188, 4);
-  transition: background-color 0.4s ease-in-out;
-}
-.tab-container__item.active:hover .tab-container__item--title {
-  color: #fff;
-  transition: color 0.4s ease-in-out;
-}
-.tab-container__item--title {
-  display: inline-block;
-  color: rgb(80, 79, 79);
-  font-weight: 700;
-  text-decoration: none;
-  margin: 15px;
-  font-size: 18px;
-}
-.content-container {
-  width: 1200px;
-  margin: 0 auto;
-  padding: 10px;
-}
-.content-container__content {
-  display: none;
-}
-.content-container__content.target {
-  display: block;
-}
 
 
 .search{
   float: right;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-right: 10px;
 }
 label{
@@ -146,10 +109,12 @@ button:hover{
   border-top: 3px solid black;
   border-bottom: 1px solid black;
   border-collapse: collapse;
+  margin: 0 auto;
 }
 .table-header{
   padding: 10px 0px;
   border-bottom: 1px solid black;
+  text-align: center !important;
 }
 
 .board-content{
@@ -165,6 +130,7 @@ button:hover{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-decoration: none;
 }
 .table-buttons{
   text-align: center;

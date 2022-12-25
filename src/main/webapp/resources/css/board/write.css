@@ -8,11 +8,16 @@ body {
 
 /*글쓰기 폼*/
 td{padding: 10px;}
-
+th{
+	text-align: center;
+}
 /*카테고리*/
 #category{
   width: 80px;
   height: 30px;
+}
+.category-selector{
+	margin-top: 20px;
 }
 
 /*제목*/
@@ -27,7 +32,9 @@ input,select{
 .title-area{
   border: none;
   border-bottom: 3px solid rgb(101, 101, 101);
+  padding-top:50px;
 }
+
 .title{
   border: none;
   width: 100%;
@@ -104,10 +111,13 @@ input:focus {outline: none;}
 
 
 /*버튼*/
-.btns{
+#writeBtns{
   padding: 20px 0px;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 40px;
 }
-.btn{
+#writeBtn{
   width: 60px;
   height: 36px;
   background-color: rgb(251, 188, 4);
@@ -116,6 +126,7 @@ input:focus {outline: none;}
   font-size: 15px;
   border-radius: 4px;
   margin: 0px 5px;
+  
 }
 button:hover{
   background-color: black;
