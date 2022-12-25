@@ -127,7 +127,7 @@ CREATE TABLE PUBLICPERFORMANCEDDISPLAYS.REVIEW(
       
     CONSTRAINT PK_BOARD PRIMARY KEY REVIEW(REVIEW_NO), 
      
-	CONSTRAINT FK_BOARD_BOOK_NO FOREIGN KEY REVIEW(BOOK_NO) REFERENCES BOOK_INFO(BOOK_NO)
+	CONSTRAINT FK_BOARD_BOOK_NO FOREIGN KEY REVIEW(BOOK_NO) REFERENCES BOOKINFO(BOOK_NO)
     ON UPDATE CASCADE
     ON DELETE CASCADE,
      
@@ -210,8 +210,8 @@ INSERT INTO BOARDREPLY VALUES(0, 3, 2, '흠... 저는 노잼인거 같은디', D
 
 select * from BOARDREPLY;
 -- --------------------------------------------------------------------------------------------
--- drop table BOOK_INFO;
-create table BOOK_INFO (
+-- drop table BOOKINFO;
+create table BOOKINFO (
 	book_no int auto_increment, -- 예매번호
     cultural_no int not null, -- 예매한 공연/전시의 일련번호
     cultural_name varchar(100) not null, -- 예약한 공연/전시 이름
@@ -225,22 +225,22 @@ create table BOOK_INFO (
     payment_method varchar(10) not null, -- 결제 수단
     payment_time DATETIME DEFAULT CURRENT_TIMESTAMP,	-- 결제 시간
     
-    CONSTRAINT PK_BOOK_INFO PRIMARY KEY BOOK_INFO(BOOK_NO),
+    CONSTRAINT PK_BOOKINFO PRIMARY KEY BOOKINFO(BOOK_NO),
     
-	CONSTRAINT FK_BOOK_INFO_USER_NO FOREIGN KEY BOOK_INFO(USER_NO) REFERENCES users(USER_NO) 
+	CONSTRAINT FK_BOOKINFO_USER_NO FOREIGN KEY BOOKINFO(USER_NO) REFERENCES users(USER_NO) 
     ON UPDATE CASCADE
     ON DELETE CASCADE,
     
-    CONSTRAINT FK_BOOK_INFO_CULTURAL_NO FOREIGN KEY BOOK_INFO(cultural_no) REFERENCES CULTURAL(CNO)
+    CONSTRAINT FK_BOOKINFO_CULTURAL_NO FOREIGN KEY BOOKINFO(cultural_no) REFERENCES CULTURAL(CNO)
     ON UPDATE CASCADE
     ON DELETE CASCADE
 );
 
-insert into book_INFO values(0, 3, "[소마미술관] 내일전_Drag and Draw", "INHEE", "이인희", 1, 3, 'C4', '2022-12-25',30000, '신용카드', DEFAULT);
-insert into book_INFO values(0, 10, "아트스쾃 작가 전시회", "2INHEE", "이윤희", 2, 3, 'C4', '2022-10-30', 30000, '신용카드',  DEFAULT);
-insert into book_INFO values(0, 6, "에델현악사중주단과 피아니스트 김강아의 클래식음악으로 듣는 러시아의 정취", "2INHEE", "이윤희", 2, 3, 'G10', '2022-10-30', 30000, '신용카드',  DEFAULT);
-insert into book_INFO values(0, 16, "[소마미술관] 드로잉나우(Drawing Now) 전시 안내", "2INHEE", "이윤희", 2, 3, 'L1', '2022-10-30', 30000, '신용카드',  DEFAULT);
-insert into book_INFO values(0, 18, "겨울왕국: 겨울이야기 [광주]", "2INHEE", "이윤희", 2, 3, 'C4, D4', '2022-12-25', 120000, '신용카드',  DEFAULT);
+insert into bookINFO values(0, 3, "[소마미술관] 내일전_Drag and Draw", "INHEE", "이인희", 1, 3, 'C4', '2022-12-25',30000, '신용카드', DEFAULT);
+insert into bookINFO values(0, 10, "아트스쾃 작가 전시회", "2INHEE", "이윤희", 2, 3, 'C4', '2022-10-30', 30000, '신용카드',  DEFAULT);
+insert into bookINFO values(0, 6, "에델현악사중주단과 피아니스트 김강아의 클래식음악으로 듣는 러시아의 정취", "2INHEE", "이윤희", 2, 3, 'G10', '2022-10-30', 30000, '신용카드',  DEFAULT);
+insert into bookINFO values(0, 16, "[소마미술관] 드로잉나우(Drawing Now) 전시 안내", "2INHEE", "이윤희", 2, 3, 'L1', '2022-10-30', 30000, '신용카드',  DEFAULT);
+insert into bookINFO values(0, 18, "겨울왕국: 겨울이야기 [광주]", "2INHEE", "이윤희", 2, 3, 'C4, D4', '2022-12-25', 120000, '신용카드',  DEFAULT);
 
 select * from book_INFO;
 

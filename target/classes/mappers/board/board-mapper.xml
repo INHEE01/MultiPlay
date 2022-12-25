@@ -37,10 +37,11 @@
 	<!-- MySQL의 페이징 기능을 활용한 코드 -->
 	<select id="selectBoardList" resultMap="boardListResultMap" parameterType="map">
 		SELECT  
-			B.bno, B.board_title, U.USER_ID, B.CREATE_DATE, B.ORIGINAL_FILENAME, B.READCOUNT, B.STATUS
+			B.bno, B.board_type, B.board_title, U.USER_ID, B.CREATE_DATE, B.ORIGINAL_FILENAME, B.READCOUNT, B.STATUS
 		FROM BOARD B JOIN USERS U ON(B.writer_no = U.USER_NO) 
 		WHERE 1 = 1 
 		AND B.STATUS = 'Y'
+		AND B.board_type LIKE '${boardType}'
 		<if test="writer != null">
 			AND U.USER_ID LIKE '%${writer}%' 
 		</if>		
@@ -59,6 +60,7 @@
 			COUNT(*)
 		FROM BOARD B JOIN USERS U ON(B.writer_no = U.USER_NO)
 		WHERE B.STATUS = 'Y'
+		AND B.board_type LIKE '${boardType}'
 		<if test="writer != null">
 			AND U.USER_ID LIKE '%${writer}%' 
 		</if>		
@@ -85,6 +87,7 @@
 		LEFT OUTER JOIN USERS U2 ON (R.USER_NO = U2.USER_NO)
 		WHERE B.STATUS = 'Y' AND B.bno = #{bno}
 	</select>
+	
 	
 	<insert id="insertBoard" parameterType="Board">
 		INSERT INTO BOARD(

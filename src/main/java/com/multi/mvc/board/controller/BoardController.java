@@ -46,8 +46,8 @@ public class BoardController {
 	
 	@GetMapping("/list")
 	public String list(Model model, @RequestParam Map<String, String> param) {
-		log.info("리스트 요청, param : " + param);
 		int page = 1;
+		log.info("리스트 요청, param : " + param);
 		Map<String, String> searchMap = new HashMap<String, String>();
 		try {
 			String searchValue = param.get("searchValue");
@@ -58,8 +58,9 @@ public class BoardController {
 			page = Integer.parseInt(param.get("page"));
 		} catch (Exception e) {}
 		
+		
 		int boardCount = service.getBoardCount(searchMap);
-		PageInfo pageInfo = new PageInfo(page, 10, boardCount, 10);
+		PageInfo pageInfo = new PageInfo(page, 5, boardCount, 10);
 		List<Board> list = service.getBoardList(pageInfo, searchMap);
 		
 		model.addAttribute("list", list);
@@ -68,19 +69,74 @@ public class BoardController {
 		return "/board/list";
 	}
 	
+
+	@GetMapping("/monlist")
+	public String monList(Model model, @RequestParam Map<String, String> param) {
+		int page = 1;
+		log.info("리스트 요청, param : " + param);
+		Map<String, String> searchMap = new HashMap<String, String>();
+		try {
+			String searchValue = param.get("searchValue");
+			if(searchValue != null && searchValue.length() > 0) {
+				String searchType = param.get("searchType");
+				searchMap.put(searchType, searchValue);
+			}
+			page = Integer.parseInt(param.get("page"));
+		} catch (Exception e) {}
+		
+		
+		int boardCount = service.getBoardCount2(searchMap);
+		PageInfo pageInfo = new PageInfo(page, 5, boardCount, 10);
+		List<Board> list = service.getBoardList2(pageInfo, searchMap);
+		
+		model.addAttribute("list", list);
+		model.addAttribute("param", param);
+		model.addAttribute("pageInfo", pageInfo);
+		return "/board/monlist";
+	}
+	
+	
+	
+	@GetMapping("/freelist")
+	public String freeList(Model model, @RequestParam Map<String, String> param) {
+		int page = 1;
+		log.info("리스트 요청, param : " + param);
+		Map<String, String> searchMap = new HashMap<String, String>();
+		try {
+			String searchValue = param.get("searchValue");
+			if(searchValue != null && searchValue.length() > 0) {
+				String searchType = param.get("searchType");
+				searchMap.put(searchType, searchValue);
+			}
+			page = Integer.parseInt(param.get("page"));
+		} catch (Exception e) {}
+		
+		
+		int boardCount = service.getBoardCount3(searchMap);
+		PageInfo pageInfo = new PageInfo(page, 5, boardCount, 10);
+		List<Board> list = service.getBoardList3(pageInfo, searchMap);
+		
+		model.addAttribute("list", list);
+		model.addAttribute("param", param);
+		model.addAttribute("pageInfo", pageInfo);
+		return "/board/freelist";
+	}
+
+	
 	@RequestMapping("/view")
 	public String view(Model model, @RequestParam("no") int no) {
 		Board board = service.findByNo(no);
+		
 		if(board == null) {
 			return "redirect:error";
 		}
 		
 		model.addAttribute("board", board);
 		model.addAttribute("replyList", board.getReplies());
+		board.setReplyCount(board.getReplies().size());
 		System.out.println(board.getReplies());
 		return "/board/view";
 	}
-	
 	
 	@GetMapping("/error")
 	public String error() {
@@ -123,10 +179,9 @@ public class BoardController {
 		
 		log.debug("board : " + board);
 		int result = service.saveBoard(board);
-		board.setBoardType("자유게시판");
 		if(result > 0) {
 			model.addAttribute("msg", "게시글이 등록 되었습니다.");
-			model.addAttribute("location", "/board/list");
+			model.addAttribute("location", "/board/freelist");
 		}else {
 			model.addAttribute("msg", "게시글 작성에 실패하였습니다.");
 			model.addAttribute("location", "/board/list");
@@ -160,10 +215,9 @@ public class BoardController {
 		
 		log.debug("board : " + board);
 		int result = service.saveBoard(board);
-		board.setBoardType("문의사항");
 		if(result > 0) {
 			model.addAttribute("msg", "게시글이 등록 되었습니다.");
-			model.addAttribute("location", "/board/list");
+			model.addAttribute("location", "/board/monlist");
 		}else {
 			model.addAttribute("msg", "게시글 작성에 실패하였습니다.");
 			model.addAttribute("location", "/board/list");
@@ -171,12 +225,6 @@ public class BoardController {
 		
 		return "common/msg";
 	}
-	
-	
-	
-	
-	
-	
 	
 	@RequestMapping("/reply")
 	public String writeReply(Model model, 
@@ -207,6 +255,7 @@ public class BoardController {
 		
 		String rootPath = session.getServletContext().getRealPath("resources");
 		String savePath = rootPath +"/upload/board";
+		Board board = service.findByNo(boardNo);
 		int result = service.deleteBoard(boardNo, savePath);
 		
 		if(result > 0) {
@@ -214,7 +263,14 @@ public class BoardController {
 		}else {
 			model.addAttribute("msg", "게시글 삭제에 실패하였습니다.");
 		}
-		model.addAttribute("location", "/board/list");
+
+		if(board.getBoardType().equals("문의사항")) {
+			model.addAttribute("location", "/board/monlist");
+		}else if(board.getBoardType().equals("자유게시판")){
+			model.addAttribute("location", "/board/freelist");
+		}else if(board.getBoardType().equals("공지사항")) {
+			model.addAttribute("location", "/board/list");
+		}
 		return "/common/msg";
 	}
 	
@@ -267,7 +323,7 @@ public class BoardController {
 				service.deleteFile(savePath + "/" +board.getRenamedFileName());
 			}
 			
-			String renameFileName = service.saveFile(reloadFile, savePath); // 실제 파일 저장하는 로직
+			String renameFileName = service.saveFile(reloadFile, savePath);
 			
 			if(renameFileName != null) {
 				board.setOriginalFileName(reloadFile.getOriginalFilename());
@@ -278,16 +334,27 @@ public class BoardController {
 		log.debug("board : " + board);
 		int result = service.saveBoard(board);
 
-		if(result > 0) {
-			model.addAttribute("msg", "게시글이 수정 되었습니다.");
-			model.addAttribute("location", "/board/list");
-		}else {
-			model.addAttribute("msg", "게시글 수정에 실패하였습니다.");
-			model.addAttribute("location", "/board/list");
+		if(board.getBoardType().equals("문의사항")) {
+			if(result > 0) {
+				model.addAttribute("msg", "문의게시글이 수정 되었습니다.");
+				model.addAttribute("location", "/board/monlist");
+			}else {
+				model.addAttribute("msg", "문의 게시글 수정에 실패하였습니다.");
+				model.addAttribute("location", "/board/monlist");
+			}
+		}else if(board.getBoardType().equals("자유게시판")){
+			if(result > 0) {
+				model.addAttribute("msg", "자유게시판 게시글이 수정 되었습니다.");
+				model.addAttribute("location", "/board/freelist");
+			}else {
+				model.addAttribute("msg", "자유게시판 게시글 수정에 실패하였습니다.");
+				model.addAttribute("location", "/board/freelist");
+			}
 		}
 		
 		return "common/msg";
 	}
+	
 	
 	@RequestMapping("/fileDown")
 	public ResponseEntity<Resource> fileDown(
@@ -317,5 +384,6 @@ public class BoardController {
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); // 실패했을 경우
 	}
 
+	
 }
 

@@ -6,25 +6,20 @@
 <script src="https://kit.fontawesome.com/9945425c20.js" crossorigin="anonymous"></script>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 
-<!--<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>-->
+<jsp:include page="/WEB-INF/views/common/header.jsp">
+	<jsp:param value="글수정" name="title"/>
+</jsp:include>
+
 <link rel="stylesheet" type="text/css" href="${path}/resources/css/board/write.css">
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <body>
 	<section class="board-write">
 	  <form action="${path}/board/update" method="post" enctype="multipart/form-data">
 	  	<input type="hidden" name="bno" value="${board.bno}" />
+	  	<input type="hidden" name="boardType" value="${board.boardType}" />
 		<input type="hidden" name="originalFileName" value="${board.originalFileName}" />
 		<input type="hidden" name="renamedFileName" value="${board.renamedFileName}" />
 	    <table id="tbl-board" class="wirter">
-	      <tr>
-	       <td class="category-selector" colspan="2">
-	        <select name="category" id="category">
-	          <option value="tip">팁공유</option>
-	          <option value="jab">잡담</option>
-	          <option value="hugi">후기</option>
-	        </select>
-	       </td>
-	      </tr>
 	      <tr>
 	        <td colspan="2"  class="title-area">
 	          <input type="text" name="boardTitle" value="${board.boardTitle}" class="title">
@@ -56,9 +51,14 @@
 	        </td>
 	      </tr>
 	      <tr>
-	        <th colspan="2" class="btns">
-	          <input type="submit" value="수정" class="btn">
-	          <input type="button" value="취소" onclick="location.href='${path}/board/list'" class="btn">
+	        <th colspan="2" id="writeBtns">
+	          <input type="submit" value="수정" id="writeBtn">
+	          <c:if test="${board.boardType=='문의사항' }">
+	          	 <input type="button" value="취소" onclick="location.href='${path}/board/monlist'" id="writeBtn">
+	          </c:if>
+	          <c:if test="${board.boardType=='자유게시판' }">
+	          	 <input type="button" value="취소" onclick="location.href='${path}/board/freelist'" id="writeBtn">
+	          </c:if>
 	        </th>
 	      </tr>
 	    </table>
@@ -106,7 +106,7 @@
 	    });
 	}); 
  </script>
-<!--<jsp:include page="/WEB-INF/views/common/footer.jsp"/>-->
+<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 
 

@@ -10,6 +10,9 @@
   rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="${path}/resources/css/board/view.css">
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<jsp:include page="/WEB-INF/views/common/header.jsp">
+	<jsp:param value="글상세보기" name="title"/>
+</jsp:include>
 
 <script src="https://kit.fontawesome.com/9945425c20.js" crossorigin="anonymous"></script>
 <body>
@@ -17,15 +20,26 @@
 	    <table id="tbl-board" class="board-table">
 	    	<tr class="bnts">
 			      <c:if test="${not empty loginMember && (loginMember.userId == board.userId || loginMember.userId == 'admin')}">
-			        <button type="button" id="btnUpdate">수정</button>
-			        <button type="button" id="btnDelete">삭제</button>
+			        <button style="margin:10px 10px;" type="button" id="btnUpdate">수정</button>
+			        <button  style="margin:10px 0px;" type="button" id="btnDelete">삭제</button>
 			      </c:if>
-			      <button type="button" id="btnList" onclick="location.href='${path}/board/list'">목록</button>
+			     <c:if test="${board.boardType=='공지사항'}">
+			     	 <button style="margin:10px 10px;" type="button" id="btnList" onclick="location.href='${path}/board/list'">목록</button>
+			     </c:if>
+			     <c:if test="${board.boardType=='문의사항'}">
+			     	 <button style="margin:10px 10px;" type="button" id="btnList" onclick="location.href='${path}/board/monlist'">목록</button>
+			     </c:if>
+			     <c:if test="${board.boardType=='자유게시판'}">
+			     	 <button style="margin:10px 10px;" type="button" id="btnList" onclick="location.href='${path}/board/freelist'">목록</button>
+			     </c:if>
+			     
 	    	</tr>
 	      	<tr><td style="display:none;">${board.bno}</td></tr>
 	      	<tr>
 	      		<td class="board-title" colspan="3">
-	          		<span class="category">[임의 카테고리]</span>
+	          		<c:if test="${board.boardType=='공지사항'}"><span class="category">[공지]</span></c:if>
+	          		<c:if test="${board.boardType=='문의사항'}"><span class="category">[문의]</span></c:if>
+	          		<c:if test="${board.boardType=='자유게시판'}"><span class="category">[자유게시판]</span></c:if>
 	         		<c:out value="${board.boardTitle}"/>
 	        	</td>
 	      	</tr>
@@ -70,11 +84,11 @@
 		</table>
 		<table id="tbl-comment">
 		  <tr>
-		    <td class="comment-count" colspan="2" style="border-color: none;">댓글 3개</td>
+		    <td class="comment-count" colspan="2" style="border-color: none;">댓글 ${board.getReplyCount()} 개</td>
 		  </tr>
 		  <c:if test="${!empty replyList}">
 		  	<c:forEach var="reply" items="${replyList}">
-		      <tr class="comments">
+		      <tr class="comments"  ${(loginMember.userId == reply.userId || loginMember.userId == admin) ? 'id="comment"':''}>
 		        <td class="comment">
 		          <sub class="comment-writer">${reply.userId}</sub>
 		          <sub class="comment-date"><fmt:formatDate type="both" value="${reply.createDate}"/></sub><br>
@@ -85,9 +99,9 @@
 		        	<c:if test="${ !empty loginMember && (loginMember.userId == reply.userId || loginMember.userId == admin)}">
 		        		<div class="reply-btns">
 				         	<c:if	test="${ !empty loginMember && (loginMember.userId == reply.userId)}">
-				         		<button class="btn-update" id="btn-update" onclick="changeForm();">수정</button>
+				         		<!--<button class="btn-update" id="btn-update" onclick="changeForm();">수정</button>-->
 				         	</c:if>	
-				         		<button class="btn-delete" id="btn-delete" onclick="deleteReply('${reply.replyNo}','${board.bno}');" >삭제</button>
+				         	<button class="btn-delete" id="btn-delete" onclick="deleteReply('${reply.replyNo}','${board.bno}');" >삭제</button>
 				         </div>
 				     </c:if>
 		        </td>
@@ -138,7 +152,7 @@
 	    </div>
 	   </section>
 </body>
-<!-- <jsp:include page="/WEB-INF/views/common/footer.jsp"/>-->
+<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 <script>
 	$(document).ready(() => {
 		$("#btnUpdate").on("click", (e) => {
@@ -157,4 +171,46 @@
 		var requestURL = url + replyNo +"&boardNo=" + boardNo;
 		location.replace(requestURL);
 	}
+	
+	const main = {
+		    init : function() {
+		        const _this = this;
+		 
+		        document.querySelectorAll('#btn-update').forEach(function (item) {
+		            item.addEventListener('click', function () { // 버튼 클릭 이벤트 발생시
+		                const form = this.closest('form'); // btn의 가장 가까운 조상의 Element(form)를 반환 (closest)
+		                _this.commentUpdate(form); // 해당 form으로 업데이트 수행
+		            });
+		        });
+		    },
+		    
+		    commentUpdate : function (form) {
+		        const data = {
+		            id: form.querySelector('#id').value,
+		            postsId: form.querySelector('#postsId').value,
+		            comment: form.querySelector('#comment-content').value,
+		        }
+		        if (!data.comment || data.comment.trim() === "") {
+		            alert("공백 또는 입력하지 않은 부분이 있습니다.");
+		            return false;
+		        }
+		        const con_check = confirm("수정하시겠습니까?");
+		        if (con_check === true) {
+		            $.ajax({
+		                type: 'PUT',
+		                url: '/api/posts/' + data.postsId + '/comments/' + data.id,
+		                dataType: 'JSON',
+		                contentType: 'application/json; charset=utf-8',
+		                data: JSON.stringify(data)
+		            }).done(function () {
+		                window.location.reload();
+		            }).fail(function (error) {
+		                alert(JSON.stringify(error));
+		            });
+		        }
+		    }
+		};
+		 
+		main.init();
+	
 </script>

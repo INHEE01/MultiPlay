@@ -5,29 +5,23 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <script src="https://kit.fontawesome.com/9945425c20.js" crossorigin="anonymous"></script>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
+<jsp:include page="/WEB-INF/views/common/header.jsp">
+	<jsp:param value="멀티플레이::문의게시판" name="title"/>
+</jsp:include>
 
-<!--<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>-->
+
 <link rel="stylesheet" type="text/css" href="${path}/resources/css/board/write.css">
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <body>
 	<section class="board-write">
-	  <form action="${path}/board/write" method="post" enctype="multipart/form-data">
+	  <form action="${path}/board/mon" method="post" enctype="multipart/form-data">
 	    <table id="tbl-board" class="wirter">
-	      <tr>
-	       <td class="category-selector" colspan="2">
-	        <select name="category" id="category">
-	          <option value="book">예매/취소</option>
-	          <option value="info">공연정보</option>
-	          <option value="other">기타사항</option>
-	        </select>
-	       </td>
-	      </tr>
 	      <tr>
 	        <td style="display:none;"  colspan="2">
 	          <input type="text" name="boardType" value="문의사항" readonly>
 	        </td>
 	      </tr>
-	      <tr>
+	      <tr style="margin-top: 30px;">
 	        <td colspan="2"  class="title-area">
 	          <input type="text" name="boardTitle" placeholder="제목을 입력해주세요" class="title">
 	        </td>
@@ -43,7 +37,7 @@
 	            <span class="file-header">첨부파일</span>
 	            <input class="upload-name" disabled="disabled"></input>
 	            <label for="ex_filename">파일 올리기</label> 
-	            <input type="file" name="upfile" id="ex_filename" class="upload-hidden"></input>
+	            <input type="file" name="upfile" id="ex_filename" class="upload-hidden"></input>          
 	          </div>
 	        </td>
 	      </tr>
@@ -55,10 +49,10 @@
 	        </td>
 	      </tr>
 	      <tr>
-	        <th colspan="2" class="btns">
-	          <input type="submit" value="등록" class="btn">
-	          <input type="reset" value="초기화" class="btn">
-	          <input type="button" value="취소" onclick="location.href='${path}/board/list'" class="btn">
+	        <th id="writeBtns" colspan="2">
+	          <input id="writeBtn" type="submit" value="등록">
+	          <input id="writeBtn" type="reset" value="초기화" >
+	          <input id="writeBtn" type="button" value="취소" onclick="location.href='${path}/board/monlist'">
 	        </th>
 	      </tr>
 	    </table>
@@ -94,19 +88,20 @@
 	   </section>
 </body>
  <script>
- $(document).ready(function(){
-	  var fileTarget = $('.filebox .upload-hidden');
-	  fileTarget.on('change', function(){
-	    if(window.FileReader){
-	       var filename = $(this)[0].files[0].name;
-	    } else {
-	      var filename = $(this).val().split('/').pop().split('\\').pop();
-	    }
-	    $(this).siblings('.upload-name').val(filename);
-	    });
-	}); 
+	 $(document).ready(function(){
+		  var fileTarget = $('.filebox .upload-hidden');
+		  fileTarget.on('change', function(){
+		    if(window.FileReader){
+		       var filename = $(this)[0].files[0].name;
+		    } else {
+		      var filename = $(this).val().split('/').pop().split('\\').pop();
+		    }
+		    $(this).siblings('.upload-name').val(filename);
+		    });
+		});
+ 
  </script>
-<!--<jsp:include page="/WEB-INF/views/common/footer.jsp"/>-->
+<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 
 

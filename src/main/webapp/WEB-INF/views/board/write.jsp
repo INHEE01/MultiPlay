@@ -5,23 +5,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <script src="https://kit.fontawesome.com/9945425c20.js" crossorigin="anonymous"></script>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
+<jsp:include page="/WEB-INF/views/common/header.jsp">
+	<jsp:param value="멀티플레이::자유게시판" name="title"/>
+</jsp:include>
 
-<!--<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>-->
+
 <link rel="stylesheet" type="text/css" href="${path}/resources/css/board/write.css">
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <body>
 	<section class="board-write">
 	  <form action="${path}/board/write" method="post" enctype="multipart/form-data">
 	    <table id="tbl-board" class="wirter">
-	      <tr>
-	       <td class="category-selector" colspan="2">
-	        <select name="category" id="category">
-	          <option value="tip">팁공유</option>
-	          <option value="jab">잡담</option>
-	          <option value="review">후기</option>
-	        </select>
-	       </td>
-	      </tr>
 	      <tr>
 	        <td style="display:none;"  colspan="2">
 	          <input type="text" name="boardType" value="자유게시판" readonly>
@@ -55,10 +49,10 @@
 	        </td>
 	      </tr>
 	      <tr>
-	        <th colspan="2" class="btns">
-	          <input type="submit" value="등록" class="btn">
-	          <input type="reset" value="초기화" class="btn">
-	          <input type="button" value="취소" onclick="location.href='${path}/board/list'" class="btn">
+	        <th id="writeBtns" colspan="2">
+	          <input id="writeBtn" type="submit" value="등록">
+	          <input id="writeBtn" type="reset" value="초기화" >
+	          <input id="writeBtn" type="button" value="취소" onclick="location.href='${path}/board/freelist'">
 	        </th>
 	      </tr>
 	    </table>
@@ -94,20 +88,20 @@
 	   </section>
 </body>
  <script>
- $(document).ready(function(){
-	  var fileTarget = $('.filebox .upload-hidden');
-	  fileTarget.on('change', function(){
-	    if(window.FileReader){
-	       var filename = $(this)[0].files[0].name;
-	    } else {
-	      var filename = $(this).val().split('/').pop().split('\\').pop();
-	    }
-	    $(this).siblings('.upload-name').val(filename);
-	    });
-	});
+	 $(document).ready(function(){
+		  var fileTarget = $('.filebox .upload-hidden');
+		  fileTarget.on('change', function(){
+		    if(window.FileReader){
+		       var filename = $(this)[0].files[0].name;
+		    } else {
+		      var filename = $(this).val().split('/').pop().split('\\').pop();
+		    }
+		    $(this).siblings('.upload-name').val(filename);
+		    });
+		});
  
  </script>
-<!--<jsp:include page="/WEB-INF/views/common/footer.jsp"/>-->
+<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 
 

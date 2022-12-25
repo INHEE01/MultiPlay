@@ -101,7 +101,7 @@
 						<div class="list-group">
 							<a
 								class="list-group-item list-group-item-action border-0"
-								href="${path}/board/list#tab1"
+								href="${path}/board/list"
 							>
 								<div class="d-flex align-items-center">
 									<div class="ms-3">
@@ -111,7 +111,7 @@
 							</a>
 							<a
 								class="list-group-item list-group-item-action border-0"
-								href="${path}/board/list#tab2"
+								href="${path}/board/monlist"
 							>
 								<div class="d-flex align-items-center">
 									<div class="ms-3">
@@ -121,7 +121,7 @@
 							</a>
 							<a
 								class="list-group-item list-group-item-action border-0"
-								href="${path}/board/list#tab3"
+								href="${path}/board/freelist"
 							>
 								<div class="d-flex align-items-center">
 									<div class="ms-3">

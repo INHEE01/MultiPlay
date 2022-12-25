@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="${path}/resources/css/board/list.css">
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <jsp:include page="/WEB-INF/views/common/header.jsp">
-	<jsp:param value="멀티플레이::공지사항" name="title"/>
+	<jsp:param value="멀티플레이::자유게시판" name="title"/>
 </jsp:include>
 
 <c:set var="searchType" value="${param.searchType}"></c:set>
@@ -18,12 +18,11 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Lato:wght@300;900&family=Noto+Sans+KR:wght@700&family=Paytone+One&family=Secular+One&display=swap"
 	rel="stylesheet" />
-<title>멀티플레이</title>
 <script src="https://kit.fontawesome.com/9945425c20.js" crossorigin="anonymous"></script>
 <body>
 	<section>
 		<div class="title">
-			<span class="title_name" id="title_name">공지사항</span>
+			<span class="title_name" id="title_name">자유게시판</span>
 		</div>
 	</section>
 	<section id="slider1" class="slider">
@@ -35,7 +34,8 @@
 	<section class="board">
 		<div class="container">
 			<div class="content-container">
-					<form action="${path}/board/list" method="get" class="search">
+				<article class="content-container__content target">
+					<form action="${path}/board/freelist" method="get" class="search">
 						<div style="text-align: center; margin-top: 60px;">
 							<label> 
 								<input type="radio" name="searchType" value="title" ${searchType=='title' ? 'checked':''}> 제목
@@ -52,7 +52,11 @@
 							<button type="submit" class="sch_smit">검색</button>
 						</div>
 					</form>
-					<table class="board-table">
+					<c:if test="${loginMember != null}">
+						<button type="button" id="btn-add" class="write"
+								onclick="location.href='${path}/board/write'">글쓰기</button>
+					</c:if>
+					<table id="tbl-board" class="board-table">
 						<tr>
 							<th class="table-header">번호</th>
 							<th class="table-header">제목</th>
@@ -72,7 +76,7 @@
 									<td class="board-content"><c:out value="${board.bno}" /></td>
 									<td class="board-content board-title">
 										<a id="board-title" href="${path}/board/view?no=${board.bno}"> 
-											<c:out value="[공지]  ${board.boardTitle}" />
+											<c:out value="[자유게시판]  ${board.boardTitle}" />
 										</a>
 									</td>
 									<td class="board-content"><c:out value="${board.userId}" /></td>
@@ -91,8 +95,8 @@
 						</c:if>
 					</table>
 					<div class="table-buttons">
-						<button onclick="movePage('${path}/board/list?page=1');" class="table-button">&lt;&lt;</button>
-						<button onclick="movePage('${path}/board/list?page=${pageInfo.prevPage}');" class="table-button" >&lt;</button>
+						<button onclick="movePage('${path}/board/freelist?page=1');" class="table-button">&lt;&lt;</button>
+						<button onclick="movePage('${path}/board/freelist?page=${pageInfo.prevPage}');" class="table-button" >&lt;</button>
 						<c:forEach begin="${pageInfo.startPage}" end="${pageInfo.endPage}"
 							step="1" varStatus="status">
 							<c:if test="${status.current == pageInfo.currentPage}">
@@ -100,13 +104,14 @@
 							</c:if>
 							<c:if test="${status.current != pageInfo.currentPage}">
 								<button class="table-button"
-									onclick="movePage('${path}/board/list?page=${status.current}');">
+									onclick="movePage('${path}/board/freelist?page=${status.current}');">
 									${status.current}</button>
 							</c:if>
 						</c:forEach>
-						<button onclick="movePage('${path}/board/list?page=${pageInfo.nextPage}');" class="table-button" >&gt;</button>
-						<button onclick="movePage('${path}/board/list?page=${pageInfo.maxPage}');" class="table-button" >&gt;&gt;</button>
+						<button onclick="movePage('${path}/board/freelist?page=${pageInfo.nextPage}');" class="table-button" >&gt;</button>
+						<button onclick="movePage('${path}/board/freelist?page=${pageInfo.maxPage}');" class="table-button" >&gt;&gt;</button>
 					</div>
+				</article>
 			</div>
 		</div>
 	</section>
@@ -158,6 +163,18 @@
 		location.href = encodeURI(pageUrl);	
 	}
 		
-	
+		$(document).ready(() => {
+			$("#info").on("click", (e) => {
+				location.href = "${path}/board/list";
+			});
+			$("#mon").on("click", (e) => {
+				location.href = "${path}/board/monlist";
+			});
+			$("#free").on("click", (e) => {
+				location.href = "${path}/board/freelist";
+			});
+			
+		
+		});
 </script>
 
