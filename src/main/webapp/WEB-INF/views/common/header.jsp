@@ -61,23 +61,23 @@
 			<!-- 헤더 네비 시작 -->
 			<ul class="navbar-nav header-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="#" id="navbarBrowse">
+					<a class="nav-link" href="${path}/submain/showMain" id="navbarBrowse">
 						공연
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#" id="navbarLanding">
+					<a class="nav-link" href="${path}/submain/displayMain" id="navbarLanding">
 						전시
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#" id="navbarPages">
+					<a class="nav-link" href="${path}/submain/locationMain" id="navbarPages">
 						지역
 					</a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="#" id="navbarAccount">
+					<a class="nav-link" href="${path}/submain/ranking" id="navbarAccount">
 						랭킹
 					</a>
 				</li>
@@ -135,12 +135,12 @@
 				</li>
 			</ul>
 
-	<form class="mt-3 mt-lg-0 ms-lg-3 d-flex align-items-center header-searchBar">
+	<form action="${path}/submain/search" method="get" class="mt-3 mt-lg-0 ms-lg-3 d-flex align-items-center header-searchBar">
 			<span class="position-absolute ps-3 search-icon">
 				<i class="fe fe-search"></i>
 			</span>
 			<input
-				type="search" class="form-control ps-6 " placeholder="통합검색"
+				type="search" name="value" class="form-control ps-6 " placeholder="통합검색"
 			/>
 		</form>
 

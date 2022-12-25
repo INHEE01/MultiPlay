@@ -1,170 +1,325 @@
-    a {
-        text-decoration: none;
-        color: black;
-        font-size: 1.3rem; /* 글씨가 너무 커서 줄였음 */
-    }
-    .search-searchresult {
-        /* margin-top: 30px;
-        margin-bottom: 30px; */
-        margin: 30px auto; /* 상하 마진 30px, 좌우 마진 자동(중앙정렬) */
-        padding: 10px;
-        width: 1100px;
-        height: 200px;
-        background-color: #f2f1f1; /* 색상 전부 연하게 바꿨음 */
-        text-align: center; /* div 안 내용물 중앙정렬 */
-    }
-    .search-searchresult-inner{
-    	margin: 45px auto;
-    }
-  
-    .search-searchresult-inner>p {
-        font-size: 1.4rem;
-        font-weight: bold;
-    }
-    .search-searchresult-inner>input {
-        width: 600px;
-        height: 30px;
-        background-color: #f2f1f1;
-    }
-    .search-searchresult-inner>a {
-        background-color: #f2f1f1;
-    }
+search-body {
+	background-color: #fff7ed;
+}
+ul {
+	display: flex;
+	font-weight: 600;
+}
 
-/* 추천 검색어 */
-    .search-recommendbar {
-        overflow: hidden;
-        text-align: center;
-        display: inline-block;
-    }
-    .search-recommendbar>h2 {
-        float: left;
-    }
-    .search-recommendbar-1 {
-        float: left;
-        width: 150px;
-        height: 40px;
-        margin: 4px;
-        border: 3px solid orange;
-        border-radius: 16px;
-        text-align: center;
-    }
-    .search-recommendbar-1:hover {
-        background-color: black;
-        color: white;
-    }
-    .search-midbar {
-        overflow: hidden;
-        text-align: center;
-    }
+<!--상단 검색결과 -->
 
-    .search-midbar-1 {
-        padding-left: 50px;
-        display: inline-block;
-        border: 2.5px solid orange;
-        width: 280px;
-        height: 50px;
-        background-color: white;
-    }
+search-nav {
+	margin: auto;
+}
 
-    .search-midbar>a {
-        display: inline-block;
-        text-align: center;
-        padding: 5px;
-        letter-spacing: 2px;
-    }
+.search-searchresult {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin: 10px auto; /* 상하 마진 30px, 좌우 마진 자동(중앙정렬) */
+	padding: 10px;
+	width: 1100px;
+	height: 200px;
+	background-color: #f2f1f1; /* 색상 전부 연하게 바꿨음 */
+	text-align: center; /* div 안 내용물 중앙정렬 */
+}
 
-    .search-midbar-1:hover {
-        background-color: orange;
-    }
+.search-searchresult-inner {
+	margin: 45px auto;
+}
 
-    .search-rankingbar>a {
-        vertical-align: middle;
-    }
+.search-searchresult-inner>p {
+	font-size: 1.4rem;
+	font-weight: bold;
+}
 
-    .search-more {
-        text-align: center;
-    }
+.search-searchresult-inner>input {
+	width: 600px;
+	height: 30px;
+	background-color: #f2f1f1;
+}
 
-    .search-more-1 {
-        display: inline-block;
-        background-color: orange;
-        width: 280px;
-        height: 50px;
-        border-radius: 5px;
-    }
+.search-searchresult-inner>a {
+	background-color: #f2f1f1;
+}
 
-    /*怨좉컼�쇳꽣 */
-    .bnr-bottom-wrap {
-        clear: both;
-        width: 100%;
-        background: white;
-    }
+<!--추천검색어-->
+.search-mid1{
+	text-align: center;
+}
+.search-mid2 {
+	position: absolute;
+	/* background-color: rgb(211, 139, 139); */
+	height: 2000px;
+	width: 1200px;
+	margin: auto;
+}
+.search-box2>input {
+	height: 25px;
+	width: 260px;
+}
 
-    .bnr-bottom {
-        width: 1200px;
-        display: table;
-        margin: 0px auto;
-        background-color: white;
-        display: flex;
-    }
+.search-mid2>log3 {
+	margin-top: 15px;
+	margin-bottom: 10px;
+	padding-left: 0px;
+	font-weight: 600;
+}
 
-    .bnr-bottom-01,
-    .bnr-bottom-02 {
-        background-color: white;
-    }
+.search-mid {
+	overflow: hidden;
+	/* padding-left: 40px; */
+	width: 1200px;
+	height: 80px;
+	margin: auto;
+	/*background-color: rgb(192, 184, 238); */
+}
 
-    .icon-container {
-        background-color: white;
-        padding: 20px;
-        border: 2px solid rgb(151, 151, 151);
-        border-radius: 50%;
-    }
+.search-mid1 {
+	width: 200px;
+	height: 80px;
+	/* padding-left: 10px; */
+	/* background-color: rgb(126, 91, 91); */
+}
 
-    .fa-phone-volume,
-    .fa-pen-to-square {
-        font-size: 30px;
-        background-color: white;
-        color: rgb(151, 151, 151);
-    }
+.search-mid1-1 {
+	width: 1000px;
+	height: 80px;
+	/* background-color: rgb(152, 101, 156); */
+}
 
-    .bnr-bottom .bnr-bottom-01 {
-        display: flex;
-        align-items: center;
-        padding-left: 120px;
-        position: relative;
-        border-right: 1px solid lightgray;
-        margin: 15px 0px;
-    }
+.search-mid1-1-button {
+	width: 140px;
+	height: 45px;
+	font-size: 18px;
+	font-weight: 600;
+	border: 3px solid rgb(251, 188, 4);
+	background-color: white;
+	border-radius: 25px;
+	text-align: center;
+	margin-top: 15px;
+	margin-left: 20px;
+}
 
-    .bnr-bottom .bnr-bottom-02 {
-        display: flex;
-        align-items: center;
-        padding-left: 50px;
-        margin: 15px 0px;
-    }
+.search-mid1-1-button:hover {
+	background-color: black;
+	color: white;
+	transition: .1s ease-in;
+}
+<!--탭 기능 구현-->
+ul.tabs {
+	display:inline;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	
+}
 
-    .bnr-bottom>div {
-        width: 50%;
-        height: 120px;
-        display: table-cell;
-        vertical-align: middle;
-    }
+ul.li {
+	list-style: none;
+}
 
-    .bottom-title {
-        font-weight: 600;
-        font-size: 18px;
-        padding-bottom: 5px;
-        margin-bottom: 5px;
-        background-color: white;
-    }
+ul.tabs li {
+	border: solid rgb(251, 188, 4) 1px;
+	text-align: center;
+	height: 50px;
+	width: 240px;
+	display: inline-block;
+	background: white;
+	font-size: 18px;
+	color: black;
+	padding: 10px 10px;
+	cursor: pointer;
+}
+.tab-content {
+	display: none;
+}
 
-    .bottom-sub {
-        background-color: white;
-        font-size: 15px;
-        display: block;
-    }
+.tab-content.current {
+	display: inherit;
+}
 
-    .info-container {
-        background-color: white;
-        margin-left: 20px;
-    }
+$(function(){
+	$("#tab1").load("../submain/search.jsp");
+
+	$(".tabs li").css("width", "120");
+
+	$("ul.tabs li").click(function () {
+		$("ul.tabs li").removeClass("active");
+		$(this).addClass("active");
+
+		var activeTab = $(this).attr("rel");
+		$("#" + activeTab).fadeIn();
+
+		if(activeTab == "tab1"){
+			$("#" + activeTab).load("../submain/search.jsp");
+		}else if(activeTab == "tab2"){
+			$("#" + activeTab).load("../submain/search.jsp");
+		}else if(activeTab == "tab3"){
+			$("#" + activeTab).load("../submain/search.jsp");
+		}
+	});
+});
+
+.search-mid2 {
+	width: 1200px;
+	height: 80px;
+	float: left;
+	margin: auto;
+	/* background-color: rgb(129, 116, 116); */
+}
+
+.search-mid2 {
+	width: 1200px;
+}
+
+<!-- 이미지 설명부분 -->
+ul.tabs, li.current {
+	border: rgb(251, 188, 4);
+	border-right: #222;
+	width: 240px;
+	height: 30px;
+	background: rgb(251, 188, 4);
+	color: #222;
+}
+.search-box0 {
+	height: 200px;
+	width: 1200px;
+	/* background-color: rgb(214, 119, 119); */
+	border-top: solid gray 1px;
+	border-bottom: solid gray 1px;
+	overflow: hidden;
+}
+
+.search-box1 {
+	height: 200px;
+	width: 250px;
+	float: left;
+	text-align: center;
+	/* background-color: rgb(131, 128, 91); */
+	font-weight: 600;
+}
+
+.search-box0 img {
+	width: 120px;
+	height: 180px;
+	margin-top: 10px;
+}
+
+.search-box2 {
+	height: 200px;
+	width: 350px;
+	float: left;
+	/* background-color: rgb(187, 182, 119); */
+	text-align: center;
+	font-weight: 600;
+	line-height: 180px;
+}
+
+.search-box3 {
+	height: 200px;
+	width: 350px;
+	float: left;
+	/* background-color: rgb(94, 131, 91); */
+	color: rgb(105, 104, 104);
+	text-align: center;
+	line-height: 180px;
+	font-weight: 600;
+}
+
+.search-box4 {
+	height: 200px;
+	width: 250px;
+	float: left;
+	/* background-color: rgb(92, 91, 131); */
+	text-align: center;
+	line-height: 180px;
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+.search-more {
+	text-align: center;
+}
+
+.search-more>a {
+	font-size: 1.5rem;
+	display: inline-block;
+	background-color: rgb(251, 188, 4);
+	width: 132px;
+	height: 50px;
+	border-radius: 5px;
+}
+
+	/*예매취소,고객센터 */
+ .bnr-bottom-wrap {
+	clear: both;
+	width: 100%;
+	background: white;
+}
+
+.bnr-bottom {
+	width: 1200px;
+	display: table;
+	margin: 0px auto;
+	background-color: white;
+	display: flex;
+}
+
+.bnr-bottom-01, .bnr-bottom-02 {
+	background-color: white;
+}
+
+.icon-container {
+	background-color: white;
+	padding: 20px;
+	border: 2px solid rgb(151, 151, 151);
+	border-radius: 50%;
+}
+
+.fa-phone-volume, .fa-pen-to-square {
+	font-size: 30px;
+	background-color: white;
+	color: rgb(151, 151, 151);
+}
+
+.bnr-bottom .bnr-bottom-01 {
+	display: flex;
+	align-items: center;
+	padding-left: 120px;
+	position: relative;
+	border-right: 1px solid lightgray;
+	margin: 15px 0px;
+}
+
+.bnr-bottom .bnr-bottom-02 {
+	display: flex;
+	align-items: center;
+	padding-left: 50px;
+	margin: 15px 0px;
+}
+
+.bnr-bottom>div {
+	width: 50%;
+	height: 120px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.bottom-title {
+	font-weight: 600;
+	font-size: 18px;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	background-color: white;
+}
+
+.bottom-sub {
+	background-color: white;
+	font-size: 15px;
+	display: block;
+}
+
+.info-container {
+	background-color: white;
+	margin-left: 20px;
+}

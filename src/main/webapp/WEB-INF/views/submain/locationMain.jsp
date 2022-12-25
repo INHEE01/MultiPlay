@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
+
+<jsp:include page="/WEB-INF/views/common/header.jsp">
+	<jsp:param value="멀티플레이::지역" name="title" />
+</jsp:include>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +21,7 @@
 	content="Bootstrap based News, Magazine and Blog Theme">
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="./resources/images/favicon.ico">
+<link rel="shortcut icon" href="${path}/resources/images/favicon.ico">
 
 <!-- Google Font -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,23 +31,26 @@
 
 <!-- Plugins CSS -->
 <link rel="stylesheet" type="text/css"
-	href="./resources/vendor/font-awesome/css/all.min.css">
+	href="${path}/resources/vendor/font-awesome/css/all.min.css">
 <link rel="stylesheet" type="text/css"
-	href="./resources/vendor/bootstrap-icons/bootstrap-icons.css">
+	href="${path}/resources/vendor/bootstrap-icons/bootstrap-icons.css">
 <link rel="stylesheet" type="text/css"
-	href="./resources/vendor/tiny-slider/tiny-slider.css">
+	href="${path}/resources/vendor/tiny-slider/tiny-slider.css">
 
 <!-- Theme CSS -->
-<link id="style-switch" rel="stylesheet" type="text/css"
-	href="./resources/css/main.css">
+
 
 <link id="style-switch" rel="stylesheet" type="text/css"
-	href="./resources/css/style.css">
+	href="${path}/resources/css/style.css">
 <link id="style-switch" rel="stylesheet" type="text/css"
-	href="./resources/css/location.css">
-<link rel="stylesheet" href="./resources/css/theme.min.css">
+	href="${path}/resources/css/location.css">
+<link rel="stylesheet" href="${path}/resources/css/theme.min.css">
+<link id="style-switch" rel="stylesheet" type="text/css"
+	href="${path}/resources/css/mymain.css">
 </head>
 <body>
+<section id="content">
+
 	<!-- Content -->
 	<div class="pt-lg-0 pb-lg-0 pt-2 pb-6">
 		<div class="container">
@@ -133,8 +145,8 @@
 			</div>
 		</div>
 	</div>
-	<section class="container">
-		<h2 class="exhibition-center" style="text-align: center">지역별 공연</h2>
+	<section id="content" class="container">
+		<h2 class="exhibition-center pb-8" style="text-align: center">지역별 공연</h2>
 		<form id="" name="exhibitionSearch" action="#" method="post">
 			<table class="table">
 				<tr>
@@ -166,8 +178,8 @@
 		</div>
 	</section>
 
-	<div class="home-top5-area location-center ">
-		<ul class="container">
+	<div class="home-top5-area container">
+		<ul >
 			<li>
 				<div class="home-top5-list">
 					<a href="#"> <img
@@ -253,7 +265,7 @@
 				</div>
 			</li>
 			<li>
-				<div class="home-top5-list">
+				<div id="content "class="home-top5-list">
 					<a href="#"> <img
 						src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
 						alt="" class="rounded-top-md card-img-top home-top5-img">
@@ -384,60 +396,61 @@
 								</h6></td>
 						</tr>
 					</table>
-				</div>f
+				</div>
 			</li>
 
 		</ul>
 	</div>
+	</section>
 	<%-- 탑5 끝 --%>
 	<!-- Scripts -->
 	<!-- Libs JS -->
-	<script src="./resources/libs/jquery/dist/jquery.min.js"></script>
+	<script src="${path}/resources/libs/jquery/dist/jquery.min.js"></script>
 	<script
-		src="./resources/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="./resources/libs/odometer/odometer.min.js"></script>
+		src="${path}/resources/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="${path}/resources/libs/odometer/odometer.min.js"></script>
 	<script
-		src="./resources/libs/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+		src="${path}/resources/libs/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
 	<script
-		src="./resources/libs/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-	<script src="./resources/libs/flatpickr/dist/flatpickr.min.js"></script>
-	<script src="./resources/libs/inputmask/dist/jquery.inputmask.min.js"></script>
-	<script src="./resources/libs/apexcharts/dist/apexcharts.min.js"></script>
-	<script src="./resources/libs/quill/dist/quill.min.js"></script>
+		src="${path}/resources/libs/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	<script src="${path}/resources/libs/flatpickr/dist/flatpickr.min.js"></script>
+	<script src="${path}/resources/libs/inputmask/dist/jquery.inputmask.min.js"></script>
+	<script src="${path}/resources/libs/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="${path}/resources/libs/quill/dist/quill.min.js"></script>
 	<script
-		src="./resources/libs/file-upload-with-preview/dist/file-upload-with-preview.iife.js"></script>
-	<script src="./resources/libs/dragula/dist/dragula.min.js"></script>
-	<script src="./resources/libs/bs-stepper/dist/js/bs-stepper.min.js"></script>
-	<script src="./resources/libs/dropzone/dist/min/dropzone.min.js"></script>
-	<script src="./resources/libs/jQuery.print/jQuery.print.js"></script>
-	<script src="./resources/libs/prismjs/prism.js"></script>
-	<script src="./resources/libs/prismjs/components/prism-scss.min.js"></script>
-	<script src="./resources/libs/@yaireo/tagify/dist/tagify.min.js"></script>
-	<script src="./resources/libs/tiny-slider/dist/min/tiny-slider.js"></script>
-	<script src="./resources/libs/@popperjs/core/dist/umd/popper.min.js"></script>
-	<script src="./resources/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
-	<script src="./resources/libs/typed.js/lib/typed.min.js"></script>
-	<script src="./resources/libs/jsvectormap/dist/js/jsvectormap.min.js"></script>
-	<script src="./resources/libs/jsvectormap/dist/maps/world.js"></script>
+		src="${path}/resources/libs/file-upload-with-preview/dist/file-upload-with-preview.iife.js"></script>
+	<script src="${path}/resources/libs/dragula/dist/dragula.min.js"></script>
+	<script src="${path}/resources/libs/bs-stepper/dist/js/bs-stepper.min.js"></script>
+	<script src="${path}/resources/libs/dropzone/dist/min/dropzone.min.js"></script>
+	<script src="${path}/resources/libs/jQuery.print/jQuery.print.js"></script>
+	<script src="${path}/resources/libs/prismjs/prism.js"></script>
+	<script src="${path}/resources/libs/prismjs/components/prism-scss.min.js"></script>
+	<script src="${path}/resources/libs/@yaireo/tagify/dist/tagify.min.js"></script>
+	<script src="${path}/resources/libs/tiny-slider/dist/min/tiny-slider.js"></script>
+	<script src="${path}/resources/libs/@popperjs/core/dist/umd/popper.min.js"></script>
+	<script src="${path}/resources/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+	<script src="${path}/resources/libs/typed.js/lib/typed.min.js"></script>
+	<script src="${path}/resources/libs/jsvectormap/dist/js/jsvectormap.min.js"></script>
+	<script src="${path}/resources/libs/jsvectormap/dist/maps/world.js"></script>
 	<script
-		src="./resources/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+		src="${path}/resources/libs/datatables.net/js/jquery.dataTables.min.js"></script>
 	<script
-		src="./resources/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+		src="${path}/resources/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
 	<script
-		src="./resources/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+		src="${path}/resources/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
 	<script
-		src="./resources/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+		src="${path}/resources/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
 	<script
-		src="./resources/libs/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+		src="${path}/resources/libs/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
 	<script
-		src="./resources/libs/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
-	<script src="./resources/libs/fullcalendar/main.min.js"></script>
+		src="${path}/resources/libs/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+	<script src="${path}/resources/libs/fullcalendar/main.min.js"></script>
 	<script
-		src="./resources/libs/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
-	<script src="./resources/libs/simplebar/dist/simplebar.min.js"></script>
-	<script src="./resources/libs/nouislider/dist/nouislider.min.js"></script>
-	<script src="./resources/libs/wnumb/wNumb.min.js"></script>
-	<script src="./resources/libs/glightbox/dist/js/glightbox.min.js"></script>
+		src="${path}/resources/libs/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
+	<script src="${path}/resources/libs/simplebar/dist/simplebar.min.js"></script>
+	<script src="${path}/resources/libs/nouislider/dist/nouislider.min.js"></script>
+	<script src="${path}/resources/libs/wnumb/wNumb.min.js"></script>
+	<script src="${path}/resources/libs/glightbox/dist/js/glightbox.min.js"></script>
 
 
 
@@ -449,7 +462,7 @@
 
 
 	<!-- Theme JS -->
-	<script src="./resources/js/theme.min.js"></script>
+	<script src="${path}/resources/js/theme.min.js"></script>
 
 </body>
 
@@ -463,15 +476,15 @@ JS libraries, plugins and custom scripts -->
 
 <!-- Bootstrap JS -->
 <script
-	src="./resources/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	src="${path}/resources/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Vendors -->
-<script src="./resources/vendor/tiny-slider/tiny-slider.js"></script>
-<script src="./resources/vendor/jarallax/jarallax.min.js"></script>
-<script src="./resources/vendor/jarallax/jarallax-video.min.js"></script>
+<script src="${path}/resources/vendor/tiny-slider/tiny-slider.js"></script>
+<script src="${path}/resources/vendor/jarallax/jarallax.min.js"></script>
+<script src="${path}/resources/vendor/jarallax/jarallax-video.min.js"></script>
 
 <!-- Template Functions -->
-<script src="./resources/js/functions.js"></script>
-
+<script src="${path}/resources/js/functions.js"></script>
+<jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
 </body>
 </html>

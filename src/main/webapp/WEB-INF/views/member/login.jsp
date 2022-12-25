@@ -171,7 +171,7 @@ body{ background-color: #fff7ed; }
 	            <input type="checkbox" name="xxx" value="yyy" check><b> 아이디 저장</b> 
 	        </div>
 	        <div class="box6">
-	            <a href="#"><b>비밀번호를 잊으셨나요?</b></a>
+	            <a href="${path}/member/idpwfind"><b>아이디/비밀번호를 잊으셨나요?</b></a>
 	        </div>
 	        <div class="box3">
 	        <input type="submit" id="loginSubmit" value="로그인"/>

@@ -5,6 +5,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
+<title>멀티플레이::아이디/비밀번호 찾기</title>
+
 <!-- 우리가 추가한 style -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${path}/resources/css/mymain.css">
