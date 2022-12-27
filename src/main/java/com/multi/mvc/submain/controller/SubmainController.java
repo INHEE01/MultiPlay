@@ -24,21 +24,20 @@ public class SubmainController {
 	@Autowired
 	BoardService boardService;
 	
-	@GetMapping("/displayMain")
-	public String displayMain() {
-		return "submain/displayMain";
-	}
-	
-	@GetMapping("/genreDetail") // 12/25: 수정할 가능성 있음
-	public String genreDetail() {
-		return "submain/genreDetail";
-	}
-	
-	@GetMapping("/locationMain")
-	public String locationMain() {
-		return "submain/locationMain";
-	}
-	
+//	@GetMapping("/displayMain")
+//	public String displayMain() {
+//		return "submain/displayMain";
+//	}
+//	
+//	@GetMapping("/genreDetail") // 12/25: 수정할 가능성 있음
+//	public String genreDetail() {
+//		return "submain/genreDetail";
+//	}
+//	
+//	@GetMapping("/locationMain")
+//	public String locationMain() {
+//		return "submain/locationMain";
+//	}	
 
 	@GetMapping("/pay") // 12/25: 수정할 가능성 있음
 	public String pay() {
@@ -74,9 +73,9 @@ public class SubmainController {
 		return "submain/search";
 	}
 	
-	@GetMapping("/showMain")
-	public String showMain() {
-		return "submain/showMain";
-	}
+//	@GetMapping("/showMain")
+//	public String showMain() {
+//		return "submain/showMain";
+//	}
 	
 }
