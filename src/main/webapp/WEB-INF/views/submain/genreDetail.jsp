@@ -6,7 +6,7 @@
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
 <jsp:include page="/WEB-INF/views/common/header.jsp">
-	<jsp:param value="멀티플레이" name="title" />
+	<jsp:param value="멀티플레이::{culture.title}" name="title" />
 </jsp:include>
 
 <link rel="stylesheet" type="text/css" href="${path}/resources/css/genreDetail.css">
@@ -24,10 +24,10 @@
 
 <section id="content">
 	<div class="col">
-		<h3 class="mt-3 mb-3 ls-lg">공연</h3>
-		<h2>뮤지컬 〈루드윅 : 베토벤 더 피아노〉</h2>
+		<h3 class="mt-3 mb-3 ls-lg">{REALMNAME}</h3>
+		<h2>{TITLE}</h2>
 		<p>
-			<span class="genDT-when d-inline-block pe-sm-3 m-md-0">2022.12.20 ~ 2023.03.12</span>
+			<span class="genDT-when d-inline-block pe-sm-3 m-md-0">{STARTDATE}~{ENDDATE}</span>
 			<span class="genDT-where d-inline-block px-sm-3 m-md-0">MULTYPLAY LIVE HALL</span>
 		</p>
 		<hr>
@@ -139,7 +139,7 @@
 		</div><!--rn-04-->		
 		
 		<div class="genDT-bookBtn">
-			<a href="#">예매하기</a>
+			<a href="${path}/submain/pay">예매하기</a>
 		</div>
 		
 		<%-- 탭메뉴 시작 --%>
@@ -368,18 +368,19 @@
 			   	
 			   	<!-- 후기 출력 -->  <!-- 수정할 부분 -->
 				<table id="tbl-review">
-					<c:if test="${!empty replyList}">
-						<c:forEach var="reply" items="${replyList}">
+					<c:if test="${!empty reviewList}">
+						<c:forEach var="review" items="${reviewList}">
 							<tr>
 								<td>
-									<sub class="review-writer">${reply.writerId}</sub>
-									<sub class="review-date"><fmt:formatDate type="both" value="${reply.createDate}"/></sub>	
+									<sub class="review-writer">${review.writerId}</sub>
+									<sub class="review-date"><fmt:formatDate type="both" value="${review.createDate}"/></sub>	
 									<br>
-									<c:out value="${reply.content}"/>
+									<c:out value="${review.reviewTitle}"/>
+									<c:out value="${review.reviewContent}"/>
 								</td>
 								<td>
-									<c:if test="${ !empty loginMember && (loginMember.id == reply.writerId 	|| loginMember.role == 'ROLE_ADMIN') }">
-									<button class="btn-delete" onclick="deleteReply('${reply.no}','${board.no}');" >삭제</button>
+									<c:if test="${ !empty loginMember && (loginMember.id == review.writerId || loginMember.role == 'ROLE_ADMIN') }">
+									<button class="btn-delete" onclick="deleteReview('${review.reviewNo}');" >삭제</button>
 									</c:if>
 								</td>
 							</tr>
@@ -391,12 +392,40 @@
 							<td colspan="3" style="text-align: center;">등록된 후기가 없습니다.</td>
 						</tr>
 					</c:if>
+					
+					<c:if test="${not empty replyList}">
+							<c:forEach var="reply" items="${list}">
+								<tr>
+									<td class="board-content"><c:out value="${board.bno}" /></td>
+									<td class="board-content board-title">
+										<a id="board-title" href="${path}/board/view?no=${board.bno}"> 
+											<c:out value="[자유게시판]  ${board.boardTitle}" />
+										</a>
+									</td>
+									<td class="board-content"><c:out value="${board.userId}" /></td>
+									<td class="board-content"><fmt:formatDate type="date" value="${board.createDate}" /></td>
+									<td class="board-content">
+										<c:if test="${board.originalFileName != null }">
+											<img class = "file-img"  src="${path}/resources/images/ours/file.png">
+										</c:if> 
+										<c:if test="${board.originalFileName == null }">
+											<span>첨부파일 없음</span>
+										</c:if>
+									</td>
+									<td class="board-content"><c:out value="${board.readCount}" /></td>
+								</tr>
+							</c:forEach>
+						</c:if>
 				</table>
 			    
 				
 			</div>
 		</div>
 		<%-- 탭메뉴 끝 --%>
+		
+		<!--  위로가기 버튼 -->
+		<div id="goingTop" onclick="window.scrollTo(0,0);"> ↑</div>
+		
 	</div>
 </section>
 

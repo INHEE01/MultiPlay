@@ -158,10 +158,10 @@ body{ background-color: #fff7ed; }
 	            <li><div class="log1">로그인<br></div></li>
 	            <div class="box0"><li>아이디가 없으신가요?</li></div>
 	            <li><div class="log4"><a href="${path}/member/signup">회원가입</a></div></li><br>
-	            <li><div class="log3">아이디 혹은 이메일</div></li>
+	            <li><div class="log3">아이디</div></li>
 	        </ul>
 	        <div class="box1">
-	        <label for ="user_id"></label><input type="text" name="userId" id="user_id" class="input_text"  placeholder="아이디 혹은 이메일을 입력해주세요" required>
+	        <label for ="user_id"></label><input type="text" name="userId" id="user_id" class="input_text"  placeholder="아이디를 입력해주세요" required>
 	        </div>
 	        <li><div class="log3">비밀번호 <br></div></li>
 	        <div class="box2">

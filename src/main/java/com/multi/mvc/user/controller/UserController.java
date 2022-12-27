@@ -99,12 +99,22 @@ public class UserController {
 	}
 	
 	
-	@PostMapping("/member/update")
+	
+	@GetMapping("/member/mypage")
+	public String mypage(){
+		log.info("회원정보 페이지 요청");
+		return "member/mypage";
+	}
+
+	@PostMapping("/member/update") // (회원정보) 수정하기 버튼 눌렀을 때
 	public String update(Model model, 
 			@ModelAttribute Users updateMember, // request에서 온 값
 			@SessionAttribute(name = "loginMember", required = false) Users loginMember // 세션 값
 			) {
-		if(loginMember == null || loginMember.getUserId().equals(updateMember.getUserId()) == false) {
+		log.info("loginMember : " + loginMember.getUserId());
+		log.info("updateMember : " + updateMember.getUserId());
+		
+		if(loginMember == null || loginMember.getUserId().equals(updateMember.getUserId()) == false) { // 로그인된 멤버와 수정하려는 멤버가 다를때
 			model.addAttribute("msg","잘못된 접근입니다.");
 			model.addAttribute("location","/");
 			return "common/msg";
@@ -116,26 +126,51 @@ public class UserController {
 		if(result > 0) {
 			model.addAttribute("loginMember", service.findById(loginMember.getUserId())); // DB에서 있는 값을 다시 세션에 넣어주는 코드
 			model.addAttribute("msg", "회원정보를 수정하였습니다.");
-			model.addAttribute("location", "/member/view");
+			model.addAttribute("location", "/member/mypage");
 		}else {
 			model.addAttribute("msg", "회원정보 수정에 실패하였습니다.");
-			model.addAttribute("location", "/member/view");
+			model.addAttribute("location", "/member/mypage");
 		}
 		return "common/msg";
 	}
 	
 	
-	@GetMapping("/member/view")
-	public String memberView() {
-		log.info("회원 정보 페이지 요청");
-		return "member/view";
+	@GetMapping("/member/mystamp")
+	public String stamp() {
+		log.info("스탬프 페이지 요청");
+		return "member/mystamp";
 	}
 	
+	@GetMapping("/member/mybooked")
+	public String booked() {
+		log.info("예약정보 페이지 요청");
+		return "member/mybooked";
+	}
 	
+	@GetMapping("/member/mypwChange")
+	public String mypwChangePage() {
+		log.info("비밀번호 변경 요청");
+		return "member/mypwChange";
+	}
 	
+	@PostMapping("/member/updatePwd")
+	public String mypwChange(Model model, @SessionAttribute(name = "loginMember", required = false) Users loginMember,
+			String userPwd) {
+		int result = service.updatePwd(loginMember, userPwd);
+
+		if (result > 0) {
+			model.addAttribute("msg", "비밀번호 수정에 성공하였습니다.");
+		} else {
+			model.addAttribute("msg", "비밀번호 변경에 실패했습니다.");
+		}
+		model.addAttribute("script", "self.close()");
+		return "/common/msg";
+	}
 	
-	
-	
+	@GetMapping("/member/idpwfind")  // 12/26: 수정할 가능성 있음
+	public String idpwfint() {
+		return "member/idpwfind";
+	}
 }
 
 

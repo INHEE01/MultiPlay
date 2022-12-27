@@ -141,12 +141,16 @@ CREATE TABLE PUBLICPERFORMANCEDDISPLAYS.REVIEW(
 );
 
 select * from REVIEW;
-INSERT INTO REVIEW VALUES(0, 1,  1, 1, '이번 영화 리뷰',  '이번 영화 리뷰 : 개쩝니다.', DEFAULT, '원본파일명1.png', '변경된파일명1.png', 'Y', DEFAULT, DEFAULT);
-INSERT INTO REVIEW VALUES(0, 1,  2, 1, '아 진짜...',  '이번 영화 리뷰 : 개쩝니다.', DEFAULT,  '원본파일명2.png', '변경된파일명2.png', 'Y', DEFAULT, DEFAULT);
-insert into REVIEW values(0, 2, 3, 2, '안녕하세요', '어그로입니다 ㅎㅎ.', DEFAULT,  '원본파일명3.png', '변경된파일명3.png', DEFAULT, DEFAULT, DEFAULT);
-insert into REVIEW values(0, 2, 4, 3, '이거 내용 이해 되시는분??', '나만 이해 안되는거야?? 나만 이해 안되는거야??', DEFAULT,  '원본파일명4.png', '변경된파일명4.png', DEFAULT, DEFAULT, DEFAULT);
-insert into REVIEW values(0, 3, 5, 4, '개꿀잼인데요??.', '라고 할뻔..', DEFAULT,  '원본파일명5.png', '변경된파일명5.png', DEFAULT, DEFAULT, DEFAULT);
-insert into REVIEW values(0, 3, 6, 5, '재밌었습니다.', '루즈하지 않고 타임킬링은 좋았습니다 ㅎㅎ', DEFAULT,  '원본파일명6.png', '변경된파일명6.png', DEFAULT, DEFAULT, DEFAULT);
+SELECT R.REVIEW_TITLE, U.USER_ID, R.REVIEW_content, R.ORIGINAL_IMG, R.CREATE_DATE, R.REACTION_COUNT, R.STATUS 
+FROM REVIEW R JOIN USERS U ON(R.REVIEW_WRITER_NO = U.USER_NO);
+
+
+INSERT INTO REVIEW VALUES(0, 3,  1, 1, '이번 영화 리뷰',  '이번 영화 리뷰 : 개쩝니다.', DEFAULT, '원본파일명1.png', '변경된파일명1.png', 'Y', DEFAULT, DEFAULT);
+INSERT INTO REVIEW VALUES(0, 3,  2, 2, '아 진짜...',  '이번 영화 리뷰 : 개쩝니다.', DEFAULT,  '원본파일명2.png', '변경된파일명2.png', 'Y', DEFAULT, DEFAULT);
+insert into REVIEW values(0, 10, 3, 3, '안녕하세요', '어그로입니다 ㅎㅎ.', DEFAULT,  '원본파일명3.png', '변경된파일명3.png', DEFAULT, DEFAULT, DEFAULT);
+insert into REVIEW values(0, 8, 4, 4, '이거 내용 이해 되시는분??', '나만 이해 안되는거야?? 나만 이해 안되는거야??', DEFAULT,  '원본파일명4.png', '변경된파일명4.png', DEFAULT, DEFAULT, DEFAULT);
+insert into REVIEW values(0, 18, 5, 5, '개꿀잼인데요??.', '라고 할뻔..', DEFAULT,  '원본파일명5.png', '변경된파일명5.png', DEFAULT, DEFAULT, DEFAULT);
+insert into REVIEW values(0, 8, 6, 5, '재밌었습니다.', '루즈하지 않고 타임킬링은 좋았습니다 ㅎㅎ', DEFAULT,  '원본파일명6.png', '변경된파일명6.png', DEFAULT, DEFAULT, DEFAULT);
 -- --------------------------------------------------------------------------------------------
 -- 게시판 분류 : (공지사항/자유게시판/문의게시판)
 -- DROP TABLE BOARD;
@@ -238,10 +242,10 @@ create table BOOKINFO (
 
 insert into bookINFO values(0, 3, "[소마미술관] 내일전_Drag and Draw", "INHEE", "이인희", 1, 3, 'C4', '2022-12-25',30000, '신용카드', DEFAULT);
 insert into bookINFO values(0, 10, "아트스쾃 작가 전시회", "2INHEE", "이윤희", 2, 3, 'C4', '2022-10-30', 30000, '신용카드',  DEFAULT);
-insert into bookINFO values(0, 6, "에델현악사중주단과 피아니스트 김강아의 클래식음악으로 듣는 러시아의 정취", "2INHEE", "이윤희", 2, 3, 'G10', '2022-10-30', 30000, '신용카드',  DEFAULT);
-insert into bookINFO values(0, 16, "[소마미술관] 드로잉나우(Drawing Now) 전시 안내", "2INHEE", "이윤희", 2, 3, 'L1', '2022-10-30', 30000, '신용카드',  DEFAULT);
-insert into bookINFO values(0, 18, "겨울왕국: 겨울이야기 [광주]", "2INHEE", "이윤희", 2, 3, 'C4, D4', '2022-12-25', 120000, '신용카드',  DEFAULT);
+insert into bookINFO values(0, 8, "에델현악사중주단과 피아니스트 김강아의 클래식음악으로 듣는 러시아의 정취", "2INHEE", "이윤희", 2, 3, 'G10', '2022-10-30', 30000, '신용카드',  DEFAULT);
+insert into bookINFO values(0, 18, "[소마미술관] 드로잉나우(Drawing Now) 전시 안내", "2INHEE", "이윤희", 2, 3, 'L1', '2022-10-30', 30000, '신용카드',  DEFAULT);
+insert into bookINFO values(0, 20, "겨울왕국: 겨울이야기 [광주]", "2INHEE", "이윤희", 2, 3, 'C4, D4', '2022-12-25', 120000, '신용카드',  DEFAULT);
 
-select * from book_INFO;
+select * from bookINFO;
 
 

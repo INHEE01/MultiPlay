@@ -1,9 +1,15 @@
+<%@page import="com.multi.mvc.board.model.service.BoardService"%>
+<%@page import="com.multi.mvc.board.model.mapper.BoardMapper"%>
+<%@page import="com.multi.mvc.common.util.PageInfo"%>
+<%@page import="com.multi.mvc.board.model.vo.Board"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
+
 
 <jsp:include page="/WEB-INF/views/common/header.jsp">
 	<jsp:param value="멀티플레이" name="title" />
@@ -497,15 +503,15 @@
 			<%-- 공지사항 시작 --%>
 			<div class="home-notice col-md-5">
 				<h2 class="mb-0 ls-lg home-diplay-ib">공지사항</h2>
-				<a href="#" class="home-notice-more">+ 더보기</a>
+				<a href="${path}/board/list" class="home-notice-more">+ 더보기</a>
 				<hr class="home-hr">
 				<div class="home-notice-board" id="mncb01" style="display: block;">
 					<ul class="home-notice-list">
 						<li>
-							<a href="#">
+							<a href="${path}/board/view?no=${board.bno}">
 								<p style="font-weight:bold">
-								◆◆ [국비지원]2023 SW개발 채용예정자 교육생 모집 ◆◆</p>
-								<span>2022-12-19</span>
+								${board.boardTitle}</p>
+								<span>${board.createDate}</span>
 							</a>
 						</li>
 						<li>
@@ -585,6 +591,9 @@
 			</div>
 		</div>
 	</div>
+	
+	<!--  위로가기 버튼 -->
+	<div id="goingTop" onclick="window.scrollTo(0,0);"> ↑</div>
 </section>
 
 <script src="${path}/resources/js/home.js"></script>

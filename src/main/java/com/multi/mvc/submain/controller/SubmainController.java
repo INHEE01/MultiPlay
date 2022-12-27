@@ -1,9 +1,18 @@
 package com.multi.mvc.submain.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.multi.mvc.board.model.service.BoardService;
+import com.multi.mvc.board.model.vo.Board;
+import com.multi.mvc.common.util.PageInfo;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,14 +21,17 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class SubmainController {
 	
-	@GetMapping("/showMain")
-	public String showMain() {
-		return "submain/showMain";
-	}
+	@Autowired
+	BoardService boardService;
 	
 	@GetMapping("/displayMain")
 	public String displayMain() {
 		return "submain/displayMain";
+	}
+	
+	@GetMapping("/genreDetail") // 12/25: 수정할 가능성 있음
+	public String genreDetail() {
+		return "submain/genreDetail";
 	}
 	
 	@GetMapping("/locationMain")
@@ -46,7 +58,25 @@ public class SubmainController {
 	@RequestMapping("/search")
 	public String search(Model model, String value) {
 		model.addAttribute("value", value);
+
+		// 자유게시판 가져오는 코드
+		Map<String, String> map = new HashMap<>();
+		map.put("title", value);
+		map.put("content", value);
+		int count = boardService.getBoardCount3(map);
+		PageInfo pageInfo = new PageInfo(1, 20, count, 20);
+		List<Board> boardList = boardService.getBoardList3(pageInfo, map);
+		model.addAttribute("boardList", boardList);
+		
+		// TODO 전시 정보 가져오는 코드 짜야함 
+		
+		
 		return "submain/search";
+	}
+	
+	@GetMapping("/showMain")
+	public String showMain() {
+		return "submain/showMain";
 	}
 	
 }

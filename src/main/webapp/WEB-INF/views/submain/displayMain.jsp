@@ -58,69 +58,72 @@
 
 <!-- Template Functions -->
 <script src="${path}/resources/js/functions.js"></script>
-<link id="style-switch" rel="stylesheet" type="text/css"
-	href="${path}/resources/css/main.css">
+
 </head>
 
 <body>
-<div style="background-color: #fff7ed">
-	<section  class="pt-5 pb-12 card-grid second">
-		<div class=" center frist">
-			<h3>상세 검색</h3>
-			<form id="" name="displaySearch" action="#" method="post">
-				<table class="table">
-					<tr>
-						<th noWrap><input class="searchSize" type="search"
-							class="center" placeholder="지역을 입력해주세요"></th>
-						<th noWrap></th>
-						<th noWrap><input type="date" class="calender"
-							name="trip-start" value="2022-12-25" min="2000-01-01"
-							max="2030-12-31"></th>
-						<th><input type="submit" class="btn_color" value="검색" /></th>
-					</tr>
-				</table>
+	<div style="background-color: #fff7ed">
+		<section class="pt-0 pb-7 card-grid second">
+			<div class=" center frist ">
+				<h3 style="color: #ffffff">상세 검색</h3>
+				<form action="${path}/submain/displayMainDetail" method="get">
+					<table class="table">
+						<tr>
+							<th noWrap><input class="searchSize" type="text"
+								name="searchValue" class="center" placeholder="지역을 입력해주세요"></th>
+							<th noWrap class="text-center"><h4>전시 시작일</h4></th>
+							<th noWrap><input type="date" class="calender"
+								name="startday" name="startday" value="" min="2000-01-01"
+								max="2030-12-31"></th>
+							<th noWrap class="text-center"><h4>전시 마감일</h4></th>
+							<th noWrap><input type="date" class="calender" name="endday"
+								min="2000-01-01" max="2030-12-31"></th>
+							<th noWrap><input type="submit" class="btn_color" value="검색" /></th>
+						</tr>
+					</table>
 
-			</form>
-		</div>
-		<div>
-			<div class="row ">
-				<div class="col-12">
-					<div
-						class="tiny-slider arrow-hover arrow-blur arrow-white arrow-round rounded-3 overflow-hidden">
-						<div class="tiny-slider-inner" data-autoplay="true"
-							data-hoverpause="true" data-gutter="1" data-arrow="true"
-							data-dots="false" data-items="1">
+				</form>
+			</div>
+			<div>
+				<div class="row ">
+					<div class="col-12">
+						<div
+							class="tiny-slider arrow-hover arrow-blur arrow-white arrow-round rounded-3 overflow-hidden">
+							<div class="tiny-slider-inner" data-autoplay="true"
+								data-hoverpause="true" data-gutter="1" data-arrow="true"
+								data-dots="false" data-items="1">
 
-							<!-- Slide 1 -->
-							<div
-								class="card bg-dark-overlay-3 h-400 h-sm-500 h-md-600 rounded-0"
-								style="background-image: url(${path}/resources/images/ours/display_img.jpg); background-position: center left; background-size: cover;">
-								<!-- Card Image overlay -->
+								<!-- Slide 1 -->
 								<div
-									class="card-img-overlay d-flex align-items-center p-3 p-sm-5">
-									<div class="w-100 my-auto">
-										<div class="col-md-10 col-lg-7 mx-auto text-center">
-											<!-- Card category -->
-											<!-- Card title -->
-											<h2 class="text-white display-5">
-												<a href="post-single-2.html"
-													class="btn-link text-reset fw-normal"></a>
-											</h2>
+									class="card bg-dark-overlay-3 h-400 h-sm-500 h-md-600 rounded-0"
+									style="background-image: url(${path}/resources/images/ours/display_img.jpg); background-position: center left; background-size: cover;">
+									<!-- Card Image overlay -->
+									<div
+										class="card-img-overlay d-flex align-items-center p-3 p-sm-5">
+										<div class="w-100 my-auto">
+											<div class="col-md-10 col-lg-7 mx-auto text-center">
+												<!-- Card category -->
+												<!-- Card title -->
+												<h2 class="text-white display-5">
+													<a href="post-single-2.html"
+														class="btn-link text-reset fw-normal"></a>
+												</h2>
 
 
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<!-- Slide 2 -->
-							<div
-								class="card bg-dark-overlay-3 h-400 h-sm-500 h-md-600 rounded-0"
-								style="background-image: url(${path}/resources/images/ours/display_img.jpg); background-position: center left; background-size: cover;">
-								<!-- Card Image overlay -->
+								<!-- Slide 2 -->
 								<div
-									class="card-img-overlay d-flex align-items-center p-3 p-sm-5">
-									<div class="w-100 my-auto">
-										<div class="col-md-10 col-lg-7 mx-auto text-center"></div>
+									class="card bg-dark-overlay-3 h-400 h-sm-500 h-md-600 rounded-0"
+									style="background-image: url(${path}/resources/images/ours/display_img.jpg); background-position: center left; background-size: cover;">
+									<!-- Card Image overlay -->
+									<div
+										class="card-img-overlay d-flex align-items-center p-3 p-sm-5">
+										<div class="w-100 my-auto">
+											<div class="col-md-10 col-lg-7 mx-auto text-center"></div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -128,15 +131,16 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-</div>
-	<section  style="background-color: #fff7ed" id="content" class=" card-grid">
+		</section>
+	</div>
+	<section style="background-color: #fff7ed" id="content"
+		class=" card-grid">
 		<div class="container">
 			<div class="row g-4">
 				<!-- Left big card -->
 				<div class="col-lg-6">
-					<div class="card card-overlay-bottom card-grid-lg card-bg-scale pb-0" 
+					<div
+						class="card card-overlay-bottom card-grid-lg card-bg-scale pb-0"
 						style="background-image: url(http://tkfile.yes24.com/Upload2/Display/202210/20221024/gmain_top_43842.jpg/dims/quality/70/); background-position: center left; background-size: cover;">
 						<!-- Card featured -->
 						<span class="card-featured" title="Featured post"><i
@@ -286,20 +290,16 @@ Main hero END -->
 										class="fs-6 text-muted">(7,700)</span>
 								</div>
 								<!-- Price -->
-								<div class="lh-1 mt-3">
-									<span class="text-dark fw-bold">$600</span>
-									<del class="fs-6 text-muted">$750</del>
-								</div>
+					
 							</div>
 							<!-- Card Footer -->
 							<div class="card-footer">
 								<div class="row align-items-center g-0">
 									<div class="col-auto">
-										<img src="resources/images/ours/avatar/avatar-1.jpg"
-											class="rounded-circle avatar-xs" alt="">
+										
 									</div>
 									<div class="col ms-2">
-										<span>Morris Mccoy</span>
+										<span>신기한 전시회였어요!</span>
 									</div>
 									<div class="col-auto">
 										<a href="#" class="text-muted bookmark"> <i
@@ -339,11 +339,10 @@ Main hero END -->
 							<div class="card-footer">
 								<div class="row align-items-center g-0">
 									<div class="col-auto">
-										<img src="resources/images/ours/avatar/avatar-3.jpg"
-											class="rounded-circle avatar-xs" alt="">
+										
 									</div>
 									<div class="col ms-2">
-										<span>Juanita Bell</span>
+										<span>좋은 경험했던거 같아요!</span>
 									</div>
 									<div class="col-auto">
 										<a href="#" class="text-muted bookmark"> <i
@@ -382,11 +381,10 @@ Main hero END -->
 							<div class="card-footer">
 								<div class="row align-items-center g-0">
 									<div class="col-auto">
-										<img src="resources/images/ours/avatar/avatar-4.jpg"
-											class="rounded-circle avatar-xs" alt="">
+									
 									</div>
 									<div class="col ms-2">
-										<span>Claire Robertson</span>
+										<span>다음에 한번 더 와야겠어요</span>
 									</div>
 									<div class="col-auto">
 										<a href="#" class="text-muted bookmark"> <i
@@ -426,11 +424,10 @@ Main hero END -->
 							<div class="card-footer">
 								<div class="row align-items-center g-0">
 									<div class="col-auto">
-										<img src="resources/images/ours/avatar/avatar-2.jpg"
-											class="rounded-circle avatar-xs" alt="">
+										
 									</div>
 									<div class="col ms-2">
-										<span>Ted Hawkins</span>
+										<span>좋은 전시회 였어요!</span>
 									</div>
 									<div class="col-auto">
 										<a href="#" class="text-muted bookmark"> <i
@@ -468,7 +465,9 @@ Main hero END -->
 							<!-- Card Footer -->
 							<div class="card-footer">
 								<div class="row align-items-center g-0">
-
+										<div class="col ms-2">
+										<span>색다른 경험이였어요!</span>
+									</div>
 									<div class="col-auto">
 										<a href="#" class="text-muted bookmark"> <i
 											class="fe fe-bookmark  "></i>
@@ -506,11 +505,10 @@ Main hero END -->
 							<div class="card-footer">
 								<div class="row align-items-center g-0">
 									<div class="col-auto">
-										<img src="resources/images/ours/avatar/avatar-4.jpg"
-											class="rounded-circle avatar-xs" alt="">
+										
 									</div>
 									<div class="col ms-2">
-										<span>Claire Robertson</span>
+										<span>눈이 호강하고 갑니다!</span>
 									</div>
 									<div class="col-auto">
 										<a href="#" class="text-muted bookmark"> <i
@@ -525,6 +523,42 @@ Main hero END -->
 			</div>
 		</div>
 	</div>
+
+	<div class="home-top5-area container">
+		<ul>
+			<c:forEach var="item" items="${list}">
+				<li>
+					<div class="home-top5-list">
+						<a href="#"> <img
+							src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
+							alt="" class="rounded-top-md card-img-top home-top5-img">
+
+						</a>
+					</div>
+					<div class="box ">
+						<table class="table-bottom">
+							<tr>
+								<td>
+									<h4>${item.show_title}
+										<br>
+									</h4>
+								</td>
+							</tr>
+
+							<tr>
+								<td><h5>${item.show_place}</h5></td>
+							</tr>
+							<tr>
+								<td><h6>
+										${item.show_startdate} <br> ${item.show_enddate} <br>
+									</h6></td>
+							</tr>
+						</table>
+					</div>
+				</li>
+			</c:forEach>
+		</ul>
+	</div>
 	<!-- Scripts -->
 	<!-- Libs JS -->
 	<script src="${path}/resources/libs/jquery/dist/jquery.min.js"></script>
@@ -536,23 +570,30 @@ Main hero END -->
 	<script
 		src="${path}/resources/libs/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 	<script src="${path}/resources/libs/flatpickr/dist/flatpickr.min.js"></script>
-	<script src="${path}/resources/libs/inputmask/dist/jquery.inputmask.min.js"></script>
+	<script
+		src="${path}/resources/libs/inputmask/dist/jquery.inputmask.min.js"></script>
 	<script src="${path}/resources/libs/apexcharts/dist/apexcharts.min.js"></script>
 	<script src="${path}/resources/libs/quill/dist/quill.min.js"></script>
 	<script
 		src="${path}/resources/libs/file-upload-with-preview/dist/file-upload-with-preview.iife.js"></script>
 	<script src="${path}/resources/libs/dragula/dist/dragula.min.js"></script>
-	<script src="${path}/resources/libs/bs-stepper/dist/js/bs-stepper.min.js"></script>
+	<script
+		src="${path}/resources/libs/bs-stepper/dist/js/bs-stepper.min.js"></script>
 	<script src="${path}/resources/libs/dropzone/dist/min/dropzone.min.js"></script>
 	<script src="${path}/resources/libs/jQuery.print/jQuery.print.js"></script>
 	<script src="${path}/resources/libs/prismjs/prism.js"></script>
-	<script src="${path}/resources/libs/prismjs/components/prism-scss.min.js"></script>
+	<script
+		src="${path}/resources/libs/prismjs/components/prism-scss.min.js"></script>
 	<script src="${path}/resources/libs/@yaireo/tagify/dist/tagify.min.js"></script>
-	<script src="${path}/resources/libs/tiny-slider/dist/min/tiny-slider.js"></script>
-	<script src="${path}/resources/libs/@popperjs/core/dist/umd/popper.min.js"></script>
-	<script src="${path}/resources/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+	<script
+		src="${path}/resources/libs/tiny-slider/dist/min/tiny-slider.js"></script>
+	<script
+		src="${path}/resources/libs/@popperjs/core/dist/umd/popper.min.js"></script>
+	<script
+		src="${path}/resources/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
 	<script src="${path}/resources/libs/typed.js/lib/typed.min.js"></script>
-	<script src="${path}/resources/libs/jsvectormap/dist/js/jsvectormap.min.js"></script>
+	<script
+		src="${path}/resources/libs/jsvectormap/dist/js/jsvectormap.min.js"></script>
 	<script src="${path}/resources/libs/jsvectormap/dist/maps/world.js"></script>
 	<script
 		src="${path}/resources/libs/datatables.net/js/jquery.dataTables.min.js"></script>

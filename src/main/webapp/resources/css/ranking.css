@@ -1,0 +1,103 @@
+ul {
+	display: flex;
+	font-weight: 600;
+}
+
+.container {
+	padding-top: 10px;
+	width: 1200px;
+}
+
+#board-title {
+	text-decoration: none;
+	color: black;
+}
+
+.ranking {
+	width: 1200px;
+	margin: 0px auto;
+	padding-top: 10px;
+}
+
+.genre-1 {
+	margin-left: 20px;
+}
+
+.genre-button {
+	
+}
+
+.genre-button-1 {
+	width: 960px;
+	height: 80px;
+	/* background-color: rgb(152, 101, 156); */
+}
+
+.genre-middle-select {
+	list-style: none;
+	padding-top: 20px;
+}
+
+a:hover {
+	font-weight: 1500;
+	color: black;
+}
+
+.genre-1 {
+	font-size: 20px;
+	color: black;
+}
+
+.genre-1:hover {
+	color: black;
+}
+
+.genre-button-1 {
+	width: 100px;
+	height: 40px;
+	font-size: 15px;
+	font-weight: 600;
+	border: 3px solid rgb(251, 188, 4);
+	background-color: white;
+	border-radius: 25px;
+	text-align: center;
+	margin-top: 15px;
+	margin-left: 20px;
+}
+
+.genre-button-1:hover {
+	background-color: #fff7ed;
+	color: black;
+	font-weight: 900;
+	transition: .1s ease-in;
+}
+
+.select-date {
+	padding-top: 50px;
+	font-size: 30px;
+	text-align: center;
+}
+.ranking-list {
+	padding-top : 10px;
+}
+
+.ranking-table {
+	width: 100%;
+	border-top: 3px solid #ccc;
+	border-bottom : 1px solid black;
+	border-collapse: collapse;
+	margin-top : 10px;
+}
+
+.ranking-content {
+	text-align: center;
+	padding: 25px 0px;
+	border-bottom: 1px solid black;
+	font-size: 20px;
+}
+
+.table-header {
+	padding: 10px 0px;
+	border-bottom: 1px solid black;
+	text-align: center !important;
+}

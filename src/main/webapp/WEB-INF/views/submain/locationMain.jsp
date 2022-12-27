@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
@@ -8,7 +8,7 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp">
 	<jsp:param value="멀티플레이::지역" name="title" />
 </jsp:include>
-	
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,358 +49,350 @@
 	href="${path}/resources/css/mymain.css">
 </head>
 <body>
-<section id="content">
+	<section id="content">
 
-	<!-- Content -->
-	<div class="pt-lg-0 pb-lg-0 pt-2 pb-6">
-		<div class="container">
-			<div class="row mb-4">
-				<div class="col"></div>
+		<!-- Content -->
+		<div class="pt-lg-0 pb-lg-0 pt-0 pb-5">
+			<div class="container">
+				<div class="row mb-4">
+					<div class="col"></div>
+				</div>
+				<div class="position-relative">
+					<ul class="controls " id="sliderFirstControls">
+						<li class="prev"><i class="fe fe-chevron-left"></i></li>
+						<li class="next"><i class="fe fe-chevron-right"></i></li>
+					</ul>
+					<div class="sliderFirst">
+
+
+						<div class="item">
+							<!-- Card -->
+							<div class="card mb-4 card-hover">
+								<a href="#" class="card-img-top"><img
+									src="http://tkfile.yes24.com/upload2/perfblog/202209/20220922/20220922-43616.jpg/dims/quality/70/"
+									alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
+
+							</div>
+						</div>
+
+
+
+						<div class="item">
+							<!-- Card -->
+							<div class="card mb-4 card-hover">
+								<a href="#" class="card-img-top"><img
+									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221128/20221128-43451.jpg/dims/quality/70/"
+									alt="" class=" rounded-bottom-md rounded-top-md card-img-top"></a>
+
+							</div>
+						</div>
+
+
+						<div class="item">
+							<!-- Card -->
+							<div class="card mb-4 card-hover">
+								<a href="#" class="card-img-top"><img
+									src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
+									alt="" class=" rounded-bottom-md rounded-top-md card-img-top"></a>
+
+							</div>
+						</div>
+
+
+						<div class="item">
+							<!-- Card -->
+							<div class="card mb-4 card-hover">
+								<a href="#" class="card-img-top"><img
+									src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43815.jpg/dims/quality/70/"
+									alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
+
+							</div>
+						</div>
+
+
+						<div class="item">
+							<!-- Card -->
+							<div class="card mb-4 card-hover">
+								<a href="#" class="card-img-top"><img
+									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/"
+									alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
+
+							</div>
+						</div>
+
+
+						<div class="item">
+							<!-- Card -->
+							<div class="card mb-4 card-hover">
+								<a href="#" class="card-img-top"><img
+									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221121/20221121-43929.jpg/dims/quality/70/"
+									alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
+
+							</div>
+						</div>
+
+
+						<div class="item">
+							<!-- Card -->
+							<div class="card mb-4 card-hover">
+								<a href="#" class="card-img-top"><img
+									src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43981.jpg/dims/quality/70/"
+									alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
+
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="position-relative">
-				<ul class="controls " id="sliderFirstControls">
-					<li class="prev"><i class="fe fe-chevron-left"></i></li>
-					<li class="next"><i class="fe fe-chevron-right"></i></li>
-				</ul>
-				<div class="sliderFirst">
-
-
-					<div class="item">
-						<!-- Card -->
-						<div class="card mb-4 card-hover">
-							<a href="#" class="card-img-top"><img
-								src="http://tkfile.yes24.com/upload2/perfblog/202209/20220922/20220922-43616.jpg/dims/quality/70/"
-								alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
-
-						</div>
-					</div>
-
-
-
-					<div class="item">
-						<!-- Card -->
-						<div class="card mb-4 card-hover">
-							<a href="#" class="card-img-top"><img
-								src="http://tkfile.yes24.com/upload2/perfblog/202211/20221128/20221128-43451.jpg/dims/quality/70/"
-								alt="" class=" rounded-bottom-md rounded-top-md card-img-top"></a>
-
-						</div>
-					</div>
-
-
-					<div class="item">
-						<!-- Card -->
-						<div class="card mb-4 card-hover">
-							<a href="#" class="card-img-top"><img
-								src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
-								alt="" class=" rounded-bottom-md rounded-top-md card-img-top"></a>
-
-						</div>
-					</div>
-
-
-					<div class="item">
-						<!-- Card -->
-						<div class="card mb-4 card-hover">
-							<a href="#" class="card-img-top"><img
-								src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43815.jpg/dims/quality/70/"
-								alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
-
-						</div>
-					</div>
-
-
-					<div class="item">
-						<!-- Card -->
-						<div class="card mb-4 card-hover">
-							<a href="#" class="card-img-top"><img
-								src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/"
-								alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
-
-						</div>
-					</div>
-
-
-					<div class="item">
-						<!-- Card -->
-						<div class="card mb-4 card-hover">
-							<a href="#" class="card-img-top"><img
-								src="http://tkfile.yes24.com/upload2/perfblog/202211/20221121/20221121-43929.jpg/dims/quality/70/"
-								alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
-
-						</div>
-					</div>
-
-
-					<div class="item">
-						<!-- Card -->
-						<div class="card mb-4 card-hover">
-							<a href="#" class="card-img-top"><img
-								src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43981.jpg/dims/quality/70/"
-								alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
-
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
-	</div>
-	<section id="content" class="container">
-		<h2 class="exhibition-center pb-8" style="text-align: center">지역별 공연</h2>
-		<form id="" name="exhibitionSearch" action="#" method="post">
-			<table class="table">
-				<tr>
-					<th noWrap onClick="alert('전체')">전체</th>
-					<th noWrap onClick="alert('서울')">서울</th>
-					<th noWrap onClick="alert('경기/인천')">경기/인천</th>
-					<th noWrap onClick="alert('전체')">대전/충청/강원</th>
-					<th noWrap onClick="alert('전체')">부산/대구/울산/경상</th>
-					<th noWrap onClick="alert('전체')">광주/전라</th>
-				</tr>
-			</table>
+		<section id="content" class="container">
+			<h2 class="exhibition-center pb-8" style="text-align: center">지역별
+				공연 & 전시</h2>
+			<form action="${path}/submain/locationMainDetail" method="get">
+				<table class="table" style="border-color: #fff7ed">
+					<tr>
+						<th noWrap><a
+							href="${path}/submain/locationMainDetail?local=서울"> 서울 </a></th>
+						<th noWrap><a
+							href="${path}/submain/locationMainDetail?local=인천"> 인천 </a></th>
+						<th noWrap><a
+							href="${path}/submain/locationMainDetail?local=경기"> 경기 </a></th>
+						<th noWrap><a
+							href="${path}/submain/locationMainDetail?local=대전"> 대전 </a></th>
+						<th noWrap><a
+							href="${path}/submain/locationMainDetail?local=광주"> 광주 </a></th>
+						<th noWrap><a
+							href="${path}/submain/locationMainDetail?local=부산"> 부산 </a></th>
+						<th noWrap><a
+							href="${path}/submain/locationMainDetail?local=창원"> 창원 </a></th>
+					</tr>
+				</table>
+			</form>
+		</section>
 
-		</form>
+		<div class="home-top5-area container">
+			<ul>
+				<li>
+					<div class="home-top5-list">
+						<a href="#"> <img
+							src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
+							alt="" class="rounded-top-md card-img-top home-top5-img">
 
-		<div class="gener">
-			<h3>장르 선택</h3>
+						</a>
+					</div>
+					<div class="box ">
+						<table class="table-bottom">
+							<tr>
+								<td>
+									<h4>[연극]사나이 와타나베</h4>
+								</td>
+							</tr>
+
+							<tr>
+								<td><h5>플러스씨어터</h5></td>
+							</tr>
+							<tr>
+								<td><h6>
+										2022년 10월 25일<br>~2023년 1월 31일
+									</h6></td>
+							</tr>
+						</table>
+					</div>
+				</li>
+				<li>
+					<div class="home-top5-list">
+						<a href="#"> <img
+							src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
+							alt="" class="rounded-top-md card-img-top home-top5-img">
+
+						</a>
+					</div>
+
+					<div class="box ">
+						<table class="table-bottom">
+							<tr>
+								<td>
+									<h4>[연극]사나이 와타나베</h4>
+								</td>
+							</tr>
+
+							<tr>
+								<td><h5>플러스씨어터</h5></td>
+							</tr>
+							<tr>
+								<td><h6>
+										2022년 10월 25일<br>~2023년 1월 31일
+									</h6></td>
+							</tr>
+						</table>
+					</div>
+				</li>
+				<li>
+					<div class="home-top5-list">
+						<a href="#"> <img
+							src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
+							alt="" class="rounded-top-md card-img-top home-top5-img">
+
+
+						</a>
+					</div>
+
+					<div class="box ">
+						<table class="table-bottom">
+							<tr>
+								<td>
+									<h4>[연극]사나이 와타나베</h4>
+								</td>
+							</tr>
+
+							<tr>
+								<td><h5>플러스씨어터</h5></td>
+							</tr>
+							<tr>
+								<td><h6>
+										2022년 10월 25일<br>~2023년 1월 31일
+									</h6></td>
+							</tr>
+						</table>
+					</div>
+				</li>
+				<li>
+					<div id="content " class="home-top5-list">
+						<a href="#"> <img
+							src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
+							alt="" class="rounded-top-md card-img-top home-top5-img">
+
+						</a>
+					</div>
+					<div class="box ">
+						<table class="table-bottom">
+							<tr>
+								<td>
+									<h4>[연극]사나이 와타나베</h4>
+								</td>
+							</tr>
+
+							<tr>
+								<td><h5>플러스씨어터</h5></td>
+							</tr>
+							<tr>
+								<td><h6>
+										2022년 10월 25일<br>~2023년 1월 31일
+									</h6></td>
+							</tr>
+						</table>
+					</div>
+				</li>
+				<li>
+					<div class="home-top5-list">
+						<a href="#"> <img
+							src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
+							alt="" class="rounded-top-md card-img-top home-top5-img">
+
+						</a>
+					</div>
+					<div class="box ">
+						<table class="table-bottom">
+							<tr>
+								<td>
+									<h4>[연극]사나이 와타나베</h4>
+								</td>
+							</tr>
+
+							<tr>
+								<td><h5>플러스씨어터</h5></td>
+							</tr>
+							<tr>
+								<td><h6>
+										2022년 10월 25일<br>~2023년 1월 31일
+									</h6></td>
+							</tr>
+						</table>
+					</div>
+				</li>
+				<li>
+					<div class="home-top5-list">
+						<a href="#"> <img
+							src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
+							alt="" class="rounded-top-md card-img-top home-top5-img">
+
+						</a>
+					</div>
+					<div class="box ">
+						<table class="table-bottom">
+							<tr>
+								<td>
+									<h4>[연극]사나이 와타나베</h4>
+								</td>
+							</tr>
+
+							<tr>
+								<td><h5>플러스씨어터</h5></td>
+							</tr>
+							<tr>
+								<td><h6>
+										2022년 10월 25일<br>~2023년 1월 31일
+									</h6></td>
+							</tr>
+						</table>
+					</div>
+				</li>
+				<li>
+					<div class="home-top5-list">
+						<a href="#"> <img
+							src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
+							alt="" class="rounded-top-md card-img-top home-top5-img">
+
+						</a>
+					</div>
+					<div class="box ">
+						<table class="table-bottom">
+							<tr>
+								<td>
+									<h4>[연극]사나이 와타나베</h4>
+								</td>
+							</tr>
+
+							<tr>
+								<td><h5>플러스씨어터</h5></td>
+							</tr>
+							<tr>
+								<td><h6>
+										2022년 10월 25일<br>~2023년 1월 31일
+									</h6></td>
+							</tr>
+						</table>
+					</div>
+				</li>
+				<li>
+					<div class="home-top5-list">
+						<a href="#"> <img
+							src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
+							alt="" class="rounded-top-md card-img-top home-top5-img">
+						</a>
+					</div>
+					<div class="box ">
+						<table class="table-bottom">
+							<tr>
+								<td>
+									<h4>[연극]사나이 와타나베</h4>
+								</td>
+							</tr>
+
+							<tr>
+								<td><h5>플러스씨어터</h5></td>
+							</tr>
+							<tr>
+								<td><h6>
+										2022년 10월 25일<br>~2023년 1월 31일
+									</h6></td>
+							</tr>
+						</table>
+					</div>
+				</li>
+
+			</ul>
 		</div>
-		<div class="select-Box">
-			<select name="genre">
-				<option value="연극">공연</option>
-				<option value="연극">연극</option>
-				<option value="뮤지컬">뮤지컬</option>
-				<option value="무용">무용</option>
-				<option value="클래식">클래식</option>
-				<option value="오페라">오페라</option>
-				<option value="국악">국악</option>
-				<option value="전체">전체</option>
-			</select>
-		</div>
-	</section>
-
-	<div class="home-top5-area container">
-		<ul >
-			<li>
-				<div class="home-top5-list">
-					<a href="#"> <img
-						src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
-						alt="" class="rounded-top-md card-img-top home-top5-img">
-
-					</a>
-				</div>
-				<div class="box ">
-					<table class="table-bottom">
-						<tr>
-							<td>
-								<h4>[연극]사나이 와타나베</h4>
-							</td>
-						</tr>
-
-						<tr>
-							<td><h5>플러스씨어터</h5></td>
-						</tr>
-						<tr>
-							<td><h6>
-									2022년 10월 25일<br>~2023년 1월 31일
-								</h6></td>
-						</tr>
-					</table>
-				</div>
-			</li>
-			<li>
-				<div class="home-top5-list">
-					<a href="#"> <img
-						src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
-						alt="" class="rounded-top-md card-img-top home-top5-img">
-
-					</a>
-				</div>
-
-				<div class="box ">
-					<table class="table-bottom">
-						<tr>
-							<td>
-								<h4>[연극]사나이 와타나베</h4>
-							</td>
-						</tr>
-
-						<tr>
-							<td><h5>플러스씨어터</h5></td>
-						</tr>
-						<tr>
-							<td><h6>
-									2022년 10월 25일<br>~2023년 1월 31일
-								</h6></td>
-						</tr>
-					</table>
-				</div>
-			</li>
-			<li>
-				<div class="home-top5-list">
-					<a href="#"> <img
-						src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
-						alt="" class="rounded-top-md card-img-top home-top5-img">
-
-
-					</a>
-				</div>
-
-				<div class="box ">
-					<table class="table-bottom">
-						<tr>
-							<td>
-								<h4>[연극]사나이 와타나베</h4>
-							</td>
-						</tr>
-
-						<tr>
-							<td><h5>플러스씨어터</h5></td>
-						</tr>
-						<tr>
-							<td><h6>
-									2022년 10월 25일<br>~2023년 1월 31일
-								</h6></td>
-						</tr>
-					</table>
-				</div>
-			</li>
-			<li>
-				<div id="content "class="home-top5-list">
-					<a href="#"> <img
-						src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
-						alt="" class="rounded-top-md card-img-top home-top5-img">
-
-					</a>
-				</div>
-				<div class="box ">
-					<table class="table-bottom">
-						<tr>
-							<td>
-								<h4>[연극]사나이 와타나베</h4>
-							</td>
-						</tr>
-
-						<tr>
-							<td><h5>플러스씨어터</h5></td>
-						</tr>
-						<tr>
-							<td><h6>
-									2022년 10월 25일<br>~2023년 1월 31일
-								</h6></td>
-						</tr>
-					</table>
-				</div>
-			</li>
-			<li>
-				<div class="home-top5-list">
-					<a href="#"> <img
-						src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
-						alt="" class="rounded-top-md card-img-top home-top5-img">
-
-					</a>
-				</div>
-				<div class="box ">
-					<table class="table-bottom">
-						<tr>
-							<td>
-								<h4>[연극]사나이 와타나베</h4>
-							</td>
-						</tr>
-
-						<tr>
-							<td><h5>플러스씨어터</h5></td>
-						</tr>
-						<tr>
-							<td><h6>
-									2022년 10월 25일<br>~2023년 1월 31일
-								</h6></td>
-						</tr>
-					</table>
-				</div>
-			</li>
-			<li>
-				<div class="home-top5-list">
-					<a href="#"> <img
-						src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
-						alt="" class="rounded-top-md card-img-top home-top5-img">
-
-					</a>
-				</div>
-				<div class="box ">
-					<table class="table-bottom">
-						<tr>
-							<td>
-								<h4>[연극]사나이 와타나베</h4>
-							</td>
-						</tr>
-
-						<tr>
-							<td><h5>플러스씨어터</h5></td>
-						</tr>
-						<tr>
-							<td><h6>
-									2022년 10월 25일<br>~2023년 1월 31일
-								</h6></td>
-						</tr>
-					</table>
-				</div>
-			</li>
-			<li>
-				<div class="home-top5-list">
-					<a href="#"> <img
-						src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
-						alt="" class="rounded-top-md card-img-top home-top5-img">
-
-					</a>
-				</div>
-				<div class="box ">
-					<table class="table-bottom">
-						<tr>
-							<td>
-								<h4>[연극]사나이 와타나베</h4>
-							</td>
-						</tr>
-
-						<tr>
-							<td><h5>플러스씨어터</h5></td>
-						</tr>
-						<tr>
-							<td><h6>
-									2022년 10월 25일<br>~2023년 1월 31일
-								</h6></td>
-						</tr>
-					</table>
-				</div>
-			</li>
-			<li>
-				<div class="home-top5-list">
-					<a href="#"> <img
-						src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
-						alt="" class="rounded-top-md card-img-top home-top5-img">
-					</a>
-				</div>
-				<div class="box ">
-					<table class="table-bottom">
-						<tr>
-							<td>
-								<h4>[연극]사나이 와타나베</h4>
-							</td>
-						</tr>
-
-						<tr>
-							<td><h5>플러스씨어터</h5></td>
-						</tr>
-						<tr>
-							<td><h6>
-									2022년 10월 25일<br>~2023년 1월 31일
-								</h6></td>
-						</tr>
-					</table>
-				</div>
-			</li>
-
-		</ul>
-	</div>
 	</section>
 	<%-- 탑5 끝 --%>
 	<!-- Scripts -->
@@ -414,23 +406,30 @@
 	<script
 		src="${path}/resources/libs/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 	<script src="${path}/resources/libs/flatpickr/dist/flatpickr.min.js"></script>
-	<script src="${path}/resources/libs/inputmask/dist/jquery.inputmask.min.js"></script>
+	<script
+		src="${path}/resources/libs/inputmask/dist/jquery.inputmask.min.js"></script>
 	<script src="${path}/resources/libs/apexcharts/dist/apexcharts.min.js"></script>
 	<script src="${path}/resources/libs/quill/dist/quill.min.js"></script>
 	<script
 		src="${path}/resources/libs/file-upload-with-preview/dist/file-upload-with-preview.iife.js"></script>
 	<script src="${path}/resources/libs/dragula/dist/dragula.min.js"></script>
-	<script src="${path}/resources/libs/bs-stepper/dist/js/bs-stepper.min.js"></script>
+	<script
+		src="${path}/resources/libs/bs-stepper/dist/js/bs-stepper.min.js"></script>
 	<script src="${path}/resources/libs/dropzone/dist/min/dropzone.min.js"></script>
 	<script src="${path}/resources/libs/jQuery.print/jQuery.print.js"></script>
 	<script src="${path}/resources/libs/prismjs/prism.js"></script>
-	<script src="${path}/resources/libs/prismjs/components/prism-scss.min.js"></script>
+	<script
+		src="${path}/resources/libs/prismjs/components/prism-scss.min.js"></script>
 	<script src="${path}/resources/libs/@yaireo/tagify/dist/tagify.min.js"></script>
-	<script src="${path}/resources/libs/tiny-slider/dist/min/tiny-slider.js"></script>
-	<script src="${path}/resources/libs/@popperjs/core/dist/umd/popper.min.js"></script>
-	<script src="${path}/resources/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+	<script
+		src="${path}/resources/libs/tiny-slider/dist/min/tiny-slider.js"></script>
+	<script
+		src="${path}/resources/libs/@popperjs/core/dist/umd/popper.min.js"></script>
+	<script
+		src="${path}/resources/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
 	<script src="${path}/resources/libs/typed.js/lib/typed.min.js"></script>
-	<script src="${path}/resources/libs/jsvectormap/dist/js/jsvectormap.min.js"></script>
+	<script
+		src="${path}/resources/libs/jsvectormap/dist/js/jsvectormap.min.js"></script>
 	<script src="${path}/resources/libs/jsvectormap/dist/maps/world.js"></script>
 	<script
 		src="${path}/resources/libs/datatables.net/js/jquery.dataTables.min.js"></script>

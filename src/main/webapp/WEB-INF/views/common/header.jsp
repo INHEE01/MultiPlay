@@ -189,30 +189,30 @@
 										/>
 									</div>
 									<div class="ms-3 lh-1">
-										<h5 class="mb-1">{userName}</h5>
-										<p class="mb-0 text-muted">{userEmail}</p>
+										<h5 class="mb-1">${loginMember.userName}</h5>
+										<p class="mb-0 text-muted">${loginMember.userEmail}</p>
 									</div>
 								</div>
 							</div>
 							<div class="dropdown-divider"></div>
 							<ul class="list-unstyled">
 								<li>
-									<a class="dropdown-item" href="#">
+									<a class="dropdown-item" href="${path}/member/mypage">
 										<i class="fa-solid fa-user me-2"></i>회원정보
 									</a>
 								</li>
 								<li>
-									<a class="dropdown-item" href="#">
+									<a class="dropdown-item" href="${path}/member/mystamp">
 										<i class="fa-solid fa-ticket me-2"></i>스탬프
 									</a>
 								</li>
 								<li>
-									<a class="dropdown-item" href="#">
+									<a class="dropdown-item" href="${path}/member/mybooked">
 										<i class="fa-solid fa-list-ul me-2"></i>예매내역
 									</a>
 								</li>
 								<li>
-									<a class="dropdown-item" href="#">
+									<a class="dropdown-item" href="${path}/member/mypwChange">
 										<i class="fa-solid fa-key me-2"></i>비밀번호 변경
 									</a>
 								</li>

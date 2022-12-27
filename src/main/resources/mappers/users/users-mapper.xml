@@ -55,17 +55,17 @@
 	 <update id="updateMember" parameterType="Users">
 	 	UPDATE USERS
 	 	SET
-	 		NAME		= #{userName}, 
-	 		PHONE		= #{userPhone},
-	 		EMAIL		= #{userEmail},
-	 		ADDRESS		= #{userAddress},
-	 		MODIFY_DATE	= #{modifyDate}
-	 	WHERE USER_NO = #{no}
+	 		USER_NAME		= #{userName}, 
+	 		USER_PHONE		= #{userPhone},
+	 		USER_EMAIL		= #{userEmail},
+	 		USER_ADDRESS	= #{userAddress},
+	 		MODIFY_DATE		= #{modifyDate}
+	 	WHERE USER_NO = #{userNo}
 	 </update>
 	 
 	 <update id="updatePwd" parameterType="map">
 	 	UPDATE USERS 
-	 		SET PASSWORD = #{newPwd} 
+	 		SET USER_PW = #{newPwd} 
  		WHERE USER_NO = #{userNo}
 	 </update>
 	 

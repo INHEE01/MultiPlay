@@ -73,7 +73,7 @@ public class UserService {
 	@Transactional(rollbackFor = Exception.class)
 	public int updatePwd(Users loginMember, String userPW) {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("no", "" + loginMember.getUserNo());
+		map.put("userNo", "" + loginMember.getUserNo());
 		map.put("newPwd", pwEncoder.encode(userPW));
 		return mapper.updatePwd(map);
 	}

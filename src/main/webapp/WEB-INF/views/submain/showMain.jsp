@@ -76,50 +76,50 @@
 
 <section class="container content">
 	
-<form action="/display/displayMain" method="post">
-<input type="search" class="center" placeholder="검색어를 입력해주세요">
+<form action="${path}/submain/showMainDetail" method="get">
+<input type="text" name="searchValue" class="center" placeholder="검색어를 입력해주세요">
 <input type="submit" class="btn_color" value="검색"/>
 <table class="table" border="1" >
   <tr >
     <th rowspan="2"><h3>장르</h3></th>
-    <th noWrap><label><input type="checkbox" name="color"value=""> 연극</label></th>
-    <th noWrap><label><input type="checkbox" name="color"value=""> 뮤지컬</label></th>
-    <th noWrap><label><input type="checkbox" name="color"value=""> 무용</label></th>
-    <th noWrap><label><input type="checkbox" name="color"value=""> 클래식</label></th>
-    <th noWrap><label><input type="checkbox" name="color"value=""> 오페라</label></th>
+    <th noWrap><label><input type="checkbox" name="genre" value="연극"> 연극</label></th>
+    <th noWrap><label><input type="checkbox" name="genre" value="콘서트"> 콘서트</label></th>
+
   </tr>
   <tr>
-    <th><label><input type="checkbox" name="color"value=""> 국악</label></th>
-    <th><label><input type="checkbox" name="color"value=""> 복합 </label></th>
+    <th noWrap><label><input type="checkbox" name="genre" value="클래식"> 클래식</label></th>
+    <th noWrap><label><input type="checkbox" name="genre" value="무용"> 무용</label></th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
   <tr>
     <th rowspan="2"><h3>지역</h3></th>
-    <th noWrap><label><input type="checkbox" name="color"value=""> 서울</label></th>
-    <th noWrap><label><input type="checkbox" name="color"value=""> 경기/인천</label></th>
-    <th><label><input type="checkbox" name="color"value=""> 강원/충청도/대전</label></th>
-    <th noWrap><label><input type="checkbox" name="color"value=""> 부산/울산/대구/경상</label></th>
+    <th noWrap><label><input type="checkbox" name="local" value="서울"> 서울</label></th>
+    <th noWrap><label><input type="checkbox" name="local" value="경기"> 경기</label></th>
+    <th noWrap><label><input type="checkbox" name="local" value="인천"> 인천</label></th>
+    <th><label><input type="checkbox" name="local" value="대전"> 대전</label></th>
    	   	
   </tr>
   <tr>
-    <th noWrap><label><input type="checkbox" name="color"value=""> 광주/전라</label></th>
-    <th noWrap><label><input type="checkbox" name="color"value=""> 제주</label></th>
-    <th noWrap><label><input type="checkbox" name="color"value=""> 전체</label></th>
+    <th noWrap><label><input type="checkbox" name="local" value="창원"> 창원</label></th>
+    <th noWrap><label><input type="checkbox" name="local" value="부산"> 부산</label></th>
+    <th noWrap><label><input type="checkbox" name="local" value="광주"> 광주</label></th>
    	<th></th>
     <th></th>
   </tr>
   
   <tr>
-  <th><h3>전시일</h3></th>
-  <th>전시일 선택</th>
-  <th><input type="date" class="calender" name="trip-start"
-       value="2022-12-25"
+  <th><h3>공연일</h3></th>
+  <th>공연 시작일</th>
+  <th noWrap><input type="date" class="calender" name="startday"
+       min="2000-01-01" max="2030-12-31"></th>
+  <th></th>
+  <th noWrap>공연 마감일</th>
+  <th noWrap><input type="date" class="calender" name="endday"
        min="2000-01-01" max="2030-12-31"></th>
   </tr>
 </table>
-
 </form>
 
 	</section>
@@ -269,19 +269,15 @@ JS libraries, plugins and custom scripts -->
                                     <span class="fs-6 text-muted">(7,700)</span>
                                 </div>
                                 <!-- Price -->
-                                <div class="lh-1 mt-3">
-                                    <span class="text-dark fw-bold">$600</span>
-                                    <del class="fs-6 text-muted">$750</del>
-                                </div>
+        
                             </div>
                             <!-- Card Footer -->
                             <div class="card-footer">
                                 <div class="row align-items-center g-0">
                                     <div class="col-auto">
-                                        <img src="resources/images/avatar/avatar-1.jpg" class="rounded-circle avatar-xs" alt="">
                                     </div>
                                     <div class="col ms-2">
-                                        <span>Morris Mccoy</span>
+                                        <span>완전 좋았어요 !</span>
                                     </div>
                                     <div class="col-auto">
                                         <a href="#" class="text-muted bookmark">
@@ -317,10 +313,9 @@ JS libraries, plugins and custom scripts -->
                             <div class="card-footer">
                                 <div class="row align-items-center g-0">
                                     <div class="col-auto">
-                                        <img src="resources/images/avatar/avatar-2.jpg" class="rounded-circle avatar-xs" alt="">
                                     </div>
                                     <div class="col ms-2">
-                                        <span>Ted Hawkins</span>
+                                        <span>깔끔한 콘서트장이였어요 :)</span>
                                     </div>
                                     <div class="col-auto">
                                         <a href="#" class="text-muted bookmark">
@@ -356,10 +351,9 @@ JS libraries, plugins and custom scripts -->
                             <div class="card-footer">
                                 <div class="row align-items-center g-0">
                                     <div class="col-auto">
-                                        <img src="resources/images/avatar/avatar-3.jpg" class="rounded-circle avatar-xs" alt="">
                                     </div>
                                     <div class="col ms-2">
-                                        <span>Juanita Bell</span>
+                                        <span>최애곡만 모아서 너무 좋았어요!!!</span>
                                     </div>
                                     <div class="col-auto">
                                         <a href="#" class="text-muted bookmark">
@@ -397,10 +391,9 @@ JS libraries, plugins and custom scripts -->
                             <div class="card-footer">
                                 <div class="row align-items-center g-0">
                                     <div class="col-auto">
-                                        <img src="resources/images/avatar/avatar-4.jpg" class="rounded-circle avatar-xs" alt="">
                                     </div>
                                     <div class="col ms-2">
-                                        <span>Claire Robertson</span>
+                                        <span>시간도 가는줄 모르고 봤네요</span>
                                     </div>
                                     <div class="col-auto">
                                         <a href="#" class="text-muted bookmark">
@@ -419,9 +412,7 @@ JS libraries, plugins and custom scripts -->
                             <div class="card-body">
                                 <h5 class="mb-2 text-truncate-line-2 "><a href="pages/course-single.html" class="text-inherit">오로라 내한 공연</a></h5>
                                 <!-- List -->
-                                <ul class="mb-3 list-inline">
-                                    <li class="list-inline-item"><i class="mdi mdi-clock-time-four-outline text-muted me-1"></i>공연 시간 2h 46m</li>
-                                </ul>
+                               
                                 <div class="lh-1">
                                     <span>
                     <i class="mdi mdi-star text-warning me-n1"></i>
@@ -438,10 +429,10 @@ JS libraries, plugins and custom scripts -->
                             <div class="card-footer">
                                 <div class="row align-items-center g-0">
                                     <div class="col-auto">
-                                        <img src="resources/images/avatar/avatar-2.jpg" class="rounded-circle avatar-xs" alt="">
+
                                     </div>
                                     <div class="col ms-2">
-                                        <span>Ted Hawkins</span>
+                                        <span>다음에도 또 예매할게요!</span>
                                     </div>
                                     <div class="col-auto">
                                         <a href="#" class="text-muted bookmark">
@@ -477,10 +468,10 @@ JS libraries, plugins and custom scripts -->
                             <div class="card-footer">
                                 <div class="row align-items-center g-0">
                                     <div class="col-auto">
-                                        <img src="resources/images/avatar/avatar-3.jpg" class="rounded-circle avatar-xs" alt="">
+									<!-- 이미지 파일 -->
                                     </div>
                                     <div class="col ms-2">
-                                        <span>Juanita Bell</span>
+                                        <span>알찬 시간이였어요!</span>
                                     </div>
                                     <div class="col-auto">
                                         <a href="#" class="text-muted bookmark">
@@ -499,16 +490,7 @@ JS libraries, plugins and custom scripts -->
                             <div class="card-body">
                                 <h5 class="mb-2 text-truncate-line-2 "><a href="pages/course-single.html" class="text-inherit">아담스 내한공연</a></h5>
                                 <!-- List -->
-                                <ul class="mb-3 list-inline">
-                                    <li class="list-inline-item"><i class="mdi mdi-clock-time-four-outline text-muted me-1"></i>2h 30m</li>
-                                    <li class="list-inline-item">
-                                        <svg class="me-1 mt-n1" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="3" y="8" width="2" height="6" rx="1" fill="#754FFE" />
-                      <rect x="7" y="5" width="2" height="9" rx="1" fill="#754FFE" />
-                      <rect x="11" y="2" width="2" height="12" rx="1" fill="#DBD8E9" />
-                    </svg> Intermediate
-                                    </li>
-                                </ul>
+                     
                                 <div class="lh-1">
                                     <span>
                     <i class="mdi mdi-star text-warning me-n1"></i>
@@ -525,10 +507,9 @@ JS libraries, plugins and custom scripts -->
                             <div class="card-footer">
                                 <div class="row align-items-center g-0">
                                     <div class="col-auto">
-                                        <img src="resources/images/avatar/avatar-4.jpg" class="rounded-circle avatar-xs" alt="">
                                     </div>
                                     <div class="col ms-2">
-                                        <span>Claire Robertson</span>
+                                        <span>노래가 너무 좋았어요!</span>
                                     </div>
                                     <div class="col-auto">
                                         <a href="#" class="text-muted bookmark">
