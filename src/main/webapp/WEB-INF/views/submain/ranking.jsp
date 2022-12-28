@@ -54,28 +54,37 @@
 			<table class="ranking-table">
 				<tr>
 					<th class="table-header">랭킹</th>
-					<th class="table-header">공연명</th>
+					<th class="table-header" colspan="2">공연명</th>
 					<th class="table-header">기간/장소</th>
 					<th class="table-header">예매율</th>
 					<th class="table-header">예매하기</th>
 				</tr>
-				<c:if test="${empty ranking}">
+				<c:if test="${empty rankingList}">
 					<tr>
 						<td style="text-align: center; font-size: 25px;" colspan="5">조회된
 							내용이 없습니다.</td>
 					</tr>
 				</c:if>
-				<c:if test="${not empty ranking}">
-					<c:forEach var="ranking" items="${ranking}">
+				<c:if test="${not empty rankingList}">
+					<c:forEach var="rankingList" items="${rankingList}">
 						<tr>
-							<td class="ranking-content"><c:out value="${ranking.no}" /></td>
-							<td class="ranking-content"><c:out value="${ranking.title}" />
+							<td class="ranking-content"><c:out value="${rankingList.rankNo}" /></td>
+							<td class="ranking-content">
+								<img src="<c:out value="${rankingList.poster}"/>" style="width:150px; height:200px;"/>
 							</td>
-							<td class="ranking-content"><c:out value="${ranking.date}" />
-								<c:out value="${ranking.place}" /></td>
+							<td class="ranking-content"><c:out value="${rankingList.prfnm}" />
+							</td>
+							<td class="ranking-content">
+								<fmt:formatDate var="dayFrom" value="${rankingList.prfpdfrom}" pattern="yyyy.MM.dd"/>
+								<c:out value="${dayFrom}" />&#32;~&#32;
+								<fmt:formatDate var="dayTo" value="${rankingList.prfpdto}" pattern="yyyy.MM.dd"/>
+								<c:out value="${dayTo}" /><br>
+								<p class="ranking-place"><c:out value="${rankingList.fdtynm}"/></p>
+								
+							</td>
 							<td class="ranking-content"><c:out
-									value="${ranking.bookRate}" /></td>
-
+									value="${rankingList.bookRate}" /></td>
+	
 							<td class="ranking-content">
 								<button onclick="" class="genre-button-2">예매하기</button>
 							</td>
@@ -92,3 +101,5 @@
 			.substring(0, 10);
 	;
 </script>
+
+<jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>

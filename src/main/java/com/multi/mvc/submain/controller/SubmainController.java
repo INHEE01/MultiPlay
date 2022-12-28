@@ -9,10 +9,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.multi.mvc.board.model.service.BoardService;
 import com.multi.mvc.board.model.vo.Board;
 import com.multi.mvc.common.util.PageInfo;
+import com.multi.mvc.submain.model.service.SubmainService;
+import com.multi.mvc.submain.model.vo.RankingList;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,6 +26,9 @@ public class SubmainController {
 	
 	@Autowired
 	BoardService boardService;
+	
+	@Autowired
+	SubmainService submainService;
 	
 //	@GetMapping("/displayMain")
 //	public String displayMain() {
@@ -44,8 +50,15 @@ public class SubmainController {
 		return "submain/pay";
 	}
 	
-	@GetMapping("/ranking") // 12/25: 수정할 가능성 있음
-	public String ranking() {
+	@GetMapping("/ranking") // 
+	public String ranking(Model model, @RequestParam Map<String, String> param) {
+		Map<String, String> map = new HashMap<>();
+		log.info("리스트 요청, param : " + param);
+		
+		List<RankingList> rankingList = submainService.getRankingList(map);
+		
+		model.addAttribute("rankingList", rankingList);
+		model.addAttribute("param", param);
 		return "submain/ranking";
 	}
 	

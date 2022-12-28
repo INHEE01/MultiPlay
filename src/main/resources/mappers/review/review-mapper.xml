@@ -19,7 +19,7 @@
 	</resultMap>
 	
 	<!-- 리뷰 가져오기 -->
-	<select id="selectReviewList" resultMap="reviewListResultMap">
+	<select id="selectReviewList" parameterType="map" resultMap="reviewListResultMap">
 		SELECT R.REVIEW_TITLE, U.USER_ID, R.REVIEW_content, R.ORIGINAL_IMG, R.CREATE_DATE, R.REACTION_COUNT, R.STATUS 
 		FROM REVIEW R JOIN USERS U ON(R.REVIEW_WRITER_NO = U.USER_NO) 
 	</select>
