@@ -77,7 +77,7 @@
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="${path}/submain/ranking" id="navbarAccount">
+					<a class="nav-link" href="${path}/submain/musicalRanking" id="navbarAccount">
 						랭킹
 					</a>
 				</li>

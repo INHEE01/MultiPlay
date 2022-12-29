@@ -12,5 +12,6 @@ public interface ShowMapper {
 	List<Show> selectShowList(Map<String, Object> map);
 	List<Show> selectDisplayList(Map<String, Object> map);
 	List<Show> selectLocationList(Map<String, Object> map);
-
+	List<Show> searchShowList(Map<String, Object> map2);
+	List<Show> searchShowList2(Map<String, Object> map3);
 }

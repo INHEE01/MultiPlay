@@ -25,11 +25,10 @@
 		<result property="show_gpsy" 	column="GPSY" />
 	</resultMap>
 	
-	
 	<select id="selectShowList" parameterType="map" resultMap="showResultMap">
 		SELECT * FROM CULTURAL_LIST
 		WHERE 1=1
-		AND REALMNAME IN  ('연극','콘서트','클래식','무용')
+		AND REALMNAME IN  ('연극','콘서트','클래식','무용','뮤지컬')
 		<if test="searchValue != null">
 			AND TITLE like '%${searchValue}%'
 		</if>
@@ -80,5 +79,26 @@
 		</if>
 		
 	</select>
-		
+
+	<select id="searchShowList" parameterType="map"
+		resultMap="showResultMap">
+		SELECT * FROM CULTURAL_LIST
+		WHERE 1=1
+		AND REALMNAME IN  ('연극','콘서트','클래식','무용','뮤지컬')
+		AND TITLE like '%${value}%'
+		<if test="value != null">
+			AND TITLE like '%${value}%'
+		</if>
+	</select>
+	
+	<select id="searchShowList2" parameterType="map"
+		resultMap="showResultMap">
+		SELECT * FROM CULTURAL_LIST
+		WHERE 1=1
+		AND REALMNAME IN ('미술','전시')
+		AND TITLE like '%${value}%'
+		<if test="value != null">
+			AND TITLE like '%${value}%'
+		</if>
+	</select>
 </mapper>

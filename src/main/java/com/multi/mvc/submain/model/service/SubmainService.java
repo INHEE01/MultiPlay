@@ -18,13 +18,13 @@ public class SubmainService {
 	public List<RankingList> getRankingList(Map<String, String> map) {
 		return mapper.selectRankingList(map);
 	}
-//	주석 지우지마세요!!
-//	public List<RankingList> getMusicalRankingList(Map<String, String> map) {
-//		return mapper.selectMusicalRanking(map);
-//	}
+
+	public List<RankingList> getMusicalRankingList(Map<String, String> map) {
+		return mapper.selectMusicalRanking(map);
+	}
 	
-//	public List<RankingList> getPlayRankingList(Map<String, String> map) {
-//		return mapper.selectPlayRanking(map);
-//	}
+	public List<RankingList> getPlayRankingList(Map<String, String> map) {
+		return mapper.selectPlayRanking(map);
+	}
 
 }

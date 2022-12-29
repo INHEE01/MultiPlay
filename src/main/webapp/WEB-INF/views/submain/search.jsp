@@ -38,23 +38,23 @@
 			class="search-container">
 			<span class="search-title"> (<span
 				style="color: rgb(251, 188, 4)"> # </span>) 추천 검색어 |
-			</span> <input type="button" value="# 서툰 사람들"
-				onclick="location.href='http://localhost/mvc/submain/search?value=서툰사람들'"
+			</span> <input type="button" value="# 합스부르크"
+				onclick="location.href='http://localhost/mvc/submain/search?value=합스부르크'"
 				class="search-mid1-1-button"> <input type="button"
 				value="# 드라큘라"
 				onclick="location.href='http://localhost/mvc/submain/search?value=드라큘라'"
 				class="search-mid1-1-button"> <input type="button"
-				value="# 조용필"
-				onclick="location.href='http://localhost/mvc/submain/search?value=조용필'"
+				value="# 콘서트"
+				onclick="location.href='http://localhost/mvc/submain/search?value=콘서트'"
 				class="search-mid1-1-button"> <input type="button"
 				value="# 미수"
 				onclick="location.href='http://localhost/mvc/submain/search?value=미수'"
 				class="search-mid1-1-button"> <input type="button"
-				value="# 웨이스티드"
-				onclick="location.href='http://localhost/mvc/submain/search?value=웨이스티드'"
+				value="# 연극"
+				onclick="location.href='http://localhost/mvc/submain/search?value=연극'"
 				class="search-mid1-1-button"> <input type="button"
-				value="# 마룬파이브"
-				onclick="location.href='http://localhost/mvc/submain/search?value=마룬파이브'"
+				value="# 뮤지컬"
+				onclick="location.href='http://localhost/mvc/submain/search?value=뮤지컬'"
 				class="search-mid1-1-button">
 		</div>
 	</section>
@@ -81,100 +81,49 @@
 				<article id="tab1" class="content-container__content target">
 					<h3>공 연 검 색</h3>
 					<table id="tbl-board" class="board-table">
-						<!--  
-						<c:if test="${empty list}">
+						<c:if test="${empty ShowList}">
 							<tr>
 								<td colspan="6">검색결과가 없습니다.</td>
 							</tr>
-						</c:if> -->
-						<tr>
-							<td class="board-content"><a href=""> <img
-									class="search-img"
-									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/">
-							</a></td>
-							<td class="board-content board-title">[부산] <span
-								style="color: rgb(251, 188, 4);">'${value}'</span> 42번가
-							</td>
-							<td class="board-content">2022.12.19~2022.12.19</td>
-							<td class="board-content">부산문화회관대극장</td>
-						</tr>
-						<tr>
-							<td class="board-content"><a href=""> <img
-									class="search-img"
-									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/">
-							</a></td>
-							<td class="board-content board-title"><뮤지컬> <span
-									style="color: rgb(251, 188, 4);">' ${value} '</span> 42번가 </td>
-							<td class="board-content">2022.12.19~2022.12.19</td>
-							<td class="board-content">링크아트센터 빅스홀</td>
-						</tr>
-						<tr>
-							<td class="board-content"><a href=""> <img
-									class="search-img"
-									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/">
-							</a></td>
-							<td class="board-content board-title">2022 하즈피아노 온<span
-								style="color: rgb(251, 188, 4);">' ${value} '</span>
-							</td>
-							<td class="board-content">2022.12.19~2022.12.19</td>
-							<td class="board-content">샤롯데씨어터</td>
-						</tr>
-						<tr>
-							<td class="board-content"><a href=""> <img
-									class="search-img"
-									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/">
-							</a></td>
-							<td class="board-content board-title">[청주] <span
-								style="color: rgb(251, 188, 4);">' ${value} '</span> 42번가
-							</td>
-							<td class="board-content">2022.12.19~2022.12.19</td>
-							<td class="board-content">한전아트센터</td>
-						</tr>
-						<tr>
-							<td class="board-content"><a href=""> <img
-									class="search-img"
-									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/">
-							</a></td>
-							<td class="board-content board-title">하즈피아노 온 <span
-								style="color: rgb(251, 188, 4);">' ${value} '</span>
-							</td>
-							<td class="board-content">2022.12.19~2022.12.19</td>
-							<td class="board-content">대학로 TOM 1관</td>
-						</tr>
-						<tr>
-							<td class="board-content"><a href=""> <img
-									class="search-img"
-									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/">
-							</a></td>
-							<td class="board-content board-title"><뮤지컬> <span
-									style="color: rgb(251, 188, 4);">' ${value} '</span> 42번가 </td>
-							<td class="board-content">2022.12.19~2022.12.19</td>
-							<td class="board-content">샤롯데씨어터</td>
-						</tr>
+						</c:if>
+						<c:if test="${not empty ShowList}">
+							<c:forEach var="show" items="${ShowList}">
+								<tr>
+									<td class="board-content"><a href="${path}/showMain/view?no=${show.show_cno}"> 
+									<img  style="width:100px; height:100px;" src=${show.show_thumbnail }>
+									&emsp;&emsp;&emsp;${show.show_title}</a></td>
+									<td class="board-content">${show.show_startdate}~</td>
+									<td class="board-content">${show.show_enddate}</td>
+									<td class="board-content">${show.show_place}</td>
+								</tr>
+							</c:forEach>
+						</c:if>
+
 					</table>
 
 					<h3>전 시 검 색</h3>
 					<table id="tbl-board" class="board-table">
-						<!--  
-						<c:if test="${empty list}">
+						<c:if test="${empty ShowList2}">
 							<tr>
 								<td colspan="6">검색결과가 없습니다.</td>
 							</tr>
-						</c:if> -->
-						<tr>
-							<td class="board-content"><a href=""> <img
-									class="search-img"
-									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/">
-							</a></td>
-							<td class="board-content board-title">[부산] <span
-								style="color: rgb(251, 188, 4);">'${value}'</span> 42번가
-							</td>
-							<td class="board-content">2022.12.19~2022.12.19</td>
-							<td class="board-content">부산문화회관대극장</td>
-						</tr>
+						</c:if>
+						<c:if test="${not empty ShowList2}">
+							<c:forEach var="show" items="${ShowList2}">
+								<tr>
+									<td class="board-content"><a href="${path}/displayMainDetail/view?no=${show.show_cno}">
+									<img  style="width:100px; height:100px;" src=${show.show_thumbnail }>
+									&emsp;&emsp;&emsp;${show.show_title}</a></td>
+									<td class="board-content">${show.show_startdate}~</td>
+									<td class="board-content">${show.show_enddate}</td>
+									<td class="board-content">${show.show_place}</td>
+								</tr>
+							</c:forEach>
+						</c:if>
+
 					</table>
 
-					<h3>게 시 판 검 색</h3><!-- 수정 미완성 -->
+					<h3>게 시 판 검 색</h3>
 					<table id="tbl-board" class="board-table">
 						<!--  
 						<c:if test="${empty list}">
@@ -182,121 +131,71 @@
 								<td colspan="6">검색결과가 없습니다.</td>
 							</tr>
 						</c:if> -->
-						<div>
-							<c:forEach var="board" items="${boardList}">
-								<div>
-									<td class="board-content"><c:out value="${board.bno}" /></td>
-									<td class="board-content board-title"><a id="board-title"
-										href="${path}/board/view?no=${board.bno}"> <c:out
-												value="[자유게시판]  ${board.boardTitle}" />
-									</a>
-								</div>
-							</c:forEach>
-						</div>
+						<tr>
+							<th class="table-header">제목</th>
+							<th class="table-header">작성일</th>
+						</tr>
+						<c:forEach var="board" items="${boardList}">
+							<tr>
+								<td class="board-content"><a
+									href="${path}/board/view?no=${board.bno}">${board.boardTitle}</a></td>
+								<td class="board-content"><fmt:formatDate
+										pattern="yyyy-MM-dd" value="${board.createDate}" /></td>
+							</tr>
+						</c:forEach>
 					</table>
 				</article>
 
 				<article id="tab2" class="content-container__content">
 					<h3>공 연 검 색</h3>
 					<table id="tbl-board" class="board-table">
-						<!--  
-						<c:if test="${empty list}">
+						<c:if test="${empty ShowList}">
 							<tr>
 								<td colspan="6">검색결과가 없습니다.</td>
 							</tr>
-						</c:if> -->
-						<tr>
-							<td class="board-content"><a href=""> <img
-									class="search-img"
-									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/">
-							</a></td>
-							<td class="board-content board-title">[부산] <span
-								style="color: rgb(251, 188, 4);">'${value}'</span> 42번가
-							</td>
-							<td class="board-content">2022.12.19~2022.12.19</td>
-							<td class="board-content">부산문화회관대극장</td>
-						</tr>
-						<tr>
-							<td class="board-content"><a href=""> <img
-									class="search-img"
-									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/">
-							</a></td>
-							<td class="board-content board-title"><뮤지컬> <span
-									style="color: rgb(251, 188, 4);">' ${value} '</span> 42번가 </td>
-							<td class="board-content">2022.12.19~2022.12.19</td>
-							<td class="board-content">링크아트센터 빅스홀</td>
-						</tr>
-						<tr>
-							<td class="board-content"><a href=""> <img
-									class="search-img"
-									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/">
-							</a></td>
-							<td class="board-content board-title">2022 하즈피아노 온<span
-								style="color: rgb(251, 188, 4);">' ${value} '</span>
-							</td>
-							<td class="board-content">2022.12.19~2022.12.19</td>
-							<td class="board-content">샤롯데씨어터</td>
-						</tr>
-						<tr>
-							<td class="board-content"><a href=""> <img
-									class="search-img"
-									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/">
-							</a></td>
-							<td class="board-content board-title">[청주] <span
-								style="color: rgb(251, 188, 4);">' ${value} '</span> 42번가
-							</td>
-							<td class="board-content">2022.12.19~2022.12.19</td>
-							<td class="board-content">한전아트센터</td>
-						</tr>
-						<tr>
-							<td class="board-content"><a href=""> <img
-									class="search-img"
-									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/">
-							</a></td>
-							<td class="board-content board-title">하즈피아노 온 <span
-								style="color: rgb(251, 188, 4);">' ${value} '</span>
-							</td>
-							<td class="board-content">2022.12.19~2022.12.19</td>
-							<td class="board-content">대학로 TOM 1관</td>
-						</tr>
-						<tr>
-							<td class="board-content"><a href=""> <img
-									class="search-img"
-									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/">
-							</a></td>
-							<td class="board-content board-title"><뮤지컬> <span
-									style="color: rgb(251, 188, 4);">' ${value} '</span> 42번가 </td>
-							<td class="board-content">2022.12.19~2022.12.19</td>
-							<td class="board-content">샤롯데씨어터</td>
-						</tr>
+						</c:if>
+						<c:if test="${not empty ShowList}">
+							<c:forEach var="show" items="${ShowList}">
+								<tr>
+									<td class="board-content"><a href="${path}/showMain/view?no=${show.show_cno}"> 
+									<img  style="width:100px; height:100px;" src=${show.show_thumbnail }>
+									&emsp;&emsp;&emsp;${show.show_title}</a></td>
+									<td class="board-content">${show.show_startdate}~</td>
+									<td class="board-content">${show.show_enddate}</td>
+									<td class="board-content">${show.show_place}</td>
+								</tr>
+							</c:forEach>
+						</c:if>
+					
 					</table>
 				</article>
 
 				<article id="tab3" class="content-container__content">
 					<h3>전 시 검 색</h3>
 					<table id="tbl-board" class="board-table">
-						<!--  
-						<c:if test="${empty list}">
+					<c:if test="${empty ShowList2}">
 							<tr>
 								<td colspan="6">검색결과가 없습니다.</td>
 							</tr>
-						</c:if> -->
-						<tr>
-							<td class="board-content"><a href=""> <img
-									class="search-img"
-									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/">
-							</a></td>
-							<td class="board-content board-title">[부산] <span
-								style="color: rgb(251, 188, 4);">'${value}'</span> 42번가
-							</td>
-							<td class="board-content">2022.12.19~2022.12.19</td>
-							<td class="board-content">부산문화회관대극장</td>
-						</tr>
+						</c:if>
+						<c:if test="${not empty ShowList2}">
+							<c:forEach var="show" items="${ShowList2}">
+								<tr>
+									<td class="board-content"><a href="${path}/displayMainDetail/view?no=${show.show_cno}">
+									<img  style="width:100px; height:100px;" src=${show.show_thumbnail }>
+									&emsp;&emsp;&emsp;${show.show_title}</a></td>
+									<td class="board-content">${show.show_startdate}~</td>
+									<td class="board-content">${show.show_enddate}</td>
+									<td class="board-content">${show.show_place}</td>
+								</tr>
+							</c:forEach>
+						</c:if>
+
 					</table>
 				</article>
 
 				<article id="tab4" class="content-container__content">
-					<h3>게 시 판 검 색</h3> <!-- 수정 미완성 -->
+					<h3>게 시 판 검 색</h3>
 					<table id="tbl-board" class="board-table">
 						<!--  
 						<c:if test="${empty list}">
@@ -305,22 +204,28 @@
 							</tr>
 						</c:if> -->
 						<tr>
+							<th class="table-header">제목</th>
+							<th class="table-header">작성일</th>
+						</tr>
+						<c:forEach var="board" items="${boardList}">
+							<tr>
+								<td class="board-content"><a
+									href="${path}/board/view?no=${board.bno}">${board.boardTitle}</a></td>
+								<td class="board-content"><fmt:formatDate
+										pattern="yyyy-MM-dd" value="${board.createDate}" /></td>
+							</tr>
+						</c:forEach>
+					</table>
+					<%-- <tr>
 							<td class="board-content">
-								<div>
 									<c:forEach var="board" items="${boardList}">
 										<div>
-											<td class="board-content"><c:out value="${board.bno}" /></td>
-											<td class="board-content board-title"><a
-												id="board-title" href="${path}/board/view?no=${board.bno}">
-													<c:out value="[자유게시판]  ${board.boardTitle}" />
-											</a> <!-- 
-											<a href="${path}/board/view?no=${board.bno}"> title :	${board.boardTitle} </a>
-											 <td class="board-content"><c:out value="${board.userId}" /></td>
-										 -->
+								 <a	href="${path}/board/view?no=${board.bno}">${board.boardTitle}</a>
+								<fmt:formatDate pattern="yyyy-MM-dd"value="${board.createDate}" />
 										</div>
 									</c:forEach>
 								</div>
-					</table>
+					</table> --%>
 				</article>
 			</div>
 		</div>

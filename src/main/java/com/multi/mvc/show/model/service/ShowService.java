@@ -19,7 +19,6 @@ public class ShowService {
 	public List<Show> findShow(Map<String, Object> map){
 		return mapper.selectShowList(map);
 	}
-	
 
 	public List<Show> findDisplay(Map<String, Object> map){
 		return mapper.selectDisplayList(map);
@@ -28,5 +27,11 @@ public class ShowService {
 	public List<Show> findLocation(Map<String, Object> map){
 		return mapper.selectLocationList(map);
 	}
-
+	public List<Show> searchShow(Map<String, Object> map2){
+		return mapper.searchShowList(map2);
+	}
+	
+	public List<Show> searchShow2(Map<String, Object> map3){
+		return mapper.searchShowList2(map3);
+	}
 }
