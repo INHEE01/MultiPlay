@@ -3,6 +3,12 @@ ul {
 	font-weight: 600;
 }
 
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	margin-bottom: 5px;
+}
 
 .container {
 	padding-top: 30px;
@@ -25,17 +31,17 @@ ul {
 }
 
 .genre-select-1 {
-	padding-top:20px;
-}
-
-.genre-button {
-	
+	padding-top: 20px;
 }
 
 .genre-button-1 {
 	width: 960px;
 	height: 80px;
 	/* background-color: rgb(152, 101, 156); */
+}
+.genre-button-1.active {
+	background-color: black;
+	color:white;
 }
 
 .genre-middle-select {
@@ -56,6 +62,12 @@ a:hover {
 .genre-1:hover {
 	color: black;
 }
+
+.tab-container {
+	display: flex;
+}
+
+
 
 .genre-button-1 {
 	width: 100px;
@@ -78,7 +90,7 @@ a:hover {
 }
 
 .genre-block {
-	margin-right:30px;
+	margin-right: 30px;
 }
 
 .select-date {
@@ -86,16 +98,17 @@ a:hover {
 	font-size: 30px;
 	text-align: center;
 }
+
 .ranking-list {
-	margin-bottom:50px;
+	margin-bottom: 50px;
 }
 
 .ranking-table {
 	width: 100%;
 	border-top: 3px solid #ccc;
-	border-bottom : 1px solid gray;
+	border-bottom: 1px solid gray;
 	border-collapse: collapse;
-	margin-top : 10px;
+	margin-top: 10px;
 	font-size: 15px;
 }
 
@@ -103,7 +116,7 @@ a:hover {
 	text-align: center;
 	padding: 25px 0px;
 	border-bottom: 1px solid gray;
-	font-size: 16px;
+	font-size: 15px;
 }
 
 .table-header {
@@ -123,7 +136,25 @@ a:hover {
 }
 
 .btn {
-	width:120px;
-	height:45px;
-	text-align:center;
+	width: 120px;
+	height: 45px;
+	text-align: center;
+}
+
+#goingTop {
+	position: fixed;
+	right: 2%;
+	bottom: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: none;
+	background-color: #6699cc;
+	color: #ffffff;
+	font-size: 25px;
+	box-shadow: 0px 0px 5px #3973ac;
+	cursor: pointer;
 }

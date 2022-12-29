@@ -21,18 +21,33 @@
 <div class="container">
 	<div class="genre-select-1">
 		<ul class="genre-middle-select">
-			<li class="genre-block"><a class="genre-1"
-				href="#" id="ranking-1">장르별 랭킹</a></li>
-			<li class="genre-block"><a class="genre-1"
-				href="#" id="ranking-2">지역별 랭킹</a></li>
+			<li class="genre-block"><a class="genre-1" href="#"
+				id="ranking-1">장르별 랭킹</a></li>
+			<li class="genre-block"><a class="genre-1" href="#"
+				id="ranking-2">지역별 랭킹</a></li>
 		</ul>
 	</div>
 	<div class="genre-select-2">
-		<button onclick="location.href='${path}/submain/musicalRanking'" class="genre-button-1">뮤지컬</button>
-		<button onclick="location.href='${path}/submain/playRanking'" class="genre-button-1">연극</button>
-		<button onclick="" class="genre-button-1">콘서트</button>
-		<button onclick="" class="genre-button-1">클래식/무용</button>
-		<button onclick="" class="genre-button-1">전시</button>
+		<ul class=tab-container>
+			<li class="genre-tab" data-tab="tab1">
+				<button onclick="location.href='${path}/submain/musicalRanking'"
+					class="genre-button-1">뮤지컬</button>
+			</li>
+			<li class="genre-tab" data-tab="tab2">
+				<button onclick="location.href='${path}/submain/playRanking'"
+					class="genre-button-1 active">연극</button>
+			</li>
+			<li class="genre-tab" data-tab="tab3">
+				<button onclick="location.href='${path}/submain/concertRanking'" class="genre-button-1">콘서트</button>
+			</li>
+			<li class="genre-tab" data-tab="tab4">
+				<button onclick="location.href='${path}/submain/classicRanking'" class="genre-button-1">클래식/무용</button>
+			</li>
+			<li class="genre-tab" data-tab="tab5">
+				<button onclick="location.href='${path}/submain/displayRanking'" class="genre-button-1">전시</button>
+			</li>
+		</ul>
+
 	</div>
 </div>
 <!-- 장르별, 지역별 랭킹 선택창 끝 -->
@@ -65,25 +80,31 @@
 				<c:if test="${not empty rankingList}">
 					<c:forEach var="rankingList" items="${rankingList}">
 						<tr>
-							<td class="ranking-content"><c:out value="${rankingList.rankNo}" /></td>
+							<td class="ranking-content"><strong><p
+										style="width: 60px;">
+										<c:out value="${rankingList.rankNo}" />
+									</p></strong></td>
+							<td class="ranking-content"><img
+								src="<c:out value="${rankingList.poster}"/>"
+								style="width: 150px; height: 200px;" /></td>
+							<td class="ranking-content" style="width : 300px;"><strong><c:out
+										value="${rankingList.prfnm}" /></strong></td>
+							<td class="ranking-content"><fmt:formatDate var="dayFrom"
+									value="${rankingList.prfpdfrom}" pattern="yyyy.MM.dd" /> <c:out
+									value="${dayFrom}" />&#32;~&#32; <fmt:formatDate var="dayTo"
+									value="${rankingList.prfpdto}" pattern="yyyy.MM.dd" /> <c:out
+									value="${dayTo}" /><br>
+								<p class="ranking-place">
+									<strong><c:out value="${rankingList.fdtynm}" /></strong>
+								</p></td>
 							<td class="ranking-content">
-								<img src="<c:out value="${rankingList.poster}"/>" style="width:150px; height:200px;"/>
-							</td>
-							<td class="ranking-content"><c:out value="${rankingList.prfnm}" />
+								<p style="font-weight: 600; color: #ffaa46; font-size: 20px;">
+									<c:out value="${rankingList.bookRate}" />
+
+								</p>
 							</td>
 							<td class="ranking-content">
-								<fmt:formatDate var="dayFrom" value="${rankingList.prfpdfrom}" pattern="yyyy.MM.dd"/>
-								<c:out value="${dayFrom}" />&#32;~&#32;
-								<fmt:formatDate var="dayTo" value="${rankingList.prfpdto}" pattern="yyyy.MM.dd"/>
-								<c:out value="${dayTo}" /><br>
-								<p class="ranking-place"><c:out value="${rankingList.fdtynm}"/></p>
-								
-							</td>
-							<td class="ranking-content"><c:out
-									value="${rankingList.bookRate}" /></td>
-	
-							<td class="ranking-content">
-								<button type="button" class="btn btn-warning">예매하기</button><br>
+								<button type="button" class="btn btn-warning">예매하기</button> <br>
 							</td>
 						</tr>
 					</c:forEach>
@@ -92,11 +113,26 @@
 		</div>
 	</div>
 </section>
+<!--  위로가기 버튼 -->
+<div id="goingTop" onclick="window.scrollTo(0,0);">↑</div>
 
 <script>
 	document.getElementById('currentDate').value = new Date().toISOString()
 			.substring(0, 10);
 	;
+</script>
+<script>
+	function fn_onclick(value) {
+
+		var vUrl = "${path}/submain/musicalRanking?genrenm=" + value;
+
+		$("#testFrm").attr("action", vUrl);
+
+		$("#testFrm").attr("method", "GET"); // or "POST"
+
+		$("#testFrm").submit();
+
+	}
 </script>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>

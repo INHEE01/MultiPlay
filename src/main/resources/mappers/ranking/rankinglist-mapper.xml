@@ -30,8 +30,9 @@
 		<result property="poster" column="poster" />
 		<result property="genrenm" column="genrenm" />
 	</resultMap>
-
-	<resultMap type="RankingList" id="PlayRankingListResultMap">
+	
+	<resultMap type="RankingList"
+		id="PlayRankingListResultMap">
 		<id property="pNo" column="pNo" />
 		<result property="rankNo" column="rankNo" />
 		<result property="bookRate" column="bookRate" />
@@ -70,8 +71,34 @@
 		rankingList R WHERE genrenm = '연극' ORDER BY RANKNO ASC
 		LIMIT 10
 	</select>
-
-
+	
+	<select id="selectConcertRanking"
+		resultMap="PlayRankingListResultMap" parameterType="map">
+		SELECT
+		R.rankNo, R.poster, R.prfnm, R.prfpdfrom, R.prfpdto, R.fdtynm, R.bookRate
+		FROM
+		rankingList R WHERE genrenm = '콘서트' ORDER BY RANKNO ASC
+		LIMIT 10
+	</select>
+	
+	<select id="selectClassicRanking"
+		resultMap="PlayRankingListResultMap" parameterType="map">
+		SELECT
+		R.rankNo, R.poster, R.prfnm, R.prfpdfrom, R.prfpdto, R.fdtynm, R.bookRate
+		FROM
+		rankingList R WHERE genrenm = '클래식/무용' ORDER BY RANKNO ASC
+		LIMIT 10
+	</select>
+	
+	<select id="selectDisplayRanking"
+		resultMap="PlayRankingListResultMap" parameterType="map">
+		SELECT
+		R.rankNo, R.poster, R.prfnm, R.prfpdfrom, R.prfpdto, R.fdtynm, R.bookRate
+		FROM
+		rankingList R WHERE genrenm = '전시' ORDER BY RANKNO ASC
+		LIMIT 10
+	</select>
+	
 
 
 

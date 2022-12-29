@@ -91,27 +91,68 @@ public class SubmainController {
 	}
 	
 	@GetMapping("/musicalRanking") // 
-	public String musicalRanking(Model model, @RequestParam Map<String, String> param) {
-		Map<String, String> map = new HashMap<>();
-		log.info("리스트 요청, param : " + param);
-		
+	public String musicalRanking(Model model, String value) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("value", value);
+			
 		List<RankingList> rankingList = submainService.getMusicalRankingList(map);
 		
 		model.addAttribute("rankingList", rankingList);
-		model.addAttribute("param", param);
+		model.addAttribute("value", value);
+		
 		return "submain/musicalRanking";
 	}
 	
-	@GetMapping("/playRanking")
-	public String playRanking(Model model, @RequestParam Map<String, String> param) {
-		Map<String, String> map = new HashMap<>();
-		log.info("리스트 요청, param : " + param);
-		
+	@GetMapping("/playRanking") // 
+	public String playRanking(Model model, String value) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("value", value);
+			
 		List<RankingList> rankingList = submainService.getPlayRankingList(map);
 		
 		model.addAttribute("rankingList", rankingList);
-		model.addAttribute("param", param);
-		return "submain/musicalRanking";
+		model.addAttribute("value", value);
+		
+		return "submain/playRanking";
+	}
+	
+	@GetMapping("/classicRanking") // 
+	public String classicRanking(Model model, String value) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("value", value);
+			
+		List<RankingList> rankingList = submainService.getClassicRankingList(map);
+		
+		model.addAttribute("rankingList", rankingList);
+		model.addAttribute("value", value);
+		
+		return "submain/classicRanking";
+	}
+	
+	@GetMapping("/displayRanking") // 
+	public String displayRanking(Model model, String value) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("value", value);
+			
+		List<RankingList> rankingList = submainService.getDisplayRankingList(map);
+		
+		model.addAttribute("rankingList", rankingList);
+		model.addAttribute("value", value);
+		
+		return "submain/displayRanking";
+	}
+	
+	@GetMapping("/concertRanking") // 
+	public String concertRanking(Model model, String value) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("value", value);
+			
+		List<RankingList> rankingList = submainService.getConcertRankingList(map);
+		
+		model.addAttribute("rankingList", rankingList);
+		model.addAttribute("value", value);
+		
+		return "submain/concertRanking";
 	}
 	
 }

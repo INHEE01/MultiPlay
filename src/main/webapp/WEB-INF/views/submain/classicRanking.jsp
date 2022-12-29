@@ -36,20 +36,23 @@
 		<ul class=tab-container>
 			<li class="genre-tab" data-tab="tab1">
 				<button onclick="location.href='${path}/submain/musicalRanking'"
-					class="genre-button-1 active">뮤지컬</button>
+					class="genre-button-1">뮤지컬</button>
 			</li>
 			<li class="genre-tab" data-tab="tab2">
 				<button onclick="location.href='${path}/submain/playRanking'"
 					class="genre-button-1">연극</button>
 			</li>
 			<li class="genre-tab" data-tab="tab3">
-				<button onclick="location.href='${path}/submain/concertRanking'" class="genre-button-1">콘서트</button>
+				<button onclick="location.href='${path}/submain/concertRanking'"
+					class="genre-button-1">콘서트</button>
 			</li>
 			<li class="genre-tab" data-tab="tab4">
-				<button onclick="location.href='${path}/submain/classicRanking'" class="genre-button-1">클래식/무용</button>
+				<button onclick="location.href='${path}/submain/classicRanking'"
+					class="genre-button-1 active">클래식/무용</button>
 			</li>
 			<li class="genre-tab" data-tab="tab5">
-				<button onclick="location.href='${path}/submain/displayRanking'" class="genre-button-1">전시</button>
+				<button onclick="location.href='${path}/submain/displayRanking'"
+					class="genre-button-1">전시</button>
 			</li>
 		</ul>
 
