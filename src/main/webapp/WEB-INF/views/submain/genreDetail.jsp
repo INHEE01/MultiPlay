@@ -6,7 +6,7 @@
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
 <jsp:include page="/WEB-INF/views/common/header.jsp">
-	<jsp:param value="멀티플레이::{culture.title}" name="title" />
+	<jsp:param value="멀티플레이::${culture.title}" name="title" />
 </jsp:include>
 
 <link rel="stylesheet" type="text/css" href="${path}/resources/css/genreDetail.css">
@@ -23,60 +23,63 @@
 </style>
 
 <section id="content">
-	<div class="col">
-		<h3 class="mt-3 mb-3 ls-lg">{REALMNAME}</h3>
-		<h2>{TITLE}</h2>
-		<p>
-			<span class="genDT-when d-inline-block pe-sm-3 m-md-0">{STARTDATE}~{ENDDATE}</span>
-			<span class="genDT-where d-inline-block px-sm-3 m-md-0">MULTYPLAY LIVE HALL</span>
-		</p>
-		<hr>
-	</div>
-	<div class="row">
-		<%-- 포스터 --%>
-		<div class="genDT-poster col-md-5">
-			<img alt="" src="http://tkfile.yes24.com/upload2/PerfBlog/202211/20221114/20221114-44090.jpg">
-		</div>
-		
-		<%-- 설명 시작 --%>
-		<div class="genDT-caption col-md-7">
-			<table>
-				<tr height="40px">
-					<th width="100px">등급</th>
-					<td>만 10세이상 관람가</td>
-				</tr>
-				<tr height="40px">
-					<th>관람시간</th>
-					<td>110분</td>
-				</tr>
-				<tr height="40px">
-					<th>출연</th>
-					<td>김주호, 박민성, 테이, 백인태, 김준영, 정재환, 조훈, 임세준, 이은율, 이지연, 유소리, 김시훈, 박이든, 양찬영, 조재철, 크리스 영</td>
-				</tr>
-				<tr height="40px">
-					<th>가격</th>
-					<td>
-						<div class="genDT-caption-price ps-md-3 py-lg-2">
-							R석 <span style="color: rgb(251, 188, 4); font-weight: 600">66,000</span>원 <br>
-							S석 <span style="color: rgb(251, 188, 4); font-weight: 600">44,000</span>원
-						</div>
-					</td>
-				</tr>
-				<tr height="40px">
-					<th>혜택</th>
-					<td>사용가능쿠폰(<span style="color: rgb(251, 188, 4); font-weight: 600">1</span>)</td>
-				</tr>
-			</table>
+		<div class="col">
+			<h3 class="mt-3 mb-3 ls-lg">${culture.realmname}</h3>
+			<h2>${culture.title}</h2>
+			<p>
+				<span class="genDT-when d-inline-block pe-sm-3 m-md-0">
+					<fmt:formatDate pattern="yyyy년 MM월 dd일" value="${culture.startdate}" />
+						~
+					<fmt:formatDate pattern="yyyy년 MM월 dd일" value="${culture.enddate}" />
+				</span>
+				<span class="genDT-where d-inline-block px-sm-3 m-md-0">${culture.place}</span>
+			</p>
 			<hr>
-			<div>
-				<p class="genDT-caption-title">공연시간 안내</p>
-				<p class="genDT-caption-content">평일 오후 8시 / 수요일 4시, 8시(12월 21일 제외) / 토요일 3시, 7시 / 일, 공휴일 2시, 6시 (월 쉼)</p>
-			</div>
-			<div>
-				<p class="genDT-caption-title">배송정보</p>
-				<p class="genDT-caption-content">현장 수령만 가능</p>
-			</div>
 		</div>
+		<div class="row">
+			<%-- 포스터 --%>
+			<div class="genDT-poster col-md-5 align-items-sm-center">
+				<img alt="" src="<c:out value="${culture.thumbnail}"/>" style="width: 300px;">
+			</div>
+			
+			<%-- 설명 시작 --%>
+			<div class="genDT-caption col-md-7">
+				<table>
+					<tr height="40px">
+						<th width="100px">등급</th>
+						<td>만 10세이상 관람가</td>
+					</tr>
+					<tr height="40px">
+						<th>관람시간</th>
+						<td>110분</td>
+					</tr>
+					<tr height="40px">
+						<th>출연</th>
+						<td>김주호, 박민성, 테이, 백인태, 김준영, 정재환, 조훈, 임세준, 이은율, 이지연, 유소리, 김시훈, 박이든, 양찬영, 조재철, 크리스 영</td>
+					</tr>
+					<tr height="40px">
+						<th>가격</th>
+						<td>
+							<div class="genDT-caption-price ps-md-3 py-lg-2">
+								<span style="color: rgb(251, 188, 4); font-weight: 600">${culture.price}</span>
+							</div>
+						</td>
+					</tr>
+					<tr height="40px">
+						<th>혜택</th>
+						<td>사용가능쿠폰(<span style="color: rgb(251, 188, 4); font-weight: 600">1</span>)</td>
+					</tr>
+				</table>
+				<hr>
+				<div>
+					<p class="genDT-caption-title">공연시간 안내</p>
+					<p class="genDT-caption-content">평일 오후 8시 / 수요일 4시, 8시(12월 21일 제외) / 토요일 3시, 7시 / 일, 공휴일 2시, 6시 (월 쉼)</p>
+				</div>
+				<div>
+					<p class="genDT-caption-title">배송정보</p>
+					<p class="genDT-caption-content">현장 수령만 가능</p>
+				</div>
+			</div>
 		<%-- 설명 끝 --%>
 		
 		<!--날짜시간선택, 예매가능좌석 박스-->
@@ -119,8 +122,8 @@
 					<div id="mCSB_4" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" tabindex="0" style="max-height: none;">
 						<div id="mCSB_4_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
 							<dl id="SeatRemain">
-								<dt>R석</dt><dd>66,000원<span>(잔여:34석)</span></dd>
-								<dt>S석</dt><dd>44,000원<span>(잔여:22석)</span></dd>
+								<dt>R석</dt><dd><span>(잔여:34석)</span></dd>
+								<dt>S석</dt><dd><span>(잔여:22석)</span></dd>
 							</dl>
 						</div>
 						<div id="mCSB_4_scrollbar_vertical" class="mCSB_scrollTools mCSB_4_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: none;">
@@ -145,9 +148,9 @@
 		<%-- 탭메뉴 시작 --%>
 		<div class="genDT-tap">
 			<%-- 라디오 버튼 --%>
-			<input id="genDT-tab1" type="radio" name="tab" checked="checked"/>
+			<input id="genDT-tab1" type="radio" name="tab" ${reviewWrite != '1' ?  'checked':''} />
 			<input id="genDT-tab2" type="radio" name="tab" />
-			<input id="genDT-tab3" type="radio" name="tab" />
+			<input id="genDT-tab3" type="radio" name="tab" ${reviewWrite == '1' ?  'checked':''} />
 			<%-- 라벨 : 화면에 표시되는 탭 제목 --%>
 			<label for="genDT-tab1">상세정보</label>
 			<label for="genDT-tab2">예매/취소 안내</label>
@@ -155,9 +158,13 @@
 			<hr style="margin-top: -1px;">
 			<%-- 탭1 시작 --%>
 			<div class="genDT-tap-area genDT-tab1-content">
-				<h2>캐스팅</h2>
+				<c:if test="${culture.contents1 == null}">
+					<h2>장소</h2>
+					<p>${culture.placeAddr}</p>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.221552293925!2d128.57508681491277!3d35.225854462419086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356f321adac299ed%3A0x7c834560419e0cd5!2zM8K3MTXslYTtirjshLzthLA!5e0!3m2!1sko!2skr!4v1672295351913!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</c:if>
 				<p style="text-align: center;">
-					<img src="http://tkfile.yes24.com/Upload2/Board/202211/20221110/44090_02.jpg" class="txc-image" style="clear:none;float:none;">
+					<img src="${culture.contents1}" class="txc-image" style="clear:none;float:none;">
 				</p>
 
 				<h2>공지사항</h2>
@@ -357,10 +364,11 @@
 				<!-- 후기 작성 Form -->
 				<div id="review-container">
 			    	<div class="review-editor" align="center">
-			    		<form >
-			    			<input type="hidden" name="boardNo" value="${board.no}" /> <!-- 수정할 부분 -->
-			    			<input type="hidden" name="writerId" value="${loginMember.id}" /> <!-- 수정할 부분 -->
-							<textarea name="content" id="replyContent" cols="130" rows="3"></textarea>
+			    		<form action="${path}/ReviewWrite" method="post">
+			    			<input type="hidden" name="cno" value="${'1'}" /> <!-- 수정할 부분 -->
+			    			<input type="hidden" name="reviewWriterNo" value="${'1'}" /> <!-- 수정할 부분 -->
+			    			<input class="reviewTitle" name="reviewTitle" id="reviewTitle" placeholder="후기제목"/>
+							<textarea name="reviewContent" id="reviewContent" cols="130" rows="3"></textarea>
 							<button type="submit" id="btn-insert">등록</button>	  	
 			    		</form>
 			    	</div>

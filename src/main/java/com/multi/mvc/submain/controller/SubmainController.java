@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.multi.mvc.board.model.service.BoardService;
 import com.multi.mvc.board.model.vo.Board;
 import com.multi.mvc.common.util.PageInfo;
+import com.multi.mvc.culture.model.service.CultureService;
+import com.multi.mvc.culture.model.vo.Culture;
 import com.multi.mvc.show.model.service.ShowService;
 import com.multi.mvc.show.model.vo.Show;
 import com.multi.mvc.submain.model.service.SubmainService;
@@ -33,12 +35,28 @@ public class SubmainController {
 	SubmainService submainService;
 	
 	@Autowired
-	ShowService showService;	
+	ShowService showService;
+	
+	@Autowired
+	CultureService cService;
 
 	@GetMapping("/pay") // 12/25: 수정할 가능성 있음
 	public String pay() {
 		return "submain/pay";
 	}	
+	
+	@RequestMapping("/genreDetail")
+	public String view(Model model, @RequestParam("cno") int cno, @RequestParam Map<String, String> param) {
+		Culture culture = cService.getCultureByCno(cno);
+		
+		if(culture == null) {
+			return "redirect:error";
+		}
+		
+		model.addAttribute("culture", culture);
+		model.addAttribute("reviewWrite", param.getOrDefault("reviewWrite", "0"));
+		return "submain/genreDetail";
+	}
 	
 	@RequestMapping("/search")
 	public String search(Model model, String value) {

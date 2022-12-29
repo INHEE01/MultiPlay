@@ -59,134 +59,164 @@
 
 			<div class="whot-area">
 				<ul id="ulWhatshot">
-					<li>
-						<div class="big-one">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43981.jpg/dims/quality/70/">
-							<div class="big-one-txt">
-									<p class="big-tit">연극 빛나는 버러지</p>
-									<p class="big-detail">
-										2022. 11. 29. ~ 2023. 01. 08. 대학로 드림아트센터 4관 /
-										<span>청소년할인 50%</span>
-									</p>
+					<c:if test="${culList != null }">
+						<c:forEach var="culList" items="${culList}" begin="2" end="2" step="1">
+							 <li>
+								<div class="big-one">
+										<a href="${path}/submain/genreDetail?cno=${culList.cno}">
+											<img src="<c:out value="${culList.thumbnail}"/>">
+											<div class="big-one-txt">
+												<p class="big-tit">${culList.title}</p>
+												<p class="big-detail">
+													<fmt:formatDate pattern="yyyy-MM-dd" value="${culList.startdate}" />
+													 ~
+													<fmt:formatDate pattern="yyyy-MM-dd" value="${culList.enddate}" /> ${culList.place} /
+													<span>청소년할인 50%</span>
+												</p>
+											</div>
+										<p class="big-circle">50%</p></a>
 								</div>
-								<p class="big-circle">50%</p></a>
-						</div>
-					</li>
-					<li>
-						<div class="whot-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202209/20220922/20220922-43616.jpg/dims/quality/70/" alt="" class="lazyload">
-								<div class="whot-list-txt">
-									<div>
-										<p class="whot-tit">뮤지컬 브로드웨이 42번가</p>
-										<p class="whot-detail">
-											2022. 11. 05. ~ 2023. 01. 15. <br>예술의전당 CJ 토월극장
+							</li>
+						</c:forEach>
+						<c:forEach var="culList" items="${culList}" begin="1" end="1" step="1">
+							<li>
+								<div class="whot-list">
+									<a href="${path}/submain/genreDetail?cno=${culList.cno}">
+										<img src="<c:out value="${culList.thumbnail}"/>" alt="" class="lazyload">
+										<div class="whot-list-txt">
+											<div>
+												<p class="whot-tit">${culList.title}</p>
+												<p class="whot-detail">
+													<fmt:formatDate pattern="yyyy-MM-dd" value="${culList.startdate}" />
+													 ~
+													<fmt:formatDate pattern="yyyy-MM-dd" value="${culList.enddate}" /> ${culList.place}
+												</p>
+												<p class="whot-event">청소년 할인 30%</p>
+											</div>
+										</div>
+										<p class="whot-list-circle">
+											<span>30%</span>
 										</p>
-										<p class="whot-event">청소년 할인 30%</p>
-									</div>
+									</a>
 								</div>
-								<p class="whot-list-circle">
-									<span>30%</span>
-								</p>
-							</a>
-						</div>
-					</li>
-					<li>
-						<div class="whot-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/" alt="" class="lazyload">
-								<div class="whot-list-txt">
-									<div>
-										<p class="whot-tit">뮤지컬 루드윅: 베토벤 더 피아노</p>
-										<p class="whot-detail">
-											2022. 12. 20. ~ 2023. 03. 12.<br>예스24스테이지 1관
+							</li>
+						</c:forEach>
+						<c:forEach var="culList" items="${culList}" begin="4" end="4" step="1">
+							<li>
+								<div class="whot-list">
+									<a href="${path}/submain/genreDetail?cno=${culList.cno}">
+										<img src="<c:out value="${culList.thumbnail}"/>" alt="" class="lazyload">
+										<div class="whot-list-txt">
+											<div>
+												<p class="whot-tit">${culList.title}</p>
+												<p class="whot-detail">
+													<fmt:formatDate pattern="yyyy-MM-dd" value="${culList.startdate}" />
+													 ~
+													<fmt:formatDate pattern="yyyy-MM-dd" value="${culList.enddate}" /> ${culList.place}
+												</p>
+												<p class="whot-event">프리뷰 할인 40%</p>
+											</div>
+										</div>
+										<p class="whot-list-circle">
+											<span>40%</span>
 										</p>
-										<p class="whot-event">프리뷰 할인 40%</p>
-									</div>
+									</a>
 								</div>
-								<p class="whot-list-circle">
-									<span>40%</span>
-								</p>
-							</a>
-						</div>
-					</li>
-					<li>
-						<div class="whot-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43815.jpg/dims/quality/70/" alt="" class="lazyload">
-								<div class="whot-list-txt">
-									<div>
-										<p class="whot-tit">뮤지컬 드라큘라</p>
-										<p class="whot-detail">
-											2022. 11. 15. ~ 2023. 01. 15.<br>올림픽공원 내 우리금융아트홀
+							</li>
+						</c:forEach>
+						<c:forEach var="culList" items="${culList}" begin="5" end="5" step="1">
+							<li>
+								<div class="whot-list">
+									<a href="${path}/submain/genreDetail?cno=${culList.cno}">
+										<img src="<c:out value="${culList.thumbnail}"/>" alt="" class="lazyload">
+										<div class="whot-list-txt">
+											<div>
+												<p class="whot-tit">${culList.title}</p>
+												<p class="whot-detail">
+													<fmt:formatDate pattern="yyyy-MM-dd" value="${culList.startdate}" />
+													 ~
+													<fmt:formatDate pattern="yyyy-MM-dd" value="${culList.enddate}" /> ${culList.place}
+												</p>
+												<p class="whot-event">커플 할인 20%</p>
+											</div>
+										</div>
+										<p class="whot-list-circle">
+											<span>20%</span>
 										</p>
-										<p class="whot-event">커플 할인 20%</p>
-									</div>
+									</a>
 								</div>
-								<p class="whot-list-circle">
-									<span>20%</span>
-								</p>
-							</a>
-						</div>
-					</li>
-					<li>
-						<div class="whot-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/" alt="" class="lazyload">
-								<div class="whot-list-txt">
-									<div>
-										<p class="whot-tit">연극 사나이 와타나베</p>
-										<p class="whot-detail">
-											2022. 10. 25. ~ 2023. 01. 15.<br>플러스씨어터
+							</li>
+						</c:forEach>
+						<c:forEach var="culList" items="${culList}" begin="10" end="10" step="1">	
+							<li>
+								<div class="whot-list">
+									<a href="${path}/submain/genreDetail?cno=${culList.cno}">
+										<img src="<c:out value="${culList.thumbnail}"/>" alt="" class="lazyload">
+										<div class="whot-list-txt">
+											<div>
+												<p class="whot-tit">${culList.title}</p>
+												<p class="whot-detail">
+													<fmt:formatDate pattern="yyyy-MM-dd" value="${culList.startdate}" />
+													 ~
+													<fmt:formatDate pattern="yyyy-MM-dd" value="${culList.enddate}" /> ${culList.place}
+												</p>
+												<p class="whot-event">조기예매 할인 30%</p>
+											</div>
+										</div>
+										<p class="whot-list-circle">
+											<span>30%</span>
 										</p>
-										<p class="whot-event">조기예매 할인 30%</p>
-									</div>
+									</a>
 								</div>
-								<p class="whot-list-circle">
-									<span>30%</span>
-								</p>
-							</a>
-						</div>
-					</li>
-					<li>
-						<div class="whot-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221121/20221121-43929.jpg/dims/quality/70/" alt="" class="lazyload">
-								<div class="whot-list-txt">
-									<div>	
-										<p class="whot-tit">연극 서툰 사람들</p>
-										<p class="whot-detail">
-											2022. 11. 26. ~ 2023. 02. 19.<br>예스24스테이지 3관
+							</li>
+						</c:forEach>
+						<c:forEach var="culList" items="${culList}" begin="11" end="11" step="1">
+							<li>
+								<div class="whot-list">
+									<a href="${path}/submain/genreDetail?cno=${culList.cno}">
+										<img src="<c:out value="${culList.thumbnail}"/>" alt="" class="lazyload">
+										<div class="whot-list-txt">
+											<div>
+												<p class="whot-tit">${culList.title}</p>
+												<p class="whot-detail">
+													<fmt:formatDate pattern="yyyy-MM-dd" value="${culList.startdate}" />
+													 ~
+													<fmt:formatDate pattern="yyyy-MM-dd" value="${culList.enddate}" /> ${culList.place}
+												</p>
+												<p class="whot-event">화이팅 할인 40%</p>
+											</div>
+										</div>
+										<p class="whot-list-circle">
+											<span>40%</span>
 										</p>
-										<p class="whot-event">화이팅 할인 40%</p>
-									</div>
+									</a>
 								</div>
-								<p class="whot-list-circle">
-									<span>40%</span>
-								</p>
-							</a>
-						</div>
-					</li>
-					<li>
-						<div class="whot-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221128/20221128-43451.jpg/dims/quality/70/" alt="" class="lazyload">
-								<div class="whot-list-txt">
-									<div>	
-										<p class="whot-tit">뮤지컬 지저스 크라이스트 수퍼스타</p>
-										<p class="whot-detail">
-											2022. 11. 10. ~ 2023. 01. 15.<br>광림아트센터 BBCH홀
+							</li>
+						</c:forEach>
+						<c:forEach var="culList" items="${culList}" begin="15" end="15" step="1">
+							<li>
+								<div class="whot-list">
+									<a href="${path}/submain/genreDetail?cno=${culList.cno}">
+										<img src="<c:out value="${culList.thumbnail}"/>" alt="" class="lazyload">
+										<div class="whot-list-txt">
+											<div>
+												<p class="whot-tit">${culList.title}</p>
+												<p class="whot-detail">
+													<fmt:formatDate pattern="yyyy-MM-dd" value="${culList.startdate}" />
+													 ~
+													<fmt:formatDate pattern="yyyy-MM-dd" value="${culList.enddate}" /> ${culList.place}
+												</p>
+												<p class="whot-event">화이팅 할인 40%</p>
+											</div>
+										</div>
+										<p class="whot-list-circle">
+											<span>40%</span>
 										</p>
-										<p class="whot-event">화이팅 할인 40%</p>
-									</div>
+									</a>
 								</div>
-								<p class="whot-list-circle">
-									<span>40%</span>
-								</p>
-							</a>
-						</div>
-					</li>
+							</li>
+						</c:forEach>
+					</c:if>
 				</ul>
 			</div>
 		</div>
@@ -507,48 +537,15 @@
 				<hr class="home-hr">
 				<div class="home-notice-board" id="mncb01" style="display: block;">
 					<ul class="home-notice-list">
+						<c:forEach var="board" items="${list}">
 						<li>
 							<a href="${path}/board/view?no=${board.bno}">
 								<p style="font-weight:bold">
 								${board.boardTitle}</p>
-								<span>${board.createDate}</span>
+								<span><fmt:formatDate pattern="yyyy-MM-add" value="${board.createDate}" /></span>
 							</a>
 						</li>
-						<li>
-							<a href="#">
-								<p style="font-weight:bold">
-								★★2022학년도 글로벌 언어 집중 강좌(GLIP) 세션6 수강생 모집★★</p>
-								<span>2022-12-15</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p style="font-weight:bold">
-								용당캠퍼스 상주업체 주차등록 안내 및 무료주차권 구입 신청서 첨부</p>
-								<span>2022-05-12</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>
-								개인정보 유출사고 위험진단 안내</p>
-								<span>2022-12-21</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>
-								[장애학생지원센터]2022년 학내구성원 대상 장애인식개선교육 안내</p>
-								<span>2022-12-20</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>
-								2023학년도 1학기 글로벌수산대학원 재입학 시행 계획 알림</p>
-								<span>2022-12-20</span>
-							</a>
-						</li>
+						</c:forEach>
 					</ul><!-- home-notice-list -->
 				</div>
 			</div>
