@@ -59,8 +59,8 @@
 	<!-- cno를 조건으로 테이블 내용 가져오기 -->
 	<select id="selectCultureByCno" resultMap="cultureListResultMap" parameterType="int">
 		SELECT
-			C.CNO, C.REALMNAME, C.TITLE,  C.STARTDATE, C.ENDDATE, C.PLACE, CD.contents1, C.THUMBNAIL, CD.price, CD.placeUrl, CD.placeAddr, CD.url
-		FROM CULTURAL C JOIN CULTURAL_DETAIL CD ON(C.SEQ = CD.SEQ)
+			C.CNO, C.REALMNAME, C.TITLE,  C.STARTDATE, C.ENDDATE, C.PLACE, C.contents1, C.THUMBNAIL
+		FROM CULTURAL C
 		WHERE C.CNO=#{cno}
 	</select>
 	

@@ -464,3 +464,22 @@ insert into CULTURAL_LIST values(191, '315237', '오리엔탈의 빛, 쿠사마 
 insert into CULTURAL_LIST values(192, '355233', '모네 향기를 만나다展', '2023.01.03', '2023.02.10', '헤리이스갤러리', '전시', '부산', 'http://tkfile.yes24.com/upload2/PerfBlog/202108/20210820/20210820-38350.jpg',127.1155185576658,  127.115517876352);
 insert into CULTURAL_LIST values(193, '325232', '데이비드 호크니 작품으로 배우는 미술상식', '2023.01.01', '2023.01.09', '라움아트센터', '전시', '경기', 'http://tkfile.yes24.com/upload2/PerfBlog/202010/20201030/20201030-37629.jpg',127.1155185576658,  127.115517876352);
 -- ------------------------------------------------------------
+-- ---------- 12/29 공연상세정보 추가
+UPDATE CULTURAL_DETAIL SET contents1='https://contents.sixshop.com/thumbnails/uploadedFiles/167156/default/image_1625184648913_1000.jpg' WHERE SEQ =174595;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000636-01.jpg' WHERE SEQ =202280;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000900-01.jpg' WHERE SEQ =202823;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/21/21013446-02.jpg' WHERE SEQ =203205;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/21/21013479-01.jpg' WHERE SEQ =203668;
+UPDATE CULTURAL_DETAIL SET contents1='https://tickets.interpark.com/goods/21013470' WHERE SEQ =203670;  
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22001215-01.jpg' WHERE SEQ =203967;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/21013344-04.jpg' WHERE SEQ =204133;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000080-01.jpg' WHERE SEQ =204151;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22001573-01.jpg' WHERE SEQ =204314;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22001897-01.jpg' WHERE SEQ =204523;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000412-03.jpg' WHERE SEQ =204562;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000310-01.jpg' WHERE SEQ =204565;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000001-01.jpg' WHERE SEQ =204570;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000634-01.jpg' WHERE SEQ =205012;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000673-02.jpg' WHERE SEQ =205324;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22002313-08.jpg' WHERE SEQ =205428;
+UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000716-01.jpg' WHERE SEQ =205678;
