@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RankingList {         
 	private int pNo          ;
+	private int cultureNo	 ;
 	private int rankNo       ;
 	private double bookRate  ;
 	private String mt20id    ;
@@ -20,6 +21,7 @@ public class RankingList {
 	private String fdtynm    ;
 	private String poster    ;
 	private String genrenm   ;
+	private String area		 ;
 	private String prfstate  ;
 	private String openrun   ;
 }

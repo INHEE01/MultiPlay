@@ -18,7 +18,7 @@ public class SubmainService {
 	public List<RankingList> getRankingList(Map<String, Object> map) {
 		return mapper.selectRankingList(map);
 	}
-
+	// TOP 10 출력
 	public List<RankingList> getMusicalRankingList(Map<String, Object> map) {
 		return mapper.selectMusicalRanking(map);
 	}
@@ -37,6 +37,30 @@ public class SubmainService {
 
 	public List<RankingList> getDisplayRankingList(Map<String, Object> map) {
 		return mapper.selectDisplayRanking(map);
+	}
+	// TOP 5 출력
+	public List<RankingList> getRankingTopFive(Map<String, Object> map) {
+		return mapper.selectRankingTopFive(map);
+	}
+	
+	public List<RankingList> getMusicalTopFive(Map<String, Object> map) {
+		return mapper.selectMusicalTopFive(map);
+	}
+	
+	public List<RankingList> getPlayTopFive(Map<String, Object> map) {
+		return mapper.selectPlayTopFive(map);
+	}
+	
+	public List<RankingList> getConcertTopFive(Map<String, Object> map) {
+		return mapper.selectConcertTopFive(map);
+	}
+	
+	public List<RankingList> getClassicTopFive(Map<String, Object> map) {
+		return mapper.selectClassicTopFive(map);
+	}
+	
+	public List<RankingList> getDisplayTopFive(Map<String, Object> map) {
+		return mapper.selectDisplayTopFive(map);
 	}
 
 }

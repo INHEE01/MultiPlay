@@ -11,4 +11,5 @@ import com.multi.mvc.culture.model.vo.Culture;
 public interface CultureMapper {
 	List<Culture> selectCulture(Map<String, String> map);
 	Culture selectCultureByCno(int cno);
+	Culture selectCultureByTitle(String title);
 }

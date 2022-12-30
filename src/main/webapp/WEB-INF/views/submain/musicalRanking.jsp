@@ -95,7 +95,7 @@
 								style="width: 150px; height: 200px;" /></td>
 							<td class="ranking-content" style="width : 300px;"><strong><c:out
 										value="${rankingList.prfnm}" /></strong></td>
-							<td class="ranking-content"><fmt:formatDate var="dayFrom"
+							<td class="ranking-content" style="width: 200px;"><fmt:formatDate var="dayFrom"
 									value="${rankingList.prfpdfrom}" pattern="yyyy.MM.dd" /> <c:out
 									value="${dayFrom}" />&#32;~&#32; <fmt:formatDate var="dayTo"
 									value="${rankingList.prfpdto}" pattern="yyyy.MM.dd" /> <c:out
@@ -103,7 +103,7 @@
 								<p class="ranking-place">
 									<strong><c:out value="${rankingList.fdtynm}" /></strong>
 								</p></td>
-							<td class="ranking-content">
+							<td class="ranking-content" style="width:100px;">
 								<p style="font-weight: 600; color: #ffaa46; font-size: 20px;">
 									<c:out value="${rankingList.bookRate}" />
 

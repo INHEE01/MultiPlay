@@ -47,6 +47,7 @@ public class SubmainController {
 	
 	@RequestMapping("/genreDetail")
 	public String view(Model model, @RequestParam("cno") int cno, @RequestParam Map<String, String> param) {
+		
 		Culture culture = cService.getCultureByCno(cno);
 		
 		if(culture == null) {

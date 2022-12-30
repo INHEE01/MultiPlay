@@ -64,4 +64,11 @@
 		WHERE C.CNO=#{cno}
 	</select>
 	
+	<select id="selectCultureByTitle" resultMap="cultureListResultMap" parameterType="string">
+		SELECT
+			C.CNO, C.REALMNAME, C.TITLE,  C.STARTDATE, C.ENDDATE, C.PLACE, C.contents1, C.THUMBNAIL
+		FROM CULTURAL C
+		WHERE C.TITLE=#{title}
+	</select>
+	
 </mapper>

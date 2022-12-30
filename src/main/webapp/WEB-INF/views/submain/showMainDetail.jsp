@@ -119,6 +119,9 @@
   <th noWrap>      공연 마감일</th>
   <th noWrap><input type="date" class="calender" name="endday"  value="${endday}"
        min="2000-01-01" max="2030-12-31"></th>
+       <th></th>
+       <th></th>
+       
   </tr>
 </table>
 </form>
@@ -130,7 +133,7 @@
 		<c:forEach var="item" items="${list}">
 			<li>
 				<div class="home-top5-list">
-					<a href="#"> <img
+					<a href="${path}/submain/genreDetail?cno=${item.show_cno}"> <img
 						src=${item.show_thumbnail}
 						alt="" class="rounded-top-md card-img-top home-top5-img">
 

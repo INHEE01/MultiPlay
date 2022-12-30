@@ -68,7 +68,7 @@
 						<div class="item">
 							<!-- Card -->
 							<div class="card mb-4 card-hover">
-								<a href="#" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=141" class="card-img-top"><img
 									src="http://tkfile.yes24.com/upload2/perfblog/202209/20220922/20220922-43616.jpg/dims/quality/70/"
 									alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
 
@@ -80,7 +80,7 @@
 						<div class="item">
 							<!-- Card -->
 							<div class="card mb-4 card-hover">
-								<a href="#" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=132" class="card-img-top"><img
 									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221128/20221128-43451.jpg/dims/quality/70/"
 									alt="" class=" rounded-bottom-md rounded-top-md card-img-top"></a>
 
@@ -91,7 +91,7 @@
 						<div class="item">
 							<!-- Card -->
 							<div class="card mb-4 card-hover">
-								<a href="#" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=119" class="card-img-top"><img
 									src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
 									alt="" class=" rounded-bottom-md rounded-top-md card-img-top"></a>
 
@@ -102,7 +102,7 @@
 						<div class="item">
 							<!-- Card -->
 							<div class="card mb-4 card-hover">
-								<a href="#" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=142" class="card-img-top"><img
 									src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43815.jpg/dims/quality/70/"
 									alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
 
@@ -113,7 +113,7 @@
 						<div class="item">
 							<!-- Card -->
 							<div class="card mb-4 card-hover">
-								<a href="#" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=136" class="card-img-top"><img
 									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/"
 									alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
 
@@ -124,19 +124,8 @@
 						<div class="item">
 							<!-- Card -->
 							<div class="card mb-4 card-hover">
-								<a href="#" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=123" class="card-img-top"><img
 									src="http://tkfile.yes24.com/upload2/perfblog/202211/20221121/20221121-43929.jpg/dims/quality/70/"
-									alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
-
-							</div>
-						</div>
-
-
-						<div class="item">
-							<!-- Card -->
-							<div class="card mb-4 card-hover">
-								<a href="#" class="card-img-top"><img
-									src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43981.jpg/dims/quality/70/"
 									alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
 
 							</div>

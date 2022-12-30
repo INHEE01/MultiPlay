@@ -66,7 +66,7 @@
 					<div class="item">
 						<!-- Card -->
 						<div class="card mb-4 card-hover">
-							<a href="#" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=141" class="card-img-top"><img
 								src="http://tkfile.yes24.com/upload2/perfblog/202209/20220922/20220922-43616.jpg/dims/quality/70/"
 								alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
 						</div>
@@ -75,7 +75,7 @@
 					<div class="item">
 						<!-- Card -->
 						<div class="card mb-4 card-hover">
-							<a href="#" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=132" class="card-img-top"><img
 								src="http://tkfile.yes24.com/upload2/perfblog/202211/20221128/20221128-43451.jpg/dims/quality/70/"
 								alt="" class=" rounded-bottom-md rounded-top-md card-img-top"></a>
 						</div>
@@ -84,7 +84,7 @@
 					<div class="item">
 						<!-- Card -->
 						<div class="card mb-4 card-hover">
-							<a href="#" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=119" class="card-img-top"><img
 								src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
 								alt="" class=" rounded-bottom-md rounded-top-md card-img-top"></a>
 
@@ -95,8 +95,8 @@
 					<div class="item">
 						<!-- Card -->
 						<div class="card mb-4 card-hover">
-							<a href="#" class="card-img-top"><img
-								src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43815.jpg/dims/quality/70/"
+							<a href="${path}/submain/genreDetail?cno=142" class="card-img-top"><img
+								src="http://tkfile.yes24.com/upload2/PerfBlog/202210/20221018/20221018-43839_1.jpg"
 								alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
 
 						</div>
@@ -106,7 +106,7 @@
 					<div class="item">
 						<!-- Card -->
 						<div class="card mb-4 card-hover">
-							<a href="#" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=136" class="card-img-top"><img
 								src="http://tkfile.yes24.com/upload2/perfblog/202211/20221114/20221114-44090.jpg/dims/quality/70/"
 								alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
 
@@ -117,19 +117,8 @@
 					<div class="item">
 						<!-- Card -->
 						<div class="card mb-4 card-hover">
-							<a href="#" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=136" class="card-img-top"><img
 								src="http://tkfile.yes24.com/upload2/perfblog/202211/20221121/20221121-43929.jpg/dims/quality/70/"
-								alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
-
-						</div>
-					</div>
-
-
-					<div class="item">
-						<!-- Card -->
-						<div class="card mb-4 card-hover">
-							<a href="#" class="card-img-top"><img
-								src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43981.jpg/dims/quality/70/"
 								alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
 
 						</div>
@@ -138,6 +127,7 @@
 			</div>
 		</div>
 	</div>
+	</section>
 	<section id="content" class="container">
 		<h2 class="exhibition-center pb-8" style="text-align: center">지역별 공연 & 전시</h2>
 			<form action="${path}/submain/locationMainDetail" method="get">
@@ -161,15 +151,18 @@
 				</table>
 			</form>
 	</section>
-<div class="home-top5-area container">
+<h3 style="margin-left:22%">공연</h3>
+	
+	<div class="home-top5-area container">
 		<ul >
+	
 		<c:forEach var="item" items="${list}">
 			<li>
+				<c:if test= "${item.show_realmname == '연극'||item.show_realmname == '콘서트'||item.show_realmname == '클래식'||item.show_realmname == '무용'}" >
 				<div class="home-top5-list">
-					<a href="#"> <img
+					<a href="${path}/submain/genreDetail?cno=${item.show_cno}"> <img
 						src=${item.show_thumbnail}
 						alt="" class="rounded-top-md card-img-top home-top5-img">
-
 					</a>
 				</div>
 				<div class="box">
@@ -191,8 +184,48 @@
 						</tr>
 					</table>
 				</div>
+				</c:if>
 			</li>
 		</c:forEach>
+			
+		</ul>
+	</div>
+	<h3 style="margin-left:22%">전시</h3>
+	
+	<div class="home-top5-area container">
+		<ul >
+		<c:forEach var="item" items="${list}">
+			<li>
+				<c:if test= "${item.show_realmname == '전시'||item.show_realmname == '미술'}" >
+				<div class="home-top5-list">
+					<a href="${path}/submain/genreDetail?cno=${item.show_cno}"> <img
+						src=${item.show_thumbnail}
+						alt="" class="rounded-top-md card-img-top home-top5-img">
+					</a>
+				</div>
+				<div class="box">
+					<table class="table-bottom">
+						<tr>
+							<td>
+								<h4>${item.show_title} <br></h4>
+							</td>
+						</tr>
+
+						<tr>
+							<td><h5>${item.show_place}</h5></td>
+						</tr>
+						<tr>
+							<td><h6>
+									${item.show_startdate} <br>
+									${item.show_enddate} <br>
+								</h6></td>
+						</tr>
+					</table>
+				</div>
+				</c:if>
+			</li>
+		</c:forEach>
+			
 		</ul>
 	</div>
 	

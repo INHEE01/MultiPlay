@@ -15,6 +15,13 @@ public interface SubmainMapper {
 	List<RankingList> selectConcertRanking(Map<String, Object> map);
 	List<RankingList> selectClassicRanking(Map<String, Object> map);
 	List<RankingList> selectDisplayRanking(Map<String, Object> map);
+	
+	List<RankingList> selectRankingTopFive(Map<String, Object> map);
+	List<RankingList> selectMusicalTopFive(Map<String, Object> map);
+	List<RankingList> selectPlayTopFive(Map<String, Object> map);
+	List<RankingList> selectConcertTopFive(Map<String, Object> map);
+	List<RankingList> selectClassicTopFive(Map<String, Object> map);
+	List<RankingList> selectDisplayTopFive(Map<String, Object> map);
 
 	
 }

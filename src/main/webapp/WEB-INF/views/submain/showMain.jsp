@@ -118,6 +118,8 @@
   <th noWrap>공연 마감일</th>
   <th noWrap><input type="date" class="calender" name="endday"
        min="2000-01-01" max="2030-12-31"></th>
+       <th></th>
+       <th></th>
   </tr>
 </table>
 </form>
@@ -140,7 +142,7 @@
 							<!-- Card category -->
 							<a href="#" class="badge text-bg-danger mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>HOT</a>
 							<!-- Card title -->
-							<h2 class="text-white h1"><a href="#" class="btn-link stretched-link text-reset">멜로망스 콘서트</a></h2>
+							<h2 class="text-white h1"><a href="${path}/submain/genreDetail?cno=160" class="btn-link stretched-link text-reset">멜로망스 콘서트</a></h2>
 							<p class="text-white">2022.12 ~2023.02 전국투어</p>
 						</div>
 					</div>
@@ -159,7 +161,7 @@
 									<!-- Card category -->
 									<a href="#" class="badge text-bg-warning mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>LIVE</a>
 									<!-- Card title -->
-									<h4 class="text-white"><a href="post-single-4.html" class="btn-link stretched-link text-reset">카운트 판타지</a></h4>
+									<h4 class="text-white"><a href="${path}/submain/genreDetail?cno=104" class="btn-link stretched-link text-reset">카운트 판타지</a></h4>
 									<p class="text-white">2022.12 ~ 2022.12.25 올림픽공원</p>
 									
 								</div>
@@ -176,7 +178,7 @@
 									<!-- Card category -->
 									<a href="#" class="badge text-bg-success mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>Busan</a>
 									<!-- Card title -->
-									<h4 class="text-white"><a href="post-single-4.html" class="btn-link stretched-link text-reset">적재 콘서트</a></h4>
+									<h4 class="text-white"><a href="${path}/submain/genreDetail?cno=105" class="btn-link stretched-link text-reset">적재 콘서트</a></h4>
 									<!-- Card info -->
 								<p class="text-white">2022.12 ~ 2023.01.20 부산</p>
 									
@@ -194,7 +196,7 @@
 									<!-- Card category -->
 									<a href="#" class="badge text-bg-info mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>Seoul</a>
 									<!-- Card title -->
-									<h4 class="text-white"><a href="post-single-4.html" class="btn-link stretched-link text-reset">O Holy Night</a></h4>
+									<h4 class="text-white"><a href="${path}/submain/genreDetail?cno=103" class="btn-link stretched-link text-reset">O Holy Night</a></h4>
 								<p class="text-white">2023.01.01 ~ 2023.01.20 서울</p>
 									
 								</div>
@@ -251,10 +253,10 @@ JS libraries, plugins and custom scripts -->
                     <div class="item">
                         <!-- Card -->
                         <div class="card  mb-4 card-hover">
-                            <a href="pages/course-single.html" class="card-img-top"><img src="http://tkfile.yes24.com/upload2/perfblog/202210/20221006/20221006-43740.jpg/dims/quality/70/" alt="" class="rounded-top-md card-img-top"></a>
+                            <a href="${path}/submain/genreDetail?cno=107" class="card-img-top"><img src="http://tkfile.yes24.com/upload2/perfblog/202210/20221006/20221006-43740.jpg/dims/quality/70/" alt="" class="rounded-top-md card-img-top"></a>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <h5 class="mb-2 text-truncate-line-2 "><a href="pages/course-single.html" class="text-inherit">백지영 전국투어 콘서트</a></h5>
+                                <h5 class="mb-2 text-truncate-line-2 "><a href="${path}/submain/genreDetail?cno=107" class="text-inherit">백지영 전국투어 콘서트</a></h5>
                                 <!-- List -->
                                 
                                 <div class="lh-1">
@@ -291,10 +293,10 @@ JS libraries, plugins and custom scripts -->
                     <div class="item">
                         <!-- Card -->
                         <div class="card  mb-4 card-hover">
-                            <a href="pages/course-single.html" class="card-img-top"><img src="http://tkfile.yes24.com/upload2/PerfBlog/202212/20221215/20221215-43925.jpg" alt="" class="rounded-top-md card-img-top"></a>
+                            <a href="${path}/submain/genreDetail?cno=105" class="card-img-top"><img src="http://tkfile.yes24.com/upload2/PerfBlog/202212/20221215/20221215-43925.jpg" alt="" class="rounded-top-md card-img-top"></a>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <h5 class="mb-2 text-truncate-line-2 "><a href="pages/course-single.html" class="text-inherit">적재 전국투어 콘서트</a></h5>
+                                <h5 class="mb-2 text-truncate-line-2 "><a href="${path}/submain/genreDetail?cno=105" class="text-inherit">적재 전국투어 콘서트</a></h5>
                                 <!-- List -->
                                 
                                 <div class="lh-1">
@@ -329,10 +331,10 @@ JS libraries, plugins and custom scripts -->
                     <div class="item">
                         <!-- Card -->
                         <div class="card  mb-4 card-hover">
-                            <a href="pages/course-single.html" class="card-img-top"><img src="http://tkfile.yes24.com/upload2/perfblog/202212/20221215/20221215-44375_1.jpg/dims/quality/70/" alt="" class="card-img-top rounded-top-md"></a>
+                            <a href="${path}/submain/genreDetail?cno=111" class="card-img-top"><img src="http://tkfile.yes24.com/upload2/perfblog/202212/20221215/20221215-44375_1.jpg/dims/quality/70/" alt="" class="card-img-top rounded-top-md"></a>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <h5 class="mb-2 text-truncate-line-2 "><a href="pages/course-single.html" class="text-inherit">예스 24 콘서트</a></h5>
+                                <h5 class="mb-2 text-truncate-line-2 "><a href="${path}/submain/genreDetail?cno=111" class="text-inherit">예스 24 콘서트</a></h5>
                                 <!-- List -->
                                 
                                 <div class="lh-1">
@@ -368,11 +370,11 @@ JS libraries, plugins and custom scripts -->
                     
                         <!-- Card -->
                         <div class="card  mb-4 card-hover">
-                            <a href="pages/course-single.html" class="card-img-top"><img
+                            <a href="${path}/submain/genreDetail?cno=109" class="card-img-top"><img
 								src="http://tkfile.yes24.com/upload2/perfblog/202212/20221201/20221201-44255.jpg/dims/quality/70/"
 								alt="" class="rounded-bottom-md rounded-top-md card-img-top"></a>
                             <div class="card-body">
-                                <h5 class="mb-2 text-truncate-line-2 "><a href="pages/course-single.html" class="text-inherit">N flying 전국투어 콘서트</a></h5>
+                                <h5 class="mb-2 text-truncate-line-2 "><a href="${path}/submain/genreDetail?cno=109" class="text-inherit">N flying 전국투어 콘서트</a></h5>
                                 <!-- List -->
                                 
                                 <div class="lh-1">
@@ -407,10 +409,10 @@ JS libraries, plugins and custom scripts -->
                     <div class="item">
                         <!-- Card -->
                         <div class="card  mb-4 card-hover">
-                            <a href="pages/course-single.html" class="card-img-top"><img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221128/20221128-44300.jpg/dims/quality/70/" alt="" class="rounded-top-md card-img-top"></a>
+                            <a href="${path}/submain/genreDetail?cno=106" class="card-img-top"><img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221128/20221128-44300.jpg/dims/quality/70/" alt="" class="rounded-top-md card-img-top"></a>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <h5 class="mb-2 text-truncate-line-2 "><a href="pages/course-single.html" class="text-inherit">오로라 내한 공연</a></h5>
+                                <h5 class="mb-2 text-truncate-line-2 "><a href="${path}/submain/genreDetail?cno=106" class="text-inherit">오로라 내한 공연</a></h5>
                                 <!-- List -->
                                
                                 <div class="lh-1">
@@ -446,10 +448,10 @@ JS libraries, plugins and custom scripts -->
                     <div class="item">
                         <!-- Card -->
                         <div class="card  mb-4 card-hover">
-                            <a href="pages/course-single.html" class="card-img-top"><img src="http://tkfile.yes24.com/upload2/perfblog/202212/20221219/20221219-44456.jpg/dims/quality/70/" alt="" class="card-img-top rounded-top-md"></a>
+                            <a href="${path}/submain/genreDetail?cno=108" class="card-img-top"><img src="http://tkfile.yes24.com/upload2/perfblog/202212/20221219/20221219-44456.jpg/dims/quality/70/" alt="" class="card-img-top rounded-top-md"></a>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <h5 class="mb-2 text-truncate-line-2 "><a href="pages/course-single.html" class="text-inherit">검정치마 연말 콘서트</a></h5>
+                                <h5 class="mb-2 text-truncate-line-2 "><a href="${path}/submain/genreDetail?cno=108" class="text-inherit">검정치마 연말 콘서트</a></h5>
                                 <!-- List -->
                                 
                                 <div class="lh-1">
@@ -485,10 +487,10 @@ JS libraries, plugins and custom scripts -->
                     <div class="item">
                         <!-- Card -->
                         <div class="card  mb-4 card-hover">
-                            <a href="pages/course-single.html" class="card-img-top"><img src="http://tkfile.yes24.com/upload2/perfblog/202212/20221215/20221215-44424.jpg/dims/quality/70/" alt="" class="card-img-top rounded-top-md"></a>
+                            <a href="${path}/submain/genreDetail?cno=110" class="card-img-top"><img src="http://tkfile.yes24.com/upload2/perfblog/202212/20221215/20221215-44424.jpg/dims/quality/70/" alt="" class="card-img-top rounded-top-md"></a>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <h5 class="mb-2 text-truncate-line-2 "><a href="pages/course-single.html" class="text-inherit">아담스 내한공연</a></h5>
+                                <h5 class="mb-2 text-truncate-line-2 "><a href="${path}/submain/genreDetail?cno=110" class="text-inherit">아담스 내한공연</a></h5>
                                 <!-- List -->
                      
                                 <div class="lh-1">

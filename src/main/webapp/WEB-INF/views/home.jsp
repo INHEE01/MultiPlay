@@ -230,252 +230,101 @@
 			<input id="home-tab1" type="radio" name="tab" checked="checked"/>
 			<input id="home-tab2" type="radio" name="tab" />
 			<input id="home-tab3" type="radio" name="tab" />
+
 			<%-- 라벨 : 화면에 표시되는 탭 제목 --%>
 			<label for="home-tab1">전체</label>
 			<label for="home-tab2">공연</label>
 			<label for="home-tab3">전시</label>
+
 			<hr class="home-hr">
 			<%-- 탭1 시작 --%>
 			<div class="home-top5-area home-tab1-content">
+				<c:if test="${musicalRankingList != null }">
 				<ul>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221128/20221128-43451.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">뮤지컬 지저스 크라이스트 수퍼스타</p>
-										<p class="home-top5-detail">
-											2022. 11. 10. ~ 2023. 01. 15.<br>광림아트센터 BBCH홀
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>					
-					</li>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221128/20221128-43451.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">뮤지컬 지저스 크라이스트 수퍼스타</p>
-										<p class="home-top5-detail">
-											2022. 11. 10. ~ 2023. 01. 15.<br>광림아트센터 BBCH홀
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>					
-					</li>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221128/20221128-43451.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">뮤지컬 지저스 크라이스트 수퍼스타</p>
-										<p class="home-top5-detail">
-											2022. 11. 10. ~ 2023. 01. 15.<br>광림아트센터 BBCH홀
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>					
-					</li>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221128/20221128-43451.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">뮤지컬 지저스 크라이스트 수퍼스타</p>
-										<p class="home-top5-detail">
-											2022. 11. 10. ~ 2023. 01. 15.<br>광림아트센터 BBCH홀
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>					
-					</li>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221128/20221128-43451.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">뮤지컬 지저스 크라이스트 수퍼스타</p>
-										<p class="home-top5-detail">
-											2022. 11. 10. ~ 2023. 01. 15.<br>광림아트센터 BBCH홀
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>					
-					</li>
+						<c:forEach var="musical" items="${musicalRankingList}">
+							<li>
+								<div class="home-top5-list">
+									<a href="${path}/submain/genreDetail?cno=${musical.cultureNo}">
+										<img src="<c:out value="${musical.poster}"/>" alt="" class="home-top5-img">
+										<div class="top5-list-txt">
+											<div>
+												<p class="home-top5-title"><c:out value="${musical.prfnm}"/></p>
+												<p class="home-top5-detail">
+													<fmt:formatDate var="dayFrom"
+													value="${musical.prfpdfrom}" pattern="yyyy.MM.dd" /> <c:out
+													value="${dayFrom}" />&#32;~&#32; <fmt:formatDate var="dayTo"
+													value="${musical.prfpdto}" pattern="yyyy.MM.dd" /> <c:out
+													value="${dayTo}" /><br>
+													<br><c:out value="${musical.fdtynm}"/>
+												</p>
+											</div>
+										</div>
+									</a>
+								</div>					
+							</li>
+						</c:forEach>
 				</ul>
+				</c:if>
 			</div>
 			<%-- 탭2 시작 --%>
 			<div class="home-top5-area home-tab1-content">
+				<c:if test="${classicRankingList != null }">
 				<ul>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221121/20221121-43929.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">연극 서툰 사람들</p>
-										<p class="home-top5-detail">
-											2022. 11. 26. ~ 2023. 02. 19.<br>예스24스테이지 3관
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>					
-					</li>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221121/20221121-43929.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">연극 서툰 사람들</p>
-										<p class="home-top5-detail">
-											2022. 11. 26. ~ 2023. 02. 19.<br>예스24스테이지 3관
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>					
-					</li>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221121/20221121-43929.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">연극 서툰 사람들</p>
-										<p class="home-top5-detail">
-											2022. 11. 26. ~ 2023. 02. 19.<br>예스24스테이지 3관
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>			
-					</li>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221121/20221121-43929.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">연극 서툰 사람들</p>
-										<p class="home-top5-detail">
-											2022. 11. 26. ~ 2023. 02. 19.<br>예스24스테이지 3관
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>				
-					</li>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202211/20221121/20221121-43929.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">연극 서툰 사람들</p>
-										<p class="home-top5-detail">
-											2022. 11. 26. ~ 2023. 02. 19.<br>예스24스테이지 3관
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>			
-					</li>
+						<c:forEach var="classic" items="${classicRankingList}">
+							<li>
+								<div class="home-top5-list">
+									<a href="${path}/submain/genreDetail?cno=${classic.cultureNo}">
+										<img src="<c:out value="${classic.poster}"/>" alt="" class="home-top5-img">
+										<div class="top5-list-txt">
+											<div>
+												<p class="home-top5-title"><c:out value="${classic.prfnm}"/></p>
+												<p class="home-top5-detail">
+													<fmt:formatDate var="dayFrom"
+													value="${classic.prfpdfrom}" pattern="yyyy.MM.dd" /> <c:out
+													value="${dayFrom}" />&#32;~&#32; <fmt:formatDate var="dayTo"
+													value="${classic.prfpdto}" pattern="yyyy.MM.dd" /> <c:out
+													value="${dayTo}" /><br>
+													<br><c:out value="${classic.fdtynm}"/>
+												</p>
+											</div>
+										</div>
+									</a>
+								</div>					
+							</li>
+						</c:forEach>
 				</ul>
+				</c:if>
 			</div>
 			<%-- 탭3 시작 --%>
 			<div class="home-top5-area home-tab3-content">
+				<c:if test="${displayRankingList != null }">
 				<ul>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">연극 사나이 와타나베</p>
-										<p class="home-top5-detail">
-											2022. 10. 25. ~ 2023. 01. 15.<br>플러스씨어터
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>					
-					</li>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">연극 사나이 와타나베</p>
-										<p class="home-top5-detail">
-											2022. 10. 25. ~ 2023. 01. 15.<br>플러스씨어터
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>						
-					</li>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">연극 사나이 와타나베</p>
-										<p class="home-top5-detail">
-											2022. 10. 25. ~ 2023. 01. 15.<br>플러스씨어터
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>					
-					</li>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">연극 사나이 와타나베</p>
-										<p class="home-top5-detail">
-											2022. 10. 25. ~ 2023. 01. 15.<br>플러스씨어터
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>						
-					</li>
-					<li>
-						<div class="home-top5-list">
-							<a href="#">
-								<img src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/" alt="" class="home-top5-img">
-								<div class="top5-list-txt">
-									<div>
-										<p class="home-top5-title">연극 사나이 와타나베</p>
-										<p class="home-top5-detail">
-											2022. 10. 25. ~ 2023. 01. 15.<br>플러스씨어터
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>					
-					</li>
+						<c:forEach var="display" items="${displayRankingList}">
+							<li>
+								<div class="home-top5-list">
+									<a href="${path}/submain/genreDetail?cno=${display.cultureNo}">
+										<img src="<c:out value="${display.poster}"/>" alt="" class="home-top5-img">
+										<div class="top5-list-txt">
+											<div>
+												<p class="home-top5-title"><c:out value="${display.prfnm}"/></p>
+												<p class="home-top5-detail">
+													<fmt:formatDate var="dayFrom"
+													value="${display.prfpdfrom}" pattern="yyyy.MM.dd" /> <c:out
+													value="${dayFrom}" />&#32;~&#32; <fmt:formatDate var="dayTo"
+													value="${display.prfpdto}" pattern="yyyy.MM.dd" /> <c:out
+													value="${dayTo}" /><br>
+													<br><c:out value="${display.fdtynm}"/>
+												</p>
+											</div>
+										</div>
+									</a>
+								</div>					
+							</li>
+						</c:forEach>
 				</ul>
+				</c:if>
 			</div>
-		</div>
+		
 		<%-- 탑5 끝 --%>
 
 		<%-- 섹션 4 : 공연후기 + 공지사항 --%>

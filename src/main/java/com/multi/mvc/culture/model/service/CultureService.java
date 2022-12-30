@@ -25,6 +25,9 @@ public class CultureService {
 		return mapper.selectCultureByCno(cno);
 	}
 	
-	
+	@Transactional(rollbackFor = Exception.class)
+	public Culture getCultureByTitle(String title) {
+		return mapper.selectCultureByTitle(title);
+	}
 	
 }

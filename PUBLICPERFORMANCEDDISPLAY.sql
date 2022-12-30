@@ -588,3 +588,31 @@ UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/ima
 UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000673-02.jpg' WHERE SEQ =205324;
 UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22002313-08.jpg' WHERE SEQ =205428;
 UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000716-01.jpg' WHERE SEQ =205678;
+-- --------------- 12/30 예약정보 추가
+insert into bookINFO values(0, 5, "미녀와 야수[창원]", "WYB", "왕예빈", 1, 3, 'C4', '2022-12-25',30000, '신용카드', DEFAULT);
+insert into bookINFO values(0, 5, "미녀와 야수[창원]", "JWS", "정우성", 1, 3, 'C5,C6', '2022-12-25',60000, '신용카드', DEFAULT);
+insert into bookINFO values(0, 5, "미녀와 야수[창원]", "INHEE", "이인희", 1, 3, 'C4', '2022-12-25',30000, '신용카드', DEFAULT);
+insert into bookINFO values(0, 5, "미녀와 야수[창원]", "2INHEE", "이윤희", 2, 3, 'C4', '2022-10-30', 30000, '신용카드',  DEFAULT);
+insert into bookINFO values(0, 5, "미녀와 야수[창원]", "PWC", "박원철", 1, 3, 'C4', '2022-12-25',30000, '신용카드', DEFAULT);
+insert into bookINFO values(0, 5, "미녀와 야수[창원]", "AJH", "안종호", 1, 3, 'C4', '2022-12-25',30000, '신용카드', DEFAULT);
+insert into bookINFO values(0, 5, "미녀와 야수[창원]", "CTY", "최지유", 1, 3, 'C4', '2022-12-25',30000, '신용카드', DEFAULT);
+insert into bookINFO values(0, 5, "미녀와 야수[창원]", "AJH", "안종호", 1, 3, 'C4', '2022-12-25',30000, '신용카드', DEFAULT);
+
+
+-- ------------ 12/30 리뷰 추가
+INSERT INTO REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
+			VALUES(0, 5, 3, 6, '미녀와 야수 최고!!', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
+			VALUES(0, 5, 1, 7, '완전 꿀잼 ㅎㅎ', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+insert into REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
+			VALUES(0, 5, 2, 8, '크리스마스에 딱이에요', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+insert into REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
+			VALUES(0, 5, 3, 9, '또 보고싶다', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+insert into REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
+			VALUES(0, 5, 4, 10, '저는 그냥 그렇더라구요', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+insert into REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
+			VALUES(0, 5, 6, 11, '공연장이 좀 추웠어요', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+insert into REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
+			VALUES(0, 5, 7, 12, '배우분들이 인사 해주셨닿ㅎ', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+insert into REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
+			VALUES(0, 5, 6, 13, '친구랑 봤어요 재밌었음~', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);

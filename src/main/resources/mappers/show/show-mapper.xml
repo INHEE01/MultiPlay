@@ -28,7 +28,7 @@
 	<select id="selectShowList" parameterType="map" resultMap="showResultMap">
 		SELECT * FROM CULTURAL_LIST
 		WHERE 1=1
-		AND REALMNAME IN  ('연극','콘서트','클래식','무용','뮤지컬')
+		AND REALMNAME IN  ('연극','콘서트','클래식','무용','뮤지컬', '기타')
 		<if test="searchValue != null">
 			AND TITLE like '%${searchValue}%'
 		</if>
@@ -84,7 +84,7 @@
 		resultMap="showResultMap">
 		SELECT * FROM CULTURAL_LIST
 		WHERE 1=1
-		AND REALMNAME IN  ('연극','콘서트','클래식','무용','뮤지컬')
+		AND REALMNAME IN  ('연극','콘서트','클래식','무용','뮤지컬', '기타')
 		AND TITLE like '%${value}%'
 		<if test="value != null">
 			AND TITLE like '%${value}%'

@@ -20,13 +20,12 @@ import com.multi.mvc.board.model.vo.Board;
 import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.culture.model.service.CultureService;
 import com.multi.mvc.culture.model.vo.Culture;
+import com.multi.mvc.submain.model.service.SubmainService;
+import com.multi.mvc.submain.model.vo.RankingList;
 import com.multi.mvc.user.model.service.UserService;
-
-import lombok.extern.slf4j.Slf4j;
 
 @Controller
 public class HomeController {
-	
 	
 	@Autowired
 	private BoardService bservice;
@@ -36,6 +35,9 @@ public class HomeController {
 	
 	@Autowired
 	private CultureService cService;
+	
+	@Autowired
+	private SubmainService sService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -58,6 +60,21 @@ public class HomeController {
 		PageInfo pageInfo = new PageInfo(1, 6, count, 6);
 		List<Board> list = bservice.getBoardList(pageInfo, map);
 		model.addAttribute("list", list);
+		
+		// TOP5 가져오기
+		Map<String, Object> rankingMap = new HashMap<>();
+		List<RankingList> musicalRankingList = sService.getMusicalTopFive(rankingMap); 
+		List<RankingList> playRankingList = sService.getPlayTopFive(rankingMap);
+		List<RankingList> concertRankingList = sService.getConcertTopFive(rankingMap);
+		List<RankingList> classicRankingList = sService.getClassicTopFive(rankingMap);
+		List<RankingList> displayRankingList = sService.getDisplayTopFive(rankingMap);
+		
+		model.addAttribute("musicalRankingList", musicalRankingList);
+		model.addAttribute("playRankingList", playRankingList);
+		model.addAttribute("concertRankingList", concertRankingList);
+		model.addAttribute("classicRankingList", classicRankingList);
+		model.addAttribute("displayRankingList", displayRankingList);
+		
 		return "home";
 	}
 	

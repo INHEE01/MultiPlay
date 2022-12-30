@@ -88,15 +88,15 @@
 				<div class="row ">
 					<div class="col-12">
 						<div
-							class="tiny-slider arrow-hover arrow-blur arrow-white arrow-round rounded-3 overflow-hidden">
+							class="tiny-slider arrow-hover arrow-blur arrow-white overflow-hidden">
 							<div class="tiny-slider-inner" data-autoplay="true"
 								data-hoverpause="true" data-gutter="1" data-arrow="true"
 								data-dots="false" data-items="1">
 
 								<!-- Slide 1 -->
 								<div
-									class="card bg-dark-overlay-3 h-400 h-sm-500 h-md-600 rounded-0"
-									style="background-image: url(${path}/resources/images/ours/display_img.jpg); background-position: center left; background-size: cover;">
+									class="card bg-dark-overlay-3 h-400 h-sm-500 h-md-600"
+									style="background-image: url(${path}/resources/images/ours/display-banner.jpg); background-position: center left; background-size: cover;">
 									<!-- Card Image overlay -->
 									<div
 										class="card-img-overlay d-flex align-items-center p-3 p-sm-5">
@@ -117,7 +117,7 @@
 								<!-- Slide 2 -->
 								<div
 									class="card bg-dark-overlay-3 h-400 h-sm-500 h-md-600 rounded-0"
-									style="background-image: url(${path}/resources/images/ours/display_img.jpg); background-position: center left; background-size: cover;">
+									style="background-image: url(${path}/resources/images/ours/display-banner.jpg); background-position: center left; background-size: cover;">
 									<!-- Card Image overlay -->
 									<div
 										class="card-img-overlay d-flex align-items-center p-3 p-sm-5">
@@ -149,11 +149,11 @@
 						<div class="card-img-overlay d-flex align-items-center p-3 p-sm-4">
 							<div class="w-100 mt-auto">
 								<!-- Card category -->
-								<a href="#" class="badge text-bg-danger mb-2"><i
+								<a href="${path}/submain/genreDetail?cno=112" class="badge text-bg-danger mb-2"><i
 									class="fas fa-circle me-2 small fw-bold"></i>HOT</a>
 								<!-- Card title -->
 								<h2 class="text-white h1">
-									<a href="#" class="btn-link stretched-link text-reset">함부르크
+									<a href="${path}/submain/genreDetail?cno=112" class="btn-link stretched-link text-reset">합부르크
 										걸작들</a>
 								</h2>
 								<p class="text-white">2022.12 ~2023.02</p>
@@ -174,11 +174,11 @@
 									class="card-img-overlay d-flex align-items-center p-3 p-sm-4">
 									<div class="w-100 mt-auto">
 										<!-- Card category -->
-										<a href="#" class="badge text-bg-warning mb-2"><i
+										<a href="${path}/submain/genreDetail?cno=115" class="badge text-bg-warning mb-2"><i
 											class="fas fa-circle me-2 small fw-bold"></i>LIVE</a>
 										<!-- Card title -->
 										<h4 class="text-white">
-											<a href="post-single-4.html"
+											<a href="${path}/submain/genreDetail?cno=115"
 												class="btn-link stretched-link text-reset">외규장각 전시회</a>
 										</h4>
 										<p class="text-white">2022.12 ~ 2022.12.25</p>
@@ -197,12 +197,12 @@
 									class="card-img-overlay d-flex align-items-center p-3 p-sm-4">
 									<div class="w-100 mt-auto">
 										<!-- Card category -->
-										<a href="#" class="badge text-bg-success mb-2"><i
+										<a href="${path}/submain/genreDetail?cno=114" class="badge text-bg-success mb-2"><i
 											class="fas fa-circle me-2 small fw-bold"></i>Busan</a>
 										<!-- Card title -->
 										<h4 class="text-white">
-											<a href="post-single-4.html"
-												class="btn-link stretched-link text-reset">곰돌이 생일</a>
+											<a href="${path}/submain/genreDetail?cno=114"
+												class="btn-link stretched-link text-reset">하리보 골드베렌 100주년 생일 기념전</a>
 										</h4>
 										<!-- Card info -->
 										<p class="text-white">2022.12 ~ 2023.01.20</p>
@@ -221,11 +221,11 @@
 									class="card-img-overlay d-flex align-items-center p-3 p-sm-4">
 									<div class="w-100 mt-auto">
 										<!-- Card category -->
-										<a href="#" class="badge text-bg-info mb-2"><i
+										<a href="${path}/submain/genreDetail?cno=113" class="badge text-bg-info mb-2"><i
 											class="fas fa-circle me-2 small fw-bold"></i>Seoul</a>
 										<!-- Card title -->
 										<h4 class="text-white">
-											<a href="post-single-4.html"
+											<a href="${path}/submain/genreDetail?cno=113"
 												class="btn-link stretched-link text-reset">뒤뷔페</a>
 										</h4>
 										<p class="text-white">2023.01.01 ~ 2023.01.20 서울</p>
@@ -269,13 +269,13 @@ Main hero END -->
 					<div class="item">
 						<!-- Card -->
 						<div class="card  mb-4 card-hover">
-							<a href="pages/course-single.html" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=116" class="card-img-top"><img
 								src="http://tkfile.yes24.com/upload2/perfblog/202210/20221028/20221028-42880.jpg/dims/quality/70/"
 								alt="" class="rounded-top-md card-img-top"></a>
 							<!-- Card Body -->
 							<div class="card-body">
 								<h5 class="mb-2 text-truncate-line-2 ">
-									<a href="pages/course-single.html" class="text-inherit">다이노스
+									<a href="${path}/submain/genreDetail?cno=116" class="text-inherit">다이노스
 										제주</a>
 								</h5>
 								<!-- List -->
@@ -314,13 +314,13 @@ Main hero END -->
 					<div class="item">
 						<!-- Card -->
 						<div class="card  mb-4 card-hover">
-							<a href="pages/course-single.html" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=117" class="card-img-top"><img
 								src="http://tkfile.yes24.com/upload2/perfblog/202209/20220922/20220922-43614.jpg/dims/quality/70/"
 								alt="" class="card-img-top rounded-top-md"></a>
 							<!-- Card Body -->
 							<div class="card-body">
 								<h5 class="mb-2 text-truncate-line-2 ">
-									<a href="pages/course-single.html" class="text-inherit">프랑코
+									<a href="${path}/submain/genreDetail?cno=117" class="text-inherit">프랑코
 										폰타나</a>
 								</h5>
 								<!-- List -->
@@ -356,13 +356,13 @@ Main hero END -->
 					<div class="item">
 						<!-- Card -->
 						<div class="card  mb-4 card-hover">
-							<a href="pages/course-single.html" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=118" class="card-img-top"><img
 								src="http://tkfile.yes24.com/upload2/perfblog/202211/20221128/20221128-40444.jpg/dims/quality/70/"
 								alt="" class="card-img-top rounded-top-md"></a>
 							<!-- Card Body -->
 							<div class="card-body">
 								<h5 class="mb-2 text-truncate-line-2 ">
-									<a href="pages/course-single.html" class="text-inherit">강원
+									<a href="${path}/submain/genreDetail?cno=118" class="text-inherit">강원
 										세계 젬버린</a>
 								</h5>
 								<!-- List -->
@@ -398,13 +398,13 @@ Main hero END -->
 					<div class="item">
 						<!-- Card -->
 						<div class="card  mb-4 card-hover">
-							<a href="pages/course-single.html" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=116" class="card-img-top"><img
 								src="http://tkfile.yes24.com/upload2/perfblog/202210/20221028/20221028-42880.jpg/dims/quality/70/"
 								alt="" class="rounded-top-md card-img-top"></a>
 							<!-- Card Body -->
 							<div class="card-body">
 								<h5 class="mb-2 text-truncate-line-2 ">
-									<a href="pages/course-single.html" class="text-inherit">다이노스
+									<a href="${path}/submain/genreDetail?cno=116" class="text-inherit">다이노스
 										제주</a>
 								</h5>
 								<!-- List -->
@@ -441,13 +441,13 @@ Main hero END -->
 					<div class="item">
 						<!-- Card -->
 						<div class="card  mb-4 card-hover">
-							<a href="pages/course-single.html" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=117" class="card-img-top"><img
 								src="http://tkfile.yes24.com/upload2/perfblog/202209/20220922/20220922-43614.jpg/dims/quality/70/"
 								alt="" class="card-img-top rounded-top-md"></a>
 							<!-- Card Body -->
 							<div class="card-body">
 								<h5 class="mb-2 text-truncate-line-2 ">
-									<a href="pages/course-single.html" class="text-inherit">프랑코
+									<a href="${path}/submain/genreDetail?cno=117" class="text-inherit">프랑코
 										폰타나</a>
 								</h5>
 								<!-- List -->
@@ -480,13 +480,13 @@ Main hero END -->
 					<div class="item">
 						<!-- Card -->
 						<div class="card  mb-4 card-hover">
-							<a href="pages/course-single.html" class="card-img-top"><img
+							<a href="${path}/submain/genreDetail?cno=118" class="card-img-top"><img
 								src="http://tkfile.yes24.com/upload2/perfblog/202211/20221128/20221128-40444.jpg/dims/quality/70/"
 								alt="" class="card-img-top rounded-top-md"></a>
 							<!-- Card Body -->
 							<div class="card-body">
 								<h5 class="mb-2 text-truncate-line-2 ">
-									<a href="pages/course-single.html" class="text-inherit">강원
+									<a href="${path}/submain/genreDetail?cno=118" class="text-inherit">강원
 										세계 젬버린</a>
 								</h5>
 								<!-- List -->
@@ -529,8 +529,8 @@ Main hero END -->
 			<c:forEach var="item" items="${list}">
 				<li>
 					<div class="home-top5-list">
-						<a href="#"> <img
-							src="http://tkfile.yes24.com/upload2/perfblog/202212/20221212/20221212-43518.jpg/dims/quality/70/"
+						<a href="${path}/submain/genreDetail?cno=${item.show_cno}"> <img
+							src=${item.show_thumbnail}
 							alt="" class="rounded-top-md card-img-top home-top5-img">
 
 						</a>

@@ -83,10 +83,13 @@ a{ color: black; }
 .home-top5-area ul li .home-top5-list a:hover img{transform:scale(1.04);}
 
 /* 탭 선택 시 표시할 요소(div) 정의(1번 탭 선택 시 첫 번째 div 요소 표시) */
-.home-top5 input:nth-of-type(1), .home-top5 input:nth-of-type(1) ~ div:nth-of-type(1), .home-top5 input:nth-of-type(2), .home-top5 input:nth-of-type(2) ~ div:nth-of-type(2), .home-top5 input:nth-of-type(3), .home-top5 input:nth-of-type(3) ~ div:nth-of-type(3) {
+.home-top5 input:nth-of-type(1), .home-top5 input:nth-of-type(1) ~ div:nth-of-type(1), .home-top5 input:nth-of-type(2), .home-top5 input:nth-of-type(2) ~ div:nth-of-type(2),
+ .home-top5 input:nth-of-type(3), .home-top5 input:nth-of-type(3) ~ div:nth-of-type(3), .home-top5 input:nth-of-type(4), .home-top5 input:nth-of-type(4) ~ div:nth-of-type(4),
+ .home-top5 input:nth-of-type(5), .home-top5 input:nth-of-type(5) ~ div:nth-of-type(5), .home-top5 input:nth-of-type(6), .home-top5 input:nth-of-type(6) ~ div:nth-of-type(6) {
     display:none
 }
-.home-top5 input:nth-of-type(1):checked ~ div:nth-of-type(1), .home-top5 input:nth-of-type(2):checked ~ div:nth-of-type(2), .home-top5 input:nth-of-type(3):checked ~ div:nth-of-type(3) {
+.home-top5 input:nth-of-type(1):checked ~ div:nth-of-type(1), .home-top5 input:nth-of-type(2):checked ~ div:nth-of-type(2), .home-top5 input:nth-of-type(3):checked ~ div:nth-of-type(3),
+ .home-top5 input:nth-of-type(4):checked ~ div:nth-of-type(4), .home-top5 input:nth-of-type(5):checked ~ div:nth-of-type(5), .home-top5 input:nth-of-type(6):checked ~ div:nth-of-type(6) {
     display:block
 }
 
@@ -116,6 +119,15 @@ a{ color: black; }
     color: black;
 }
 .home-top5 input:nth-of-type(3):checked ~ label:nth-of-type(3), .home-top5 > label[for=home-tab3]:hover {
+    color: black;
+}
+.home-top5 input:nth-of-type(4):checked ~ label:nth-of-type(4), .home-top5 > label[for=home-tab4]:hover {
+    color: black;
+}
+.home-top5 input:nth-of-type(5):checked ~ label:nth-of-type(5), .home-top5 > label[for=home-tab5]:hover {
+    color: black;
+}
+.home-top5 input:nth-of-type(6):checked ~ label:nth-of-type(6), .home-top5 > label[for=home-tab6]:hover {
     color: black;
 }
 

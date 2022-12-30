@@ -65,24 +65,22 @@
 </head>
 
 <body>
-	<section class="pt-0 pb-7 card-grid second">
-		<div style="background-color: #fff7ed">
-
-			<div class=" center frist">
-				<h3>상세 검색</h3>
-				<form id="" name="displaySearch"
-					action="/mvc/submain/displayMainDetail" method="get">
+	<div style="background-color: #fff7ed">
+		<section class="pt-0 pb-7 card-grid second">
+			<div class=" center frist ">
+				<h3 style="color: #ffffff">상세 검색</h3>
+				<form action="${path}/submain/displayMainDetail" method="get">
 					<table class="table">
 						<tr>
 							<th noWrap><input class="searchSize" type="text"
-								name="searchValue" class="center" value="${searchValue}" ></th>
+								name="searchValue" class="center" value="${searchValue}"></th>
 							<th noWrap class="text-center"><h4>전시 시작일</h4></th>
-							<th noWrap><input type="date" class="calender" value="${startday}"
-								name="startday" name="startday" value="" min="2000-01-01"
-								max="2030-12-31"></th>
-							<th noWrap class="text-center"><h4>전시 마감일</h4></th>
-							<th noWrap><input type="date" class="calender" name="endday" value="${endday}"
+							<th noWrap><input type="date" class="calender"
+								value="${startday}" name="startday" name="startday" value=""
 								min="2000-01-01" max="2030-12-31"></th>
+							<th noWrap class="text-center"><h4>전시 마감일</h4></th>
+							<th noWrap><input type="date" class="calender" name="endday"
+								value="${endday}" min="2000-01-01" max="2030-12-31"></th>
 							<th noWrap><input type="submit" class="btn_color" value="검색" /></th>
 						</tr>
 					</table>
@@ -93,15 +91,14 @@
 				<div class="row ">
 					<div class="col-12">
 						<div
-							class="tiny-slider arrow-hover arrow-blur arrow-white arrow-round rounded-3 overflow-hidden">
+							class="tiny-slider arrow-hover arrow-blur arrow-white overflow-hidden">
 							<div class="tiny-slider-inner" data-autoplay="true"
 								data-hoverpause="true" data-gutter="1" data-arrow="true"
 								data-dots="false" data-items="1">
 
 								<!-- Slide 1 -->
-								<div
-									class="card bg-dark-overlay-3 h-400 h-sm-500 h-md-600 rounded-0"
-									style="background-image: url(${path}/resources/images/ours/display_img.jpg); background-position: center left; background-size: cover;">
+								<div class="card bg-dark-overlay-3 h-400 h-sm-500 h-md-600"
+									style="background-image: url(${path}/resources/images/ours/display-banner.jpg); background-position: center left; background-size: cover;">
 									<!-- Card Image overlay -->
 									<div
 										class="card-img-overlay d-flex align-items-center p-3 p-sm-5">
@@ -122,7 +119,7 @@
 								<!-- Slide 2 -->
 								<div
 									class="card bg-dark-overlay-3 h-400 h-sm-500 h-md-600 rounded-0"
-									style="background-image: url(${path}/resources/images/ours/display_img.jpg); background-position: center left; background-size: cover;">
+									style="background-image: url(${path}/resources/images/ours/display-banner.jpg); background-position: center left; background-size: cover;">
 									<!-- Card Image overlay -->
 									<div
 										class="card-img-overlay d-flex align-items-center p-3 p-sm-5">
@@ -136,41 +133,45 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	
-<div class="home-top5-area container">
-		<ul >
-		<c:forEach var="item" items="${list}">
-			<li>
-				<div class="home-top5-list">
-					<a href="#"> <img
-						src=${item.show_thumbnail}
-						alt="" class="rounded-top-md card-img-top home-top5-img">
+		</section>
+	</div>
 
-					</a>
-				</div>
-				<div class="box ">
-					<table class="table-bottom">
-						<tr>
-							<td>
-								<h4>${item.show_title} <br></h4>
-							</td>
-						</tr>
+	<c:if test="${empty list}">
+		<h3 style="text-align: center">검색하신 결과가 없습니다.</h3>
+	</c:if>
+	<div class="home-top5-area container">
+		<ul>
+			<c:forEach var="item" items="${list}">
+				<li>
+					<div class="home-top5-list">
+						<a href="${path}/submain/genreDetail?cno=${item.show_cno}"> <img src=${item.show_thumbnail }
+						alt=""
+							class="rounded-top-md card-img-top home-top5-img">
 
-						<tr>
-							<td><h5>${item.show_place}</h5></td>
-						</tr>
-						<tr>
-							<td><h6>
-									${item.show_startdate} <br>
-									~ ${item.show_enddate} <br>
-								</h6></td>
-						</tr>
-					</table>
-				</div>
-			</li>
-		</c:forEach>
+						</a>
+					</div>
+					<div class="box ">
+						<table class="table-bottom">
+							<tr>
+								<td>
+									<h4>${item.show_title}
+										<br>
+									</h4>
+								</td>
+							</tr>
+
+							<tr>
+								<td><h5>${item.show_place}</h5></td>
+							</tr>
+							<tr>
+								<td><h6>
+										${item.show_startdate} <br> ~ ${item.show_enddate} <br>
+									</h6></td>
+							</tr>
+						</table>
+					</div>
+				</li>
+			</c:forEach>
 		</ul>
 	</div>
 	<!-- Scripts -->

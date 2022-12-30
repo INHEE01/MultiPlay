@@ -4,6 +4,11 @@ ul {
 	font-weight: 600;
 }
 
+a {
+	color:black;
+}
+
+
 <!--상단 검색결과 -->
 
 search-nav {margin: auto;}
