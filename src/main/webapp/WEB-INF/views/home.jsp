@@ -268,23 +268,23 @@
 			</div>
 			<%-- 탭2 시작 --%>
 			<div class="home-top5-area home-tab1-content">
-				<c:if test="${classicRankingList != null }">
+				<c:if test="${concertRankingList != null }">
 				<ul>
-						<c:forEach var="classic" items="${classicRankingList}">
+						<c:forEach var="concert" items="${concertRankingList}">
 							<li>
 								<div class="home-top5-list">
-									<a href="${path}/submain/genreDetail?cno=${classic.cultureNo}">
-										<img src="<c:out value="${classic.poster}"/>" alt="" class="home-top5-img">
+									<a href="${path}/submain/genreDetail?cno=${concert.cultureNo}">
+										<img src="<c:out value="${concert.poster}"/>" alt="" class="home-top5-img">
 										<div class="top5-list-txt">
 											<div>
-												<p class="home-top5-title"><c:out value="${classic.prfnm}"/></p>
+												<p class="home-top5-title"><c:out value="${concert.prfnm}"/></p>
 												<p class="home-top5-detail">
 													<fmt:formatDate var="dayFrom"
-													value="${classic.prfpdfrom}" pattern="yyyy.MM.dd" /> <c:out
+													value="${concert.prfpdfrom}" pattern="yyyy.MM.dd" /> <c:out
 													value="${dayFrom}" />&#32;~&#32; <fmt:formatDate var="dayTo"
-													value="${classic.prfpdto}" pattern="yyyy.MM.dd" /> <c:out
+													value="${concert.prfpdto}" pattern="yyyy.MM.dd" /> <c:out
 													value="${dayTo}" /><br>
-													<br><c:out value="${classic.fdtynm}"/>
+													<br><c:out value="${concert.fdtynm}"/>
 												</p>
 											</div>
 										</div>

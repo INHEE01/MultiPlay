@@ -94,7 +94,7 @@
 					<li class="nav-item"><a class="nav-link"
 						href="${path}/submain/displayMain" id="navbarLanding"> 전시 </a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="${path}/submain/locationMain" id="navbarPages"> 지역 </a></li>
+						href="${path}/submain/locationMainDetail" id="navbarPages"> 지역 </a></li>
 
 					<li class="nav-item"><a class="nav-link"
 						href="${path}/submain/musicalRanking" id="navbarAccount"> 랭킹 </a>

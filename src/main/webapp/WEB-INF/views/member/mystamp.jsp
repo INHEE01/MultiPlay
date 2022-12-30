@@ -50,7 +50,7 @@
 				<div id="mypageStamp" class="card target">
 					<!-- Card header -->
 					<div class="card-header">
-						<h3 class="mb-0"> {month}월의 스탬프</h3>
+						<h3 class="mb-0"> <span id="current_date"></span>월의 스탬프</h3>
 						<p class="mb-0">
 							이번 달 미션을 완료하세요!
 						</p>
@@ -83,5 +83,12 @@
 </section> <%-- 맨 끝 --%>
 
 <script src="${path}/resources/js/mypage.js"></script>
+
+
+<script>
+	date = new Date();
+	month = date.getMonth() + 1;
+	document.getElementById("current_date").innerHTML = month;
+</script>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>

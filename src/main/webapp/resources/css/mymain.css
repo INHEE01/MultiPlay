@@ -11,9 +11,12 @@ a:hover{
 }
 
 /* 헤더 시작 */
+/* 헤더 이슈 발생 2022-12-31 여기 손봐야 할듯... */
 .header{
 	position: relative;
+	height: 50px;	
 }
+
 .navbar-brand img{
 	width: 50px;
 	height: auto;
