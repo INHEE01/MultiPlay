@@ -143,18 +143,13 @@ public class BoardController {
 		return "/common/error";
 	}
 	
-	
+	//자유게시판
 	@GetMapping("/write")
 	public String writeView() {
 		return "board/write";
 	}
-
-	@GetMapping("/mon")
-	public String monView() {
-		return "board/mon";
-	}
 	
-	
+	// 2022.12.30 추가
 	@PostMapping("/write")
 	public String writeBoard(Model model, HttpSession session,
 			@SessionAttribute(name = "loginMember", required = false) Users loginMember,
@@ -184,10 +179,20 @@ public class BoardController {
 			model.addAttribute("location", "/board/freelist");
 		}else {
 			model.addAttribute("msg", "게시글 작성에 실패하였습니다.");
-			model.addAttribute("location", "/board/list");
+			model.addAttribute("location", "/board/freelist");
 		}
 		
 		return "common/msg";
+	}
+	// 2022.12.30 추가
+	
+	
+	
+	//문의사항
+
+	@GetMapping("/mon")
+	public String monView() {
+		return "board/mon";
 	}
 	
 	
@@ -220,11 +225,57 @@ public class BoardController {
 			model.addAttribute("location", "/board/monlist");
 		}else {
 			model.addAttribute("msg", "게시글 작성에 실패하였습니다.");
+			model.addAttribute("location", "/board/monlist");
+		}
+		
+		return "common/msg";
+	}
+	
+	
+	
+	
+	//공지사항 2022.12.30 추가
+	@GetMapping("/infoWrite")
+	public String infoWriteView() {
+		return "board/infoWrite";
+	}
+
+	@PostMapping("/infoWrite")
+	public String infoWriteBoard(Model model, HttpSession session,
+			@SessionAttribute(name = "loginMember", required = false) Users loginMember,
+			@ModelAttribute Board board,
+			@RequestParam("upfile") MultipartFile upfile
+			) {
+		log.info("게시글 작성 요청");
+		board.setWriterNo(loginMember.getUserNo());
+		
+		// 파일 저장 로직
+		if(upfile != null && upfile.isEmpty() == false) {
+			String rootPath = session.getServletContext().getRealPath("resources");
+			System.out.println(rootPath);
+			String savePath = rootPath +"/upload/board";
+			String renameFileName = service.saveFile(upfile, savePath); 
+			
+			if(renameFileName != null) {
+				board.setOriginalFileName(upfile.getOriginalFilename());
+				board.setRenamedFileName(renameFileName);
+			}
+		}
+		
+		log.debug("board : " + board);
+		int result = service.saveBoard(board);
+		if(result > 0) {
+			model.addAttribute("msg", "게시글이 등록 되었습니다.");
+			model.addAttribute("location", "/board/list");
+		}else {
+			model.addAttribute("msg", "게시글 작성에 실패하였습니다.");
 			model.addAttribute("location", "/board/list");
 		}
 		
 		return "common/msg";
 	}
+	
+	
 	
 	@RequestMapping("/reply")
 	public String writeReply(Model model, 
@@ -349,6 +400,14 @@ public class BoardController {
 			}else {
 				model.addAttribute("msg", "자유게시판 게시글 수정에 실패하였습니다.");
 				model.addAttribute("location", "/board/freelist");
+			}
+		}else if(board.getBoardType().equals("공지사항")) {
+			if(result > 0) {
+				model.addAttribute("msg", "공지글이 수정 되었습니다.");
+				model.addAttribute("location", "/board/list");
+			}else {
+				model.addAttribute("msg", "공지글 수정에 실패하였습니다.");
+				model.addAttribute("location", "/board/list");
 			}
 		}
 		

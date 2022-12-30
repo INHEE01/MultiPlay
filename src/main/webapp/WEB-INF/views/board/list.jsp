@@ -52,6 +52,9 @@
 							<button type="submit" class="sch_smit">검색</button>
 						</div>
 					</form>
+					<c:if test="${loginMember.userId == 'admin'}">
+						<button type="button" id="btn-add" class="write" onclick="location.href='${path}/board/infoWrite'">글쓰기</button>
+					</c:if>
 					<table class="board-table">
 						<tr>
 							<th class="table-header">번호</th>
