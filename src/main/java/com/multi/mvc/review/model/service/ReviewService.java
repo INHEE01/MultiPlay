@@ -35,15 +35,35 @@ public class ReviewService {
 	}
 	
 	// 리뷰 가져오기
-	public List<Review> getReviewList(PageInfo pageInfo, Map<String, String> param) {
-		param.put("limit", "" + pageInfo.getListLimit());
-		param.put("offset", "" + (pageInfo.getStartList() - 1));
+	public List<Review> getReviewList(Map<String, String> param) {
 		return mapper.selectReviewList(param);
 	}
 	
 	// 리뷰 리액션 카운트
-	public int getReactionCount(Map<String, String> param) {
-		return mapper.selectReactionCount(param);
+	public int getReactionCount(int reviewNo) {
+		return mapper.selectReactionCount(reviewNo);
+	}
+	
+	// 리뷰 리액션 업데이트
+	@Transactional(rollbackFor = Exception.class)
+	public int updateReaction(int reviewNo) {
+		return mapper.updateReactionCount(reviewNo);
+	}
+	
+	@Transactional(rollbackFor = Exception.class)
+	public int deupdateReactionCount(int reviewNo) {
+		return mapper.deupdateReactionCount(reviewNo);
+	}
+	
+	// 리뷰 삭제하기
+	@Transactional(rollbackFor = Exception.class)
+	public int deleteReview(int reviewNo) {
+		return mapper.deleteReview(reviewNo);
+	}
+	
+	// 리액션 개수 가져오기
+	public int reactionCountNum(int reviewNo) {
+		return mapper.reactionCountNum(reviewNo);
 	}
 	
 }

@@ -123,8 +123,83 @@ th, td{
 .genDT-tap3-tbl td{ text-align: center;  vertical-align: middle; }
 
 
-/* 후기 입력창 */
-.genDT-review-editor{
+/*후기테이블*/
+#tbl-comment{
+  width:1200px;
+  margin:0 auto; 
+  border-collapse:collapse; 
+  clear:both; 
+} 
+
+#tbl-comment tr td{
+  border-bottom:1px solid black; 
+  text-align:left; 
+  line-height:200%;
+}
+table#tbl-comment tr td:first-of-type{
+  padding: 5px 6px 7px 70px;
+}
+
+table#tbl-comment tr td:last-of-type { width: 100px;}
+.comment-count{
+  font-weight: 800;
+  color: tomato;
+}
+
+table#tbl-comment button.btn-delete{
+  display:none;
+  margin: 10px 0px;
+  line-height: 50%;
+  margin-right: 70px;
+  height: 50px;
+}
+
+table#tbl-comment button.btn-update{
+  display:none;
+  margin: 10px 0px;
+  line-height: 50%;
+  margin-right: 10px;
+}
+
+.reply-btns{
+	display: flex;
+	 background-color: lightgray;
+}
+
+table#tbl-comment tr:hover button.btn-delete{
+  display:inline-block;
+  background-color: black;
+  color: white;
+}
+table#tbl-comment tr:hover button.btn-update{
+  display:inline-block;
+  background-color: black;
+  color: white;
+}
+
+#comment:hover td{
+  background-color: lightgray;
+}
+.commnet:hover td{
+	background-color: transparent;
+}
+.comment-count:hover td{
+  background-color: transparent;
+}
+
+table#tbl-comment sub.comment-writer {
+  color:navy; 
+  font-size:18px;
+  font-weight: 600;
+  background-color: transparent;
+}
+table#tbl-comment sub.comment-date {
+  color:tomato; 
+  font-size:15px;
+  background-color: transparent;
+}
+/*후기 입력창*/
+.comment-editor{
   display: flex;
   justify-content: center;
 }
@@ -142,64 +217,10 @@ th, td{
   height: 40px;
   margin-top: 85px;
 }
-.review-inputer{
+.comment-inputer{
   margin-bottom: 50px;
 }
 
-/*댓글테이블*/
-#tbl-review{
-  width:1200px;
-  margin:0 auto; 
-  border-collapse:collapse; 
-  clear:both; 
-} 
-
-#tbl-review tr td{
-  border-bottom:1px solid black; 
-  text-align:left; 
-  line-height:200%;
-}
-table#tbl-review tr td:first-of-type{
-  padding: 6px 6px 6px 70px;
-}
-
-table#tbl-review tr td:last-of-type { width: 100px;}
-.review-count{
-  font-weight: 800;
-  color: tomato;
-}
-
-table#tbl-review button.btn-delete{
-  display:none;
-  margin: 10px 0px;
-  line-height: 50%;
-  margin-right: 70px;
-}
-
-table#tbl-review tr:hover button.btn-delete{
-  display:inline-block;
-  background-color: black;
-  color: white;
-}
-
-.reviews:hover td{
-  background-color: lightgray;
-}
-.review-count:hover td{
-  background-color: transparent;
-}
-
-table#tbl-review sub.review-writer {
-  color:navy; 
-  font-size:18px;
-  font-weight: 600;
-  background-color: transparent;
-}
-table#tbl-review sub.review-date {
-  color:tomato; 
-  font-size:15px;
-  background-color: transparent;
-}
 
 /* 위로가기 버튼 css*/
 #goingTop {

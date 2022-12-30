@@ -13,6 +13,8 @@ public interface ReviewMapper {
 		int insertReview(Review review);
 		int updateReview(Review review);
 		int deleteReview(int reviewNo);
-		int selectReactionCount(Map<String, String> map);
-		int updateReactionCount(Map<String, String> map);
+		int selectReactionCount(int reviewNo);
+		int updateReactionCount(int reviewNo);
+		int deupdateReactionCount(int reviewNo);
+		int reactionCountNum(int reviewNo);
 }

@@ -1,5 +1,6 @@
 package com.multi.mvc.submain.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +17,8 @@ import com.multi.mvc.board.model.vo.Board;
 import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.culture.model.service.CultureService;
 import com.multi.mvc.culture.model.vo.Culture;
+import com.multi.mvc.review.model.service.ReviewService;
+import com.multi.mvc.review.model.vo.Review;
 import com.multi.mvc.show.model.service.ShowService;
 import com.multi.mvc.show.model.vo.Show;
 import com.multi.mvc.submain.model.service.SubmainService;
@@ -39,6 +42,9 @@ public class SubmainController {
 	
 	@Autowired
 	CultureService cService;
+	
+	@Autowired
+	private ReviewService rService;
 
 	@GetMapping("/pay") // 12/25: 수정할 가능성 있음
 	public String pay() {
@@ -47,15 +53,26 @@ public class SubmainController {
 	
 	@RequestMapping("/genreDetail")
 	public String view(Model model, @RequestParam("cno") int cno, @RequestParam Map<String, String> param) {
-		
 		Culture culture = cService.getCultureByCno(cno);
 		
 		if(culture == null) {
 			return "redirect:error";
 		}
 		
+
+		// 리뷰 관련
+		Map<String, String> map = new HashMap<String, String>();
+		List<Review> reviewList = new ArrayList<Review>();
+		for (Review review : rService.getReviewList(map)) {
+			if(cno == review.getCno()) {
+				reviewList.add(review);
+			}
+		}
+		int reviewSize = reviewList.size();
 		model.addAttribute("culture", culture);
 		model.addAttribute("reviewWrite", param.getOrDefault("reviewWrite", "0"));
+		model.addAttribute("reviewList", reviewList); // cno에 달린 리뷰 리스트
+		model.addAttribute("reviewSize", reviewSize); // 리뷰 개수
 		return "submain/genreDetail";
 	}
 	

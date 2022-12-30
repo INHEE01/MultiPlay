@@ -9,6 +9,7 @@
 	<jsp:param value="멀티플레이::${culture.title}" name="title" />
 </jsp:include>
 
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="${path}/resources/css/genreDetail.css">
 
 <style type="text/css">
@@ -61,7 +62,8 @@
 						<th>가격</th>
 						<td>
 							<div class="genDT-caption-price ps-md-3 py-lg-2">
-								<span style="color: rgb(251, 188, 4); font-weight: 600">${culture.price}</span>
+								R석 <span style="color: rgb(251, 188, 4); font-weight: 600">66,000</span>원 <br>
+								S석 <span style="color: rgb(251, 188, 4); font-weight: 600">44,000</span>원
 							</div>
 						</td>
 					</tr>
@@ -365,9 +367,8 @@
 				<div id="review-container">
 			    	<div class="review-editor" align="center">
 			    		<form action="${path}/ReviewWrite" method="post">
-			    			<input type="hidden" name="cno" value="${'1'}" /> <!-- 수정할 부분 -->
-			    			<input type="hidden" name="reviewWriterNo" value="${'1'}" /> <!-- 수정할 부분 -->
-			    			<input class="reviewTitle" name="reviewTitle" id="reviewTitle" placeholder="후기제목"/>
+			    			<input type="hidden" name="cno" value="${culture.cno}" />
+			    			<input type="hidden" name="userId" value="${loginMember.userId}" />
 							<textarea name="reviewContent" id="reviewContent" cols="130" rows="3"></textarea>
 							<button type="submit" id="btn-insert">등록</button>	  	
 			    		</form>
@@ -375,58 +376,47 @@
 			   	</div>
 			   	
 			   	<!-- 후기 출력 -->  <!-- 수정할 부분 -->
-				<table id="tbl-review">
-					<c:if test="${!empty reviewList}">
-						<c:forEach var="review" items="${reviewList}">
-							<tr>
-								<td>
-									<sub class="review-writer">${review.writerId}</sub>
-									<sub class="review-date"><fmt:formatDate type="both" value="${review.createDate}"/></sub>	
-									<br>
-									<c:out value="${review.reviewTitle}"/>
-									<c:out value="${review.reviewContent}"/>
-								</td>
-								<td>
-									<c:if test="${ !empty loginMember && (loginMember.id == review.writerId || loginMember.role == 'ROLE_ADMIN') }">
-									<button class="btn-delete" onclick="deleteReview('${review.reviewNo}');" >삭제</button>
-									</c:if>
-								</td>
-							</tr>
-						</c:forEach>
-					</c:if>
-					
-					<c:if test="${empty replyList}">
-						<tr>
-							<td colspan="3" style="text-align: center;">등록된 후기가 없습니다.</td>
-						</tr>
-					</c:if>
-					
-					<c:if test="${not empty replyList}">
-							<c:forEach var="reply" items="${list}">
-								<tr>
-									<td class="board-content"><c:out value="${board.bno}" /></td>
-									<td class="board-content board-title">
-										<a id="board-title" href="${path}/board/view?no=${board.bno}"> 
-											<c:out value="[자유게시판]  ${board.boardTitle}" />
-										</a>
-									</td>
-									<td class="board-content"><c:out value="${board.userId}" /></td>
-									<td class="board-content"><fmt:formatDate type="date" value="${board.createDate}" /></td>
-									<td class="board-content">
-										<c:if test="${board.originalFileName != null }">
-											<img class = "file-img"  src="${path}/resources/images/ours/file.png">
-										</c:if> 
-										<c:if test="${board.originalFileName == null }">
-											<span>첨부파일 없음</span>
-										</c:if>
-									</td>
-									<td class="board-content"><c:out value="${board.readCount}" /></td>
-								</tr>
-							</c:forEach>
-						</c:if>
-				</table>
-			    
-				
+				<table id="tbl-comment">
+				  <c:if test="${empty reviewList}">
+					  <tr>
+					    <td class="comment-count" colspan="2" style="border-color: none;">후기 0 개</td>
+					  </tr>
+				  </c:if>
+				  <c:if test="${!empty reviewList}">
+				  	<tr>
+				    	<td class="comment-count" colspan="2" style="border-color: none;">후기 ${reviewSize} 개</td>
+				 	</tr>
+				  	<c:forEach var="reviewList" items="${reviewList}">
+				      <tr class="comments"  ${(loginMember.userId == reviewList.userId || loginMember.userId == admin) ? 'id="comment"':''}>
+				        <td align="center" width="180px">
+				        	<span class="heart" id="heart${reviewList.reviewNo}" value="false" onclick="onClickHeart('heart${reviewList.reviewNo}', ${reviewList.reviewNo});">♥</span>
+				        	<span id="reactionCount${reviewList.reviewNo}" ><c:out value="${reviewList.reactionCount}"/></span>
+				        </td>
+				        <td class="comment">
+				          <input type="hidden" name="reviewNo" value="${reviewList.reviewNo}"/>
+				          <sub class="comment-writer">${reviewList.userId}</sub>
+				          <sub class="comment-date"><fmt:formatDate type="both" pattern="yyyy-MM-dd" value="${reviewList.createDate}"/></sub><br>
+				          <c:out value="${reviewList.reviewContent}"/>
+				        </td>
+				        <td class="comment comment-btn">
+				        	<c:set var="admin" value="admin"></c:set>
+				        	<c:if test="${ !empty loginMember && (loginMember.userId == reviewList.userId || loginMember.userId == admin)}">
+				        		<div class="reply-btns">
+				        			<form action="${path}/ReviewDel?reviewNo=${reviewList.reviewNo}&cno=${culture.cno}" method="post">
+						         		<button type="submit" class="btn-delete" id="btn-delete" >삭제</button>
+				        			</form>
+						         </div>
+						     </c:if>
+				        </td>
+				      </tr>
+			      	</c:forEach>
+			      </c:if>
+			      <c:if test="${empty reviewList}">
+			      	<tr>
+						<td colspan="3" style="text-align: center;">등록된 후기가 없습니다.</td>
+					</tr>
+			      </c:if>
+			    </table>
 			</div>
 		</div>
 		<%-- 탭메뉴 끝 --%>
@@ -438,5 +428,75 @@
 </section>
 
 <script src="${path}/resources/js/genreDetail.js"></script>
+
+<script>
+    // 초기화 문구
+    $(function(){
+        // 하트 class 초기화
+        heartItems = document.getElementsByClassName('heart');
+        for(i = 0; i < heartItems.length; i++){
+            heartValue = JSON.parse(heartItems[i].getAttribute('value'));
+
+            if(heartValue == true){
+                heartItems[i].innerHTML = '♥';
+            }else{
+                heartItems[i].innerHTML = '♡';
+            }
+        }
+    });
+
+    function onClickHeart(id, no){
+        heartValue = JSON.parse($('#'+id).attr('value'));
+        heartValue = !heartValue;
+        var form = {
+				reviewNo : no,
+		}
+        
+        // 여기에 AJAX로 DB 업데이트하는 코드 있어야함!!
+     if(heartValue == true){
+        $.ajax({
+			url : '${path}/ReactionCount',
+			method : 'POST',
+			data : form,
+			dataType : 'json',
+			contentType : "application/x-www-form-urlencoded; charset=utf-8",
+			success: function(result){
+				$("#reactionCount" + no).html(result); // 후기 테이블 숫자만 새로고침하는 문장
+				alert('공감추가 : ' + result);
+			},
+			error: function(){
+				alert('공감+추가+실패');
+			}
+		})
+     } else{
+    	 $.ajax({
+   			url : '${path}/ReactionDecount',
+   			method : 'POST',
+   			data : form,
+   			dataType : 'json',
+   			contentType : "application/x-www-form-urlencoded; charset=utf-8",
+   			success: function(result){
+   				$("#reactionCount" + no).html(result); // 후기 테이블 숫자만 새로고침하는 문장
+   				alert('공감삭제 : ' + result);
+   			},
+   			error: function(){
+   				alert('공감-삭제-실패');
+   			}
+   		})
+     }
+
+        $('#'+id).attr('value', ''+heartValue);
+        if(heartValue == true){
+            $('#'+id).text('♥');
+        }else{
+            $('#'+id).text('♡');
+        }
+    }
+
+	
+
+
+</script>
+
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>

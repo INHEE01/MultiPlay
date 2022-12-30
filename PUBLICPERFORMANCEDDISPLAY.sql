@@ -570,24 +570,26 @@ insert into CULTURAL_LIST values(192, '355233', '모네 향기를 만나다展',
 insert into CULTURAL_LIST values(193, '325232', '데이비드 호크니 작품으로 배우는 미술상식', '2023.01.01', '2023.01.09', '라움아트센터', '전시', '경기', 'http://tkfile.yes24.com/upload2/PerfBlog/202010/20201030/20201030-37629.jpg',127.1155185576658,  127.115517876352);
 -- ------------------------------------------------------------
 -- ---------- 12/29 공연상세정보 추가
-UPDATE CULTURAL_DETAIL SET contents1='https://contents.sixshop.com/thumbnails/uploadedFiles/167156/default/image_1625184648913_1000.jpg' WHERE SEQ =174595;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000636-01.jpg' WHERE SEQ =202280;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000900-01.jpg' WHERE SEQ =202823;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/21/21013446-02.jpg' WHERE SEQ =203205;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/21/21013479-01.jpg' WHERE SEQ =203668;
-UPDATE CULTURAL_DETAIL SET contents1='https://tickets.interpark.com/goods/21013470' WHERE SEQ =203670;  
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22001215-01.jpg' WHERE SEQ =203967;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/21013344-04.jpg' WHERE SEQ =204133;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000080-01.jpg' WHERE SEQ =204151;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22001573-01.jpg' WHERE SEQ =204314;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22001897-01.jpg' WHERE SEQ =204523;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000412-03.jpg' WHERE SEQ =204562;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000310-01.jpg' WHERE SEQ =204565;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000001-01.jpg' WHERE SEQ =204570;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000634-01.jpg' WHERE SEQ =205012;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000673-02.jpg' WHERE SEQ =205324;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22002313-08.jpg' WHERE SEQ =205428;
-UPDATE CULTURAL_DETAIL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000716-01.jpg' WHERE SEQ =205678;
+UPDATE CULTURAL SET contents1='https://contents.sixshop.com/thumbnails/uploadedFiles/167156/default/image_1625184648913_1000.jpg' WHERE SEQ =174595;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000636-01.jpg' WHERE SEQ =202280;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000900-01.jpg' WHERE SEQ =202823;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/21/21013446-02.jpg' WHERE SEQ =203205;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/21/21013479-01.jpg' WHERE SEQ =203668;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/21/21013470-01.jpg' WHERE SEQ =203670;  
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22001215-01.jpg' WHERE SEQ =203967;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/21013344-04.jpg' WHERE SEQ =204133;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000080-01.jpg' WHERE SEQ =204151;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22001573-01.jpg' WHERE SEQ =204314;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22001897-01.jpg' WHERE SEQ =204523;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000412-03.jpg' WHERE SEQ =204562;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000310-01.jpg' WHERE SEQ =204565;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000001-01.jpg' WHERE SEQ =204570;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000634-01.jpg' WHERE SEQ =205012;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000673-02.jpg' WHERE SEQ =205324;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22002313-08.jpg' WHERE SEQ =205428;
+UPDATE CULTURAL SET contents1='https://ticketimage.interpark.com/Play/image/etc/22/22000716-01.jpg' WHERE SEQ =205678;
+
+
 -- --------------- 12/30 예약정보 추가
 insert into bookINFO values(0, 5, "미녀와 야수[창원]", "WYB", "왕예빈", 1, 3, 'C4', '2022-12-25',30000, '신용카드', DEFAULT);
 insert into bookINFO values(0, 5, "미녀와 야수[창원]", "JWS", "정우성", 1, 3, 'C5,C6', '2022-12-25',60000, '신용카드', DEFAULT);
@@ -601,18 +603,18 @@ insert into bookINFO values(0, 5, "미녀와 야수[창원]", "AJH", "안종호"
 
 -- ------------ 12/30 리뷰 추가
 INSERT INTO REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
-			VALUES(0, 5, 3, 6, '미녀와 야수 최고!!', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+			VALUES(0, 5, 3, 6, '미녀와 야수 최고!!', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, '2022-12-20', DEFAULT);
 INSERT INTO REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
-			VALUES(0, 5, 1, 7, '완전 꿀잼 ㅎㅎ', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+			VALUES(0, 5, 1, 7, '완전 꿀잼 ㅎㅎ', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, '2022-12-22', DEFAULT);
 insert into REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
-			VALUES(0, 5, 2, 8, '크리스마스에 딱이에요', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+			VALUES(0, 5, 2, 8, '크리스마스에 딱이에요', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, '2022-12-22', DEFAULT);
 insert into REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
-			VALUES(0, 5, 3, 9, '또 보고싶다', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+			VALUES(0, 5, 3, 9, '또 보고싶다', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, '2022-12-24', DEFAULT);
 insert into REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
-			VALUES(0, 5, 4, 10, '저는 그냥 그렇더라구요', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+			VALUES(0, 5, 4, 10, '저는 그냥 그렇더라구요', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, '2022-12-25', DEFAULT);
 insert into REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
-			VALUES(0, 5, 6, 11, '공연장이 좀 추웠어요', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+			VALUES(0, 5, 6, 11, '공연장이 좀 추웠어요', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, '2022-12-25', DEFAULT);
 insert into REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
-			VALUES(0, 5, 7, 12, '배우분들이 인사 해주셨닿ㅎ', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+			VALUES(0, 5, 7, 12, '배우분들이 인사 해주셨닿ㅎ', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, '2022-12-29', DEFAULT);
 insert into REVIEW(REVIEW_NO, CNO, REVIEW_WRITER_NO, BOOK_NO, REVIEW_content, REACTION_COUNT, ORIGINAL_IMG, MODIFY_IMG, STATUS, CREATE_DATE, MODIFY_DATE) 
-			VALUES(0, 5, 6, 13, '친구랑 봤어요 재밌었음~', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, DEFAULT, DEFAULT);
+			VALUES(0, 5, 6, 13, '친구랑 봤어요 재밌었음~', DEFAULT, '원본파일명1.png', '변경된파일명1.png', DEFAULT, '2022-12-30', DEFAULT);

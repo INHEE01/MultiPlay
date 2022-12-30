@@ -18,6 +18,8 @@ public class Review {
 	private int reviewNo; // -- 리뷰 일련번호
 	private int cno; // -- 공연/전시 상세정보 일련번호
 	private int reviewWriterNo; // -- 게시물 작성자 (일련번호)
+	private String reviewWriterId;
+	private String userId; // -- 게시물 작성자
 	private int bookNo;
 	private String reviewTitle; // -- 게시물 제목 200자 제한
 	private String reviewContent; // -- 게시물 내용 1000자 제한

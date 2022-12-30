@@ -192,19 +192,6 @@ function autoLeftPad(num, digit) {
 
 
 /*
-    예매 날짜, 시간 선택
-*/
-const perfPlayTime = document.querySelectorAll('#PerfPlayTime > a');
-
-// 회차 선택하면 스타일 변경
-perfPlayTime.addEventListener('click', ()=>{
-    perfPlayTime.classList.add("on");
-})
-
-
-
-
-/*
 	어떻게 하는지 모르겠음
 */
 // body 스크롤 방지 함수
