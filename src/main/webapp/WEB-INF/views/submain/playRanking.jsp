@@ -23,8 +23,8 @@
 		<ul class="genre-middle-select">
 			<li class="genre-block"><a class="genre-1" href="#"
 				id="ranking-1">장르별 랭킹</a></li>
-			<li class="genre-block"><a class="genre-1" href="#"
-				id="ranking-2">지역별 랭킹</a></li>
+			<!-- <li class="genre-block"><a class="genre-1" href="#"
+				id="ranking-2">지역별 랭킹</a></li> -->
 		</ul>
 	</div>
 	<div class="genre-select-2">
@@ -58,10 +58,9 @@
 <section class="ranking-list">
 	<div class="container">
 		<div class="content-container">
-			<h1 class="select-date">날짜 선택</h1>
-			<form style="text-align: center;">
-				<input type="date" id="currentDate" name="day">
-			</form>
+			<h1 class="select-date">
+				<div class="calendar-date" id="current_date"></div>
+			</h1>
 			<!-- 선택한 날짜의 해당하는 랭킹 출력하기 -->
 			<table class="ranking-table">
 				<tr>
@@ -104,7 +103,7 @@
 								</p>
 							</td>
 							<td class="ranking-content">
-								<button type="button" class="btn btn-warning">예매하기</button> <br>
+								<button type="button" onclick="location.href='${path}/submain/genreDetail?cno=${rankingList.cultureNo}'" class="btn btn-warning">예매하기</button> <br>
 							</td>
 						</tr>
 					</c:forEach>
@@ -117,22 +116,11 @@
 <div id="goingTop" onclick="window.scrollTo(0,0);">↑</div>
 
 <script>
-	document.getElementById('currentDate').value = new Date().toISOString()
-			.substring(0, 10);
-	;
-</script>
-<script>
-	function fn_onclick(value) {
-
-		var vUrl = "${path}/submain/musicalRanking?genrenm=" + value;
-
-		$("#testFrm").attr("action", vUrl);
-
-		$("#testFrm").attr("method", "GET"); // or "POST"
-
-		$("#testFrm").submit();
-
-	}
+	date = new Date();
+	year = date.getFullYear();
+	month = date.getMonth() + 1;
+	day = date.getDate();
+	document.getElementById("current_date").innerHTML = year + "년 " + month + "월 " + day + "일"; 
 </script>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
