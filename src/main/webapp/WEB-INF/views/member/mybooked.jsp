@@ -59,7 +59,7 @@
 	                            <div class="col-lg-6 col-md-8 col-7 mb-2 mb-lg-0">
 	                                <span class="d-block">
 	                               		<a href="#">
-		                                    <span class="h4">뮤지컬 호두까기 인형</span>
+		                                    <span class="h4">미녀와 야수 [창원]</span>
 	                               		</a>
 	                            </div>
 	                        </div>
@@ -71,7 +71,7 @@
 	                            </div>
 	                            <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
 	                                <span class="fs-6">관람 일자</span>
-	                                <h6 class="mb-0">2022-12-25</h6>
+	                                <h6 class="mb-0">2022-12-20</h6>
 	                            </div>
 	                            <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
 	                                <span class="fs-6">인원</span>
@@ -79,7 +79,7 @@
 	                            </div>
 	                            <div class="col-lg-3 col-md-3 col-6 mb-2 mb-lg-0">
 	                                <span class="fs-6">가격</span>
-	                                <h6 class="mb-0">230,000원</h6>
+	                                <h6 class="mb-0">132,000원</h6>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -216,23 +216,6 @@
 	                        </div>
 	                    </div>
 	                    
-	                    <%-- 예매내역 더보기 --%>
-	                    <div class="moreBookBtn">
-							<button onclick="" class="moreBookList">&lt;&lt;</button>
-							<button onclick="" class="moreBookList">&lt;</button>
-							<button onclick="" class="moreBookList">1</button>
-							<button onclick="" class="moreBookList">2</button>
-							<button onclick="" class="moreBookList">3</button>
-							<button onclick="" class="moreBookList">4</button>
-							<button onclick="" class="moreBookList">5</button>
-							<button onclick="" class="moreBookList">6</button>
-							<button onclick="" class="moreBookList">7</button>
-							<button onclick="" class="moreBookList">8</button>
-							<button onclick="" class="moreBookList">9</button>
-							<button onclick="" class="moreBookList">10</button>
-							<button onclick="" class="moreBookList">&gt;</button>
-							<button onclick="" class="moreBookList">&gt;&gt;</button>
-			            </div>
 					</div>
 				</div>
 				<%-- 예매내역 끝 --%>
