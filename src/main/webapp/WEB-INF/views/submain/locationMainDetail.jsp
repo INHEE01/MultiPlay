@@ -151,7 +151,7 @@
 				</table>
 			</form>
 	</section>
-<h3 style="margin-left:22%">공연</h3>
+<h3 style="margin-left:16%">공연</h3>
 	
 	<div class="home-top5-area container">
 		<ul >
@@ -190,7 +190,7 @@
 			
 		</ul>
 	</div>
-	<h3 style="margin-left:22%">전시</h3>
+	<h3 style="margin-left:16%">전시</h3>
 	
 	<div class="home-top5-area container">
 		<ul >
