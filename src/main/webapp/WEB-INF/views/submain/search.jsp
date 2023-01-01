@@ -89,7 +89,7 @@
 						<c:if test="${not empty ShowList}">
 							<c:forEach var="show" items="${ShowList}">
 								<tr>
-									<td class="board-content"><a href="${path}/showMain/view?no=${show.show_cno}"> 
+									<td class="board-content"><a href="${path}/submain/genreDetail?cno=${show.show_cno}">
 									<img  style="width:100px; height:100px;" src=${show.show_thumbnail }>
 									&emsp;&emsp;&emsp;${show.show_title}</a></td>
 									<td class="board-content">${show.show_startdate}~</td>
@@ -111,7 +111,7 @@
 						<c:if test="${not empty ShowList2}">
 							<c:forEach var="show" items="${ShowList2}">
 								<tr>
-									<td class="board-content"><a href="${path}/displayMainDetail/view?no=${show.show_cno}">
+									<td class="board-content"><a href="${path}/submain/genreDetail?cno=${show.show_cno}">
 									<img  style="width:100px; height:100px;" src=${show.show_thumbnail }>
 									&emsp;&emsp;&emsp;${show.show_title}</a></td>
 									<td class="board-content">${show.show_startdate}~</td>
@@ -157,7 +157,7 @@
 						<c:if test="${not empty ShowList}">
 							<c:forEach var="show" items="${ShowList}">
 								<tr>
-									<td class="board-content"><a href="${path}/showMain/view?no=${show.show_cno}"> 
+									<td class="board-content"><a href="${path}/submain/genreDetail?cno=${show.show_cno}"> 
 									<img  style="width:100px; height:100px;" src=${show.show_thumbnail }>
 									&emsp;&emsp;&emsp;${show.show_title}</a></td>
 									<td class="board-content">${show.show_startdate}~</td>
@@ -181,7 +181,7 @@
 						<c:if test="${not empty ShowList2}">
 							<c:forEach var="show" items="${ShowList2}">
 								<tr>
-									<td class="board-content"><a href="${path}/displayMainDetail/view?no=${show.show_cno}">
+									<td class="board-content"><a href="${path}/submain/genreDetail?cno=${show.show_cno}">
 									<img  style="width:100px; height:100px;" src=${show.show_thumbnail }>
 									&emsp;&emsp;&emsp;${show.show_title}</a></td>
 									<td class="board-content">${show.show_startdate}~</td>
