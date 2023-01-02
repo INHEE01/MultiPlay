@@ -293,7 +293,9 @@
 					</div>
 				</div>
 			</div>
+			<button type="button" class="button-to-main" onClick="location.href='${path}/'">메인으로</button>
 		</div>
 	</div>
+	
   <script src="${path}/resources/js/seat.js"> </script>
 </body>

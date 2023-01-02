@@ -17,6 +17,16 @@ body{
   border-right: 2px solid #dddddd;
   border-bottom: 2px solid #dddddd;
 }
+.button-to-main {
+  align-items: center;
+  font-weight: 900;
+  font-size: 20px;
+  padding: 20px;
+  border: none;
+  background-color: rgb(251, 188, 4);
+  color: black;	
+  width : 1200px;
+}
 
 .select-title {
   background-color: #444444;
